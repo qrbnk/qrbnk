@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Daryna Vakulenko | Digital Transformation Strategist</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#DDE3E9", 
+                        "secondary": "#2E554F", 
+                        "tertiary": "#5254A3", 
+                        "neutral": "#283F56", 
+                        "surface": "#f7f8f9",
+                        "on-surface": "#283F56",
+                        "on-surface-variant": "#44474a",
+                        "background": "#f7f8f9",
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        "2xl": "1rem",
+                        "xxl": "1.5rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "section-gap": "8rem",
+                    },
+                    fontFamily: {
+                        headline: ["Inter"],
+                        display: ["Inter"],
+                        body: ["Inter"],
+                        label: ["Inter"]
+                    },
+                },
+            },
+        };
+    </script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f7f8f9; }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(40, 63, 86, 0.2);
+        }
+
+        .glass-panel-elevated {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(40, 63, 86, 0.2);
+            box-shadow: 0 20px 40px -10px rgba(46, 85, 79, 0.1);
+        }
+
+        .brand-glow:hover {
+            box-shadow: 0 0 30px rgba(82, 84, 163, 0.1);
+            border-color: rgba(46, 85, 79, 0.4);
+        }
+
+        .micro-heading {
+            font-size: 14px;
+            line-height: 1.5;
+            letter-spacing: 0.2em;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        
+        .tight-tracking { letter-spacing: -0.05em; }
+    </style>
+</head>
+<body class="bg-surface text-neutral selection:bg-tertiary/20">
+
+<header class="fixed top-0 w-full z-50 glass-panel border-b border-neutral/10 shadow-sm">
+    <div class="flex justify-between items-center px-8 py-4 max-w-[1280px] mx-auto">
+        <div class="text-xl font-extrabold text-neutral tracking-tighter">
+            Daryna Vakulenko
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+            <a class="text-secondary border-b-2 border-secondary pb-1 text-xs font-extrabold uppercase tracking-widest" href="#what">What I Do</a>
+            <a class="text-on-surface-variant hover:text-secondary transition-colors text-xs font-extrabold uppercase tracking-widest" href="#how">How I Know</a>
+            <a class="text-on-surface-variant hover:text-secondary transition-colors text-xs font-extrabold uppercase tracking-widest" href="#built">How It Was Built</a>
+            <a class="text-on-surface-variant hover:text-secondary transition-colors text-xs font-extrabold uppercase tracking-widest" href="#impact">Where I Add Value</a>
+            <a class="text-on-surface-variant hover:text-secondary transition-colors text-xs font-extrabold uppercase tracking-widest" href="#outside">Outside</a>
+        </nav>
+        <a href="mailto:info@darynavakulenko.com" 
+   target="_blank" 
+   class="inline-block bg-secondary text-white px-6 py-2 rounded-full text-xs font-extrabold uppercase tracking-widest hover:brightness-110 transition-all active:scale-95 text-center">
+   Connect
+</a>
+    </div>
+</header>
+
+<section class="relative h-screen flex items-center justify-center overflow-hidden bg-surface">
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/30 via-transparent to-surface"></div>
+    <div class="relative z-10 text-center px-6 max-w-4xl">
+        <span class="inline-block px-4 py-1.5 glass-panel rounded-full text-secondary text-[10px] font-extrabold tracking-[0.2em] uppercase mb-6 shadow-sm animate-float">
+            STRATEGY & EXECUTION
+        </span>
+        <h1 class="text-6xl md:text-8xl font-extrabold tight-tracking text-neutral mb-6 leading-none">
+            Daryna Vakulenko
+        </h1>
+        <p class="text-xl md:text-2xl text-on-surface-variant font-light leading-relaxed max-w-3xl mx-auto">
+            I bridge the gap between technical execution, commercial growth, and human-centric innovation.
+        </p>
+        <div class="mt-12 flex flex-col md:flex-row gap-4 justify-center">
+            <a class="px-8 py-4 bg-secondary text-white font-extrabold rounded-full hover:brightness-110 transition-all text-xs uppercase tracking-widest shadow-lg shadow-secondary/20" href="#what">Explore Methodology</a>
+            <a class="px-8 py-4 glass-panel text-neutral font-extrabold rounded-full hover:bg-white transition-all text-xs uppercase tracking-widest shadow-sm border-neutral/20" href="#contact">Get in Touch</a>
+        </div>
+    </div>
+    <div class="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-30 animate-bounce">
+        <span class="material-symbols-outlined text-3xl text-neutral">expand_more</span>
+    </div>
+</section>
+
+<main class="max-w-[1280px] mx-auto px-8 space-y-section-gap py-32">
+
+<section class="scroll-mt-24 transition-all duration-1000 opacity-0 translate-y-10" id="what">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="micro-heading text-tertiary mb-4">What I Actually Do</h2>
+                <h3 class="text-4xl md:text-5xl font-extrabold tight-tracking mb-8 leading-tight text-neutral">Full Cycle Transformation.</h3>
+                <p class="text-on-surface-variant text-lg font-light leading-relaxed mb-6">
+                    I handle the full cycle of digital transformation and deployment. From high-level strategy to getting into the weeds of execution, my work spans across healthcare, social impact, and enterprise tech. Whether navigating the technical complexity of LLM deployment, redesigning a stalled sales pipeline, or untangling operational friction, I turn abstract technical potential into measurable commercial growth.
+                </p>
+                <ul class="space-y-4 text-on-surface-variant font-light">
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+                        <span><strong>Industry Transformation:</strong> End-to-end deployment in healthcare, EdTech, and non-profit initiatives.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+                        <span><strong>Commercial Growth:</strong> Business development and sales across SMEs and large corporate clients.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+                        <span><strong>Technical Execution:</strong> Program management and hands-on AI prototyping (NLP/LLMs, Python, JS).</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+                        <span><strong>Brand Strategy:</strong> Creative marketing, visual content, and storytelling.</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="relative w-full h-[500px] flex flex-col sm:flex-row gap-6 items-center justify-center">
+                <div class="absolute inset-0 bg-tertiary/5 blur-3xl opacity-60 pointer-events-none"></div>
+                
+                <div class="w-full sm:w-1/2 aspect-[4/5] glass-panel-elevated rounded-2xl p-6 flex items-center justify-center brand-glow transition-all duration-500 sm:-translate-y-6 animate-float">
+                    <div class="w-full h-full flex items-center justify-center">
+                        <img src="vector_img.svg" class="w-full h-full object-contain max-h-[220px]" alt="Daryna Vakulenko Methodology" />
+                    </div>
+                </div>
+                <model-viewer 
+
+    src="cylinder.glb" 
+    alt="My 3D Animation" 
+    auto-rotate 
+    camera-controls 
+    autoplay
+    camera-orbit="0deg 40deg 0.8m" 
+    camera-target="10m 25m 10m"
+    style="width: 100%; height: 500px; display: block;">
+    
+
+</model-viewer>
+
+                
+    </section>
+
+    <section class="scroll-mt-24 transition-all duration-1000 opacity-0 translate-y-10" id="how">
+        <h2 class="micro-heading text-tertiary mb-4 text-center">How I Know What Works</h2>
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <p class="text-on-surface-variant text-lg font-light leading-relaxed">
+                I am a trained doctor who pivoted into the tech sector. This path gave me a unique lens: I understand the deeply human side of systems implementation just as well as the technical and commercial realities. Because my background is broad, I see the full picture of an organization—connecting the underlying technical infrastructure directly to the commercial incentives that keep the lights on.
+            </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass-panel p-8 rounded-2xl brand-glow transition-all">
+                <span class="material-symbols-outlined text-4xl text-secondary mb-6">medical_services</span>
+                <h4 class="text-xl font-extrabold mb-4 text-neutral">Human Centricity</h4>
+                <p class="text-on-surface-variant text-sm font-light leading-relaxed">Understanding the gravity of decisions and the deeply human side of implementation.</p>
+            </div>
+            <div class="glass-panel p-8 rounded-2xl brand-glow transition-all">
+                <span class="material-symbols-outlined text-4xl text-tertiary mb-6">integration_instructions</span>
+                <h4 class="text-xl font-extrabold mb-4 text-neutral">Technical Depth</h4>
+                <p class="text-on-surface-variant text-sm font-light leading-relaxed">Navigating technical complexity to deliver functional, high-stakes infrastructure.</p>
+            </div>
+            <div class="glass-panel p-8 rounded-2xl brand-glow transition-all">
+                <span class="material-symbols-outlined text-4xl text-secondary mb-6">point_of_sale</span>
+                <h4 class="text-xl font-extrabold mb-4 text-neutral">Commercial Reality</h4>
+                <p class="text-on-surface-variant text-sm font-light leading-relaxed">Aligning technical capabilities with commercial incentives and market agility.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="scroll-mt-24 transition-all duration-1000 opacity-0 translate-y-10" id="built">
+        <div class="glass-panel-elevated p-12 md:p-20 rounded-[2rem] relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+            <div class="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="micro-heading text-tertiary mb-6">How It Was Built</h2>
+                    <h3 class="text-4xl font-extrabold tight-tracking mb-8 leading-tight text-neutral">The Discipline of a Doctor, the Mindset of a Builder.</h3>
+                    <p class="text-lg text-on-surface-variant font-light leading-relaxed">
+                        I have scaled startups, managed high-value digital health portfolios, and trained AI models on complex clinical and technical data. By moving fluidly across clinical practice, B2B sales, and AI development, I ensure that innovations aren't just built—they are successfully adopted and commercialized.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="glass-panel p-8 rounded-2xl text-center brand-glow transition-all">
+                        <div class="text-3xl font-extrabold text-secondary mb-2">Doctor</div>
+                        <div class="text-[10px] font-extrabold tracking-[0.2em] text-on-surface-variant uppercase">Clinical Foundation</div>
+                    </div>
+                    <div class="glass-panel p-8 rounded-2xl text-center brand-glow transition-all">
+                        <div class="text-3xl font-extrabold text-secondary mb-2">Builder</div>
+                        <div class="text-[10px] font-extrabold tracking-[0.2em] text-on-surface-variant uppercase">Technical Core</div>
+                    </div>
+                    <div class="glass-panel p-8 rounded-2xl text-center brand-glow transition-all">
+                        <div class="text-3xl font-extrabold text-tertiary mb-2">Scaler</div>
+                        <div class="text-[10px] font-extrabold tracking-[0.2em] text-on-surface-variant uppercase">Startup Growth</div>
+                    </div>
+                    <div class="glass-panel p-8 rounded-2xl text-center brand-glow transition-all">
+                        <div class="text-3xl font-extrabold text-tertiary mb-2">B2B</div>
+                        <div class="text-[10px] font-extrabold tracking-[0.2em] text-on-surface-variant uppercase">Commercial Strategy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="scroll-mt-24 transition-all duration-1000 opacity-0 translate-y-10" id="impact">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="micro-heading text-tertiary mb-6 text-center">Where I Add the Most Value</h2>
+            <h3 class="text-4xl md:text-5xl font-extrabold tight-tracking mb-12 text-center leading-tight text-neutral">Thriving in Transition.</h3>
+            <p class="text-xl text-on-surface-variant mb-12 text-center font-light leading-relaxed">
+                The situations I am best suited for are those in transition. If you are a founder or leader looking for someone who can translate technical complexity into real-world business results, I am glad to be thought of.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="glass-panel p-6 rounded-xl border-l-4 border-secondary">
+                    <p class="text-sm font-light text-on-surface-variant">A healthcare or enterprise organization looking to integrate AI, but unsure where the operational friction will hide.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl border-l-4 border-tertiary">
+                    <p class="text-sm font-light text-on-surface-variant">A leadership team that needs a partner who can fluidly manage both technical delivery and commercial go-to-market strategy.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl border-l-4 border-secondary">
+                    <p class="text-sm font-light text-on-surface-variant">A project that is currently stuck in the frustrating gap between a "great idea" and a "delivered result."</p>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="px-6 py-3 glass-panel rounded-full text-[10px] font-extrabold uppercase tracking-widest hover:border-secondary/40 transition-colors cursor-default">High-Stakes AI Integration</span>
+                <span class="px-6 py-3 glass-panel rounded-full text-[10px] font-extrabold uppercase tracking-widest hover:border-secondary/40 transition-colors cursor-default">Health-Tech Commercial Strategy</span>
+                <span class="px-6 py-3 glass-panel rounded-full text-[10px] font-extrabold uppercase tracking-widest hover:border-secondary/40 transition-colors cursor-default">Digital Transformation</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="scroll-mt-24 transition-all duration-1000 opacity-0 translate-y-10" id="outside">
+        <div class="flex flex-col md:flex-row gap-16">
+            <div class="md:w-1/3">
+                <h2 class="micro-heading text-tertiary mb-4">Outside the Work</h2>
+                <h3 class="text-3xl font-extrabold tight-tracking mb-6 text-neutral">Creativity & Connection.</h3>
+                <p class="text-on-surface-variant font-light leading-relaxed">
+                    When I am not untangling business and technology challenges, I value community initiatives, exploring new cultures, creative projects, and taking time for reflection.
+                </p>
+            </div>
+            <div class="flex-1 glass-panel-elevated p-8 md:p-12 rounded-[2rem]">
+                <p class="text-lg text-neutral leading-relaxed italic font-light mb-8">
+                    "I find that the same curiosity that drives me to solve a complex system failure is the same one that leads me to explore new cultures. I welcome conversations with people building at the edge of health, AI, and human systems."
+                </p>
+                <div class="grid grid-cols-2 gap-8 pt-8 border-t border-neutral/10">
+                    <div>
+                        <h4 class="font-extrabold text-secondary mb-2 uppercase text-[10px] tracking-widest">Synthesis</h4>
+                        <p class="text-sm font-light text-on-surface-variant">Connecting dots across medicine, engineering, and culture.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-extrabold text-tertiary mb-2 uppercase text-[10px] tracking-widest">Community</h4>
+                        <p class="text-sm font-light text-on-surface-variant">Fostering resilience through health initiatives and education.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="w-full py-16 glass-panel border-t border-neutral/10">
+    <div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-[1280px] mx-auto gap-8">
+        <div class="font-extrabold text-neutral uppercase tracking-widest text-xs">Daryna Vakulenko</div>
+        <div class="text-[10px] font-light text-on-surface-variant tracking-widest">
+            © 2026 Daryna Vakulenko. All rights reserved.
+        </div>
+        <div class="flex gap-8">
+            <a class="text-on-surface-variant hover:text-secondary transition-colors text-[10px] font-extrabold uppercase tracking-widest" href="https://linkedin.com/in/daryna-vakulenko" target="_blank">LinkedIn</a>
+            <a class="text-on-surface-variant hover:text-secondary transition-colors text-[10px] font-extrabold uppercase tracking-widest" href="https://www.behance.net/qrbnk" target="_blank">Design Portfolio</a>
+            <a class="text-on-surface-variant hover:text-secondary transition-colors text-[10px] font-extrabold uppercase tracking-widest" href="cylinder.blend" target="_blank">Design Animation</a>
+            <a class="text-on-surface-variant hover:text-secondary transition-colors text-[10px] font-extrabold uppercase tracking-widest" href="https://darynavakulenko.com/privacy" target="_blank">Privacy</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Smooth scroll implementation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-10');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+    });
+</script>
+</body>
+</html>
+

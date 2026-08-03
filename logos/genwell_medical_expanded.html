@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Genwell Medical Timeline</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&amp;family=Chivo:wght@700;800;900&amp;family=Inter:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-container": "#ffdad6",
+                      "surface-container-highest": "#e2e2e2",
+                      "primary": "#000000",
+                      "primary-container": "#1b1b1b",
+                      "surface-container-high": "#e8e8e8",
+                      "primary-fixed": "#e2e2e2",
+                      "surface-variant": "#e2e2e2",
+                      "border-muted": "#E5E5E5",
+                      "tertiary-fixed": "#e2e2e2",
+                      "on-primary-container": "#848484",
+                      "on-surface-variant": "#4c4546",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed-dim": "#c6c6c7",
+                      "inverse-surface": "#303030",
+                      "surface-dim": "#dadada",
+                      "on-primary-fixed": "#1b1b1b",
+                      "on-tertiary-fixed-variant": "#474747",
+                      "background": "#f9f9f9",
+                      "on-tertiary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "on-tertiary-container": "#848484",
+                      "on-secondary-container": "#626364",
+                      "on-tertiary-fixed": "#1b1b1b",
+                      "surface-alt": "#F8F8F8",
+                      "outline": "#7e7576",
+                      "on-error": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "tertiary-container": "#1b1b1b",
+                      "outline-variant": "#cfc4c5",
+                      "surface-bright": "#f9f9f9",
+                      "inverse-primary": "#c6c6c6",
+                      "on-primary-fixed-variant": "#474747",
+                      "surface-container": "#eeeeee",
+                      "secondary": "#5d5e5f",
+                      "on-secondary-fixed-variant": "#464748",
+                      "inverse-on-surface": "#f1f1f1",
+                      "secondary-container": "#e0dfe0",
+                      "surface": "#f9f9f9",
+                      "on-error-container": "#93000a",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface": "#1b1b1b",
+                      "on-background": "#1b1b1b",
+                      "surface-container-low": "#f3f3f3",
+                      "secondary-fixed": "#e3e2e3",
+                      "tertiary": "#000000",
+                      "on-secondary-fixed": "#1a1c1d",
+                      "tertiary-fixed-dim": "#c6c6c6",
+                      "surface-tint": "#5e5e5e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-sm": "8px",
+                      "gutter": "32px",
+                      "stack-lg": "48px",
+                      "section-gap": "160px",
+                      "stack-md": "24px",
+                      "margin-mobile": "24px",
+                      "margin-desktop": "80px",
+                      "section-padding": "80px",
+                      "container-max": "1120px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg-mobile": [
+                              "Chivo"
+                      ],
+                      "display-xl": [
+                              "Chivo"
+                      ],
+                      "headline-lg": [
+                              "Chivo"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Chivo"
+                      ],
+                      "headline-md": [
+                              "Chivo"
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "display-xl": [
+                              "120px",
+                              {
+                                      "lineHeight": "110px",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "900"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "52px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "80px",
+                              {
+                                      "lineHeight": "84px",
+                                      "letterSpacing": "-0.03em",
+                                      "fontWeight": "900"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "30px",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .timeline-curve {
+            position: absolute;
+            top: 0;
+            left: 50px;
+            width: 2px;
+            height: 100%;
+            background: #E5E5E5;
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .timeline-curve {
+                left: 50%;
+            }
+        }
+        .timeline-dot {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #000;
+            border-radius: 50%;
+            left: 45px;
+            transform: translateY(24px);
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+        @media (min-width: 768px) {
+            .timeline-dot {
+                left: calc(50% - 5px);
+            }
+        }
+        .timeline-item:hover .timeline-dot {
+            transform: translateY(24px) scale(1.5);
+            background: #000;
+            box-shadow: 0 0 0 4px #e2e2e2;
+        }
+        
+        .animated-line {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawLine 3s ease forwards;
+        }
+        
+        @keyframes drawLine {
+            to { stroke-dashoffset: 0; }
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 12px;
+            border: 1px solid #000;
+            background: transparent;
+            color: #000;
+            transition: all 0.2s;
+        }
+        .chip:hover {
+            background: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-background text-primary font-body-md selection:bg-primary selection:text-white">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface-container/80 backdrop-blur-md full-width top-0 sticky border-b border-outline-variant/30 shadow-sm z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto h-20">
+<a class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed-dim tracking-tighter hover:opacity-80 transition-opacity" href="home.html">Portfolio</a>
+<div class="hidden md:flex items-center gap-6">
+</div>
+<button class="hidden md:inline-flex items-center justify-center px-6 py-3 bg-primary text-on-primary rounded-full font-label-md text-label-md hover:opacity-90 scale-95 active:scale-90 transition-transform duration-200">
+  <a class="btn-primary px-5 py-3 font-label-sm rounded-none text-sm tracking-widest uppercase" href="portfolio_page.html">Portfolio</a>
+            </button>
+<button class="md:hidden flex items-center justify-center p-2" id="mobile-menu-toggle">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<div id="mobile-menu" class="hidden md:hidden bg-surface border-b border-primary w-full px-margin-mobile py-6 flex flex-col gap-4 shadow-lg absolute top-20 left-0 z-40">
+    <a href="home.html" class="font-label-sm uppercase tracking-widest text-primary py-3 border-b border-outline-variant/30 flex items-center justify-between">
+        Home <span class="material-symbols-outlined">chevron_right</span>
+    </a>
+    <a href="portfolio_page.html" class="font-label-sm uppercase tracking-widest text-primary py-3 border-b border-outline-variant/30 flex items-center justify-between">
+        Portfolio <span class="material-symbols-outlined">chevron_right</span>
+    </a>
+    <a href="mailto:info@darynavakulenko.com" class="font-label-sm uppercase tracking-widest text-primary py-3 flex items-center justify-between">
+        Contact <span class="material-symbols-outlined">mail</span>
+    </a>
+</div>
+<main class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop pt-stack-lg pb-section-gap">
+<div class="w-full mb-8">
+    <a href="portfolio_page.html" class="inline-flex items-center gap-2 px-5 py-3 font-label-sm text-sm tracking-widest uppercase border border-primary hover:bg-primary hover:text-white transition-colors w-fit">
+        <span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
+        Back to Portfolio
+    </a>
+</div>
+<!-- Hero Section -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-stack-lg">
+<div class="col-span-1 md:col-span-12">
+<h1 class="font-display-xl text-headline-lg-mobile md:text-display-xl tracking-tighter mb-stack-md">Genwell Medical</h1>
+<p class="font-body-lg text-body-lg max-w-2xl text-on-surface-variant">Account Management &amp; Technical Optimization</p>
+</div>
+</section>
+<!-- Meta Data Section -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-section-gap border-t border-primary pt-stack-lg">
+<div class="col-span-1 md:col-span-4">
+<h3 class="font-label-sm text-label-sm uppercase text-on-surface-variant mb-stack-sm">Clients</h3>
+<div class="flex flex-wrap gap-2 mt-stack-sm">
+<span class="chip font-label-sm text-label-sm">Hospitals</span>
+<span class="chip font-label-sm text-label-sm">Insurance</span>
+<span class="chip font-label-sm text-label-sm">Medicare</span>
+<span class="chip font-label-sm text-label-sm">Medicaid</span>
+<span class="chip font-label-sm text-label-sm">Service Providers</span>
+<span class="chip font-label-sm text-label-sm">Billing</span>
+</div>
+</div>
+<div class="col-span-1 md:col-span-4">
+<h3 class="font-label-sm text-label-sm uppercase text-on-surface-variant mb-stack-sm">Tools Stack</h3>
+<div class="flex flex-wrap gap-2 mt-stack-sm">
+<span class="chip font-label-sm text-label-sm">Brighttree</span>
+<span class="chip font-label-sm text-label-sm">NikoHealth</span>
+<span class="chip font-label-sm text-label-sm">Asana</span>
+<span class="chip font-label-sm text-label-sm">Ringcentral</span>
+</div>
+</div>
+<div class="col-span-1 md:col-span-4">
+<h3 class="font-label-sm text-label-sm uppercase text-on-surface-variant mb-stack-sm">Coverage</h3>
+<div class="flex flex-wrap gap-2 mt-stack-sm">
+<span class="chip font-label-sm text-label-sm">NJ</span>
+<span class="chip font-label-sm text-label-sm">NY</span>
+<span class="chip font-label-sm text-label-sm">FL</span>
+<span class="chip font-label-sm text-label-sm">IL</span>
+<span class="chip font-label-sm text-label-sm">TX</span>
+<span class="chip font-label-sm text-label-sm">IN</span>
+<span class="chip font-label-sm text-label-sm">WI</span>
+<span class="chip font-label-sm text-label-sm">AR</span>
+</div>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="relative mb-section-gap">
+<div class="text-center mb-stack-lg">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-display-lg tracking-tighter">Impact Timeline</h2>
+</div>
+<div class="relative py-stack-lg">
+<!-- Central Line -->
+<div class="timeline-curve"></div>
+<!-- Timeline Item 1 -->
+<div class="timeline-item relative grid grid-cols-1 md:grid-cols-2 gap-gutter mb-stack-lg">
+<div class="timeline-dot"></div>
+<div class="md:text-right md:pr-gutter pl-20 md:pl-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block mb-stack-sm">Phase 01</span>
+<h3 class="font-headline-md text-headline-md mb-stack-sm">Account Management</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Managed the end-to-end processing of complex 20+ accounts.</p>
+</div>
+<div class="hidden md:block"></div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="timeline-item relative grid grid-cols-1 md:grid-cols-2 gap-gutter mb-stack-lg">
+<div class="timeline-dot"></div>
+<div class="hidden md:block"></div>
+<div class="pl-20 md:pl-gutter">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block mb-stack-sm">Phase 02</span>
+<h3 class="font-headline-md text-headline-md mb-stack-sm">Process Optimization</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Redesigned the account onboarding process, reducing turnaround time by 80% and accelerating the path to revenue realization.</p>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="timeline-item relative grid grid-cols-1 md:grid-cols-2 gap-gutter mb-stack-lg">
+<div class="timeline-dot"></div>
+<div class="md:text-right md:pr-gutter pl-20 md:pl-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block mb-stack-sm">Phase 03</span>
+<h3 class="font-headline-md text-headline-md mb-stack-sm">Technical Resolution</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Proactively resolved technical and billing bottlenecks, securing long-term partnership stability.</p>
+</div>
+<div class="hidden md:block"></div>
+</div>
+<!-- Timeline Item 4 -->
+<div class="timeline-item relative grid grid-cols-1 md:grid-cols-2 gap-gutter mb-stack-lg">
+<div class="timeline-dot"></div>
+<div class="hidden md:block"></div>
+<div class="pl-20 md:pl-gutter">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block mb-stack-sm">Phase 04</span>
+<h3 class="font-headline-md text-headline-md mb-stack-sm">Regulatory Navigation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Navigated regulatory requirements to ensure account compliance while identifying opportunities for digital process improvements.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component from JSON -->
+<footer class="bg-background dark:bg-on-background py-section-padding border-t border-outline-variant/20 full-width w-full">
+<div class="max-w-container-max mx-auto px-margin-mobile flex flex-col md:flex-row justify-between items-center gap-base">
+<p class="font-body-md text-body-md text-on-surface-variant">© 2026 Daryna Vakulenko All Rights Reserved</p>
+<div class="flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="https://www.linkedin.com/in/daryna-vakulenko/" target="_blank">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="mailto:info@darynavakulenko.com">Email</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="https://www.behance.net/qrbnk" target="_blank">Behance</a>
+</div>
+<a class="font-headline-lg text-headline-lg text-primary opacity-80 hover:opacity-100 transition-opacity" href="home.html">
+                Portfolio
+            </a>
+</div>
+</footer>
+<script>
+    // Mobile Menu Toggle
+    document.addEventListener('click', (e) => {
+        const toggle = e.target.closest('#mobile-menu-toggle');
+        if (!toggle) return;
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = toggle.querySelector('.material-symbols-outlined');
+        if (mobileMenu) {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            // Toggle icon between menu and close
+            if (menuIcon) {
+                menuIcon.textContent = isHidden ? 'close' : 'menu';
+            }
+        }
+    });
+</script>
+</body></html>

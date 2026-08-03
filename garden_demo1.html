@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Train Garden - Visual CV Timeline</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#eeeeee",
+                    "tertiary-container": "#1b1b1b",
+                    "on-secondary-fixed-variant": "#464748",
+                    "secondary-fixed": "#e3e2e3",
+                    "primary-container": "#1b1b1b",
+                    "on-primary-fixed-variant": "#474747",
+                    "on-background": "#1b1b1b",
+                    "tertiary": "#000000",
+                    "inverse-surface": "#303030",
+                    "border-muted": "#E5E5E5",
+                    "surface-container-low": "#f3f3f3",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#c6c6c6",
+                    "on-secondary-container": "#626364",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#c6c6c6",
+                    "on-primary-fixed": "#1b1b1b",
+                    "surface-dim": "#dadada",
+                    "inverse-primary": "#c6c6c6",
+                    "surface-variant": "#e2e2e2",
+                    "surface-container-highest": "#e2e2e2",
+                    "secondary-container": "#e0dfe0",
+                    "secondary": "#5d5e5f",
+                    "surface": "#f9f9f9",
+                    "on-error-container": "#93000a",
+                    "surface-alt": "#F8F8F8",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#848484",
+                    "on-primary-container": "#848484",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#f9f9f9",
+                    "primary": "#000000",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#1b1b1b",
+                    "background": "#f9f9f9",
+                    "on-secondary-fixed": "#1a1c1d",
+                    "on-surface-variant": "#4c4546",
+                    "error": "#ba1a1a",
+                    "on-surface": "#1b1b1b",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-tint": "#5e5e5e",
+                    "outline": "#7e7576",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "primary-fixed": "#e2e2e2",
+                    "outline-variant": "#cfc4c5",
+                    "tertiary-fixed": "#e2e2e2",
+                    "inverse-on-surface": "#f1f1f1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "section-gap": "160px",
+                    "margin-mobile": "24px",
+                    "stack-lg": "48px",
+                    "gutter": "32px",
+                    "stack-sm": "8px",
+                    "stack-md": "24px",
+                    "section-padding": "80px",
+                    "container-max": "1120px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Chivo"],
+                    "label-sm": ["JetBrains Mono"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Chivo"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Chivo"],
+                    "headline-lg": ["Chivo"],
+                    "display-xl": ["Chivo"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", { "lineHeight": "30px", "fontWeight": "700" }],
+                    "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                    "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                    "display-lg": ["80px", { "lineHeight": "84px", "letterSpacing": "-0.03em", "fontWeight": "900" }],
+                    "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                    "headline-lg-mobile": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                    "headline-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                    "display-xl": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "900" }]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #f9f9f9;
+            color: #1b1b1b;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            display: inline-block;
+        }
+        .timeline-dot {
+            transition: all 0.3s ease;
+        }
+        .timeline-item:hover .timeline-dot {
+            transform: scale(1.5);
+            background-color: #000;
+            border-color: #fff;
+        }
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 14px;
+            border: 1px solid #000;
+            background: transparent;
+            color: #000;
+            transition: all 0.2s;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .chip:hover {
+            background: #000;
+            color: #fff;
+        }
+        /* Accent palette experiment */
+        :root {
+            --accent-purple: #6D4DA3;
+            --accent-orange: #FF6A3B;
+            --accent-teal: #15857A;
+            --accent-gold: #2F2E41;
+        }
+        .chip-purple { border-color: var(--accent-purple); color: var(--accent-purple); }
+        .chip-purple:hover { background: var(--accent-purple); color: #fff; }
+        .chip-orange { border-color: var(--accent-orange); color: var(--accent-orange); }
+        .chip-orange:hover { background: var(--accent-orange); color: #fff; }
+        .chip-teal { border-color: var(--accent-teal); color: var(--accent-teal); }
+        .chip-teal:hover { background: var(--accent-teal); color: #fff; }
+        .chip-gold { border-color: var(--accent-gold); color: var(--accent-gold); }
+        .chip-gold:hover { background: var(--accent-gold); color: #1b1b1b; }
+        .badge-purple { color: var(--accent-purple); }
+        .badge-orange { color: var(--accent-orange); }
+        .badge-teal { color: var(--accent-teal); }
+        .badge-gold { color: var(--accent-gold); }
+        .dot-purple { background: var(--accent-purple) !important; }
+        .dot-orange { background: var(--accent-orange) !important; }
+        .dot-teal { background: var(--accent-teal) !important; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col font-body-md text-body-md selection:bg-primary selection:text-on-primary">
+<header class="bg-surface/80 backdrop-blur-md sticky top-0 full-width z-50 border-b border-outline-variant/30 shadow-sm">
+    <div id="header-placeholder"></div>
+</header>
+<div id="mobile-menu" class="hidden md:hidden bg-surface border-b border-primary w-full px-margin-mobile py-6 flex flex-col gap-4 shadow-lg absolute top-20 left-0 z-40">
+    <a href="home.html" class="font-label-sm uppercase tracking-widest text-primary py-3 border-b border-outline-variant/30 flex items-center justify-between">
+        Home <span class="material-symbols-outlined">chevron_right</span>
+    </a>
+    <a href="portfolio_page.html" class="font-label-sm uppercase tracking-widest text-primary py-3 border-b border-outline-variant/30 flex items-center justify-between">
+        Portfolio <span class="material-symbols-outlined">chevron_right</span>
+    </a>
+    <a href="mailto:info@darynavakulenko.com" class="font-label-sm uppercase tracking-widest text-primary py-3 flex items-center justify-between">
+        Contact <span class="material-symbols-outlined">mail</span>
+    </a>
+</div>
+
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-gutter relative">
+<div class="col-span-1 md:col-span-12 mb-2">
+    <a href="portfolio_page.html" class="inline-flex items-center gap-2 px-4 py-2.5 md:px-5 md:py-3 font-label-sm text-xs md:text-sm tracking-widest uppercase border border-primary hover:bg-primary hover:text-white transition-colors w-fit">
+        <span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
+        Back to Portfolio
+    </a>
+</div>
+
+<header class="col-span-1 md:col-span-10 md:col-start-2 mb-8 md:mb-12 z-10 relative">
+    <h1 class="font-display-xl text-3xl md:text-display-xl text-primary mb-2 uppercase leading-none tracking-tighter">
+        Train Garden
+    </h1>
+    <h2 class="font-headline-lg text-xl md:text-headline-lg text-primary mb-4">
+        AI Transformation Delivery Lead
+    </h2>
+    <div class="flex flex-wrap items-center gap-2 md:gap-4 font-label-sm text-xs md:text-label-sm text-on-surface-variant border-t border-outline-variant/30 pt-3 md:pt-stack-sm w-full max-w-2xl mb-6">
+        <span>July 2024 – Present</span>
+        <span class="w-1 h-1 rounded-full dot-orange"></span>
+        <span>AI Transformation</span>
+        <span class="w-1 h-1 rounded-full dot-teal"></span>
+        <span>London, UK</span>
+    </div>
+
+    <aside class="border-t-2 border-primary pt-3 md:pt-stack-sm">
+        <h4 class="font-label-sm text-xs md:text-label-sm uppercase tracking-widest mb-3 text-on-surface-variant">Core Competencies</h4>
+        <div class="flex flex-wrap gap-1.5 md:gap-2">
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-primary hover:text-on-primary transition-colors cursor-default">software development</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-primary hover:text-on-primary transition-colors cursor-default">NLP</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-primary hover:text-on-primary transition-colors cursor-default">LLM</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-primary hover:text-on-primary transition-colors cursor-default">AI</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-primary hover:text-on-primary transition-colors cursor-default">Prototyping</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-primary hover:text-on-primary transition-colors cursor-default">UI/UX</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-primary hover:text-on-primary transition-colors cursor-default">Brand Strategy</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-primary hover:text-on-primary transition-colors cursor-default">marketing</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-primary hover:text-on-primary transition-colors cursor-default">python</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-primary hover:text-on-primary transition-colors cursor-default">javascript</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-primary hover:text-on-primary transition-colors cursor-default">agents</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-primary hover:text-on-primary transition-colors cursor-default">strategy</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-primary hover:text-on-primary transition-colors cursor-default">social impact</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-primary hover:text-on-primary transition-colors cursor-default">pitching</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-primary hover:text-on-primary transition-colors cursor-default">funding</span>
+        </div>
+    </aside>
+</header>
+
+<!-- Problem & Solution -->
+<section class="col-span-1 md:col-span-10 md:col-start-2 relative z-10 border-t border-primary pt-8 md:pt-12 mb-16 md:mb-24">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+        <!-- Problem Section -->
+        <div>
+            <h3 class="font-label-sm text-xs uppercase text-on-surface-variant mb-6">The Problem</h3>
+            <div class="flex flex-wrap gap-2">
+                <span class="chip chip-purple">Traditional Systems</span>
+                <span class="chip chip-orange">Blocked Access</span>
+                <span class="chip chip-teal">Skill Blindness</span>
+                <span class="chip chip-gold">Growth Stagnation</span>
+            </div>
+            <p class="mt-6 font-body-md text-on-surface-variant">
+                Traditional systems block qualified people from reaching climate career opportunities — and vice versa. Many people aren't even aware of the skills they already have, or the growth opportunities available to them.
+            </p>
+        </div>
+
+        <!-- Solution Section -->
+        <div>
+            <h3 class="font-label-sm text-xs uppercase text-on-surface-variant mb-6">The Solution</h3>
+
+            <div class="mb-6">
+                <div class="flex flex-wrap gap-2">
+                    <span class="chip chip-teal">Local</span>
+                    <span class="chip chip-purple">Free</span>
+                    <span class="chip chip-orange">Community</span>
+                    <span class="chip chip-gold">Social Impact</span>
+                    <span class="chip chip-teal">Climate</span>
+                    <span class="chip chip-purple">Career</span>
+                </div>
+                <p class="mt-4 font-body-md text-on-surface-variant">
+                    A local, free platform built around community — connecting people to climate careers through social impact.
+                </p>
+            </div>
+
+            <div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="chip chip-orange">Local</span>
+                    <span class="chip chip-gold">Qualified Talent</span>
+                    <span class="chip chip-teal">Fast</span>
+                    <span class="chip chip-purple">Net Zero</span>
+                    <span class="chip chip-orange">Social Value</span>
+                </div>
+                <p class="mt-4 font-body-md text-on-surface-variant">
+                    Fast-matching local, qualified talent to net-zero roles that create lasting social value.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Timeline -->
+<section class="col-span-1 md:col-span-8 md:col-start-3 relative z-10 mb-16 md:mb-24">
+    <h3 class="font-label-sm text-xs uppercase text-on-surface-variant mb-6 md:mb-8 pb-3 border-b border-outline-variant/30">Timeline</h3>
+    <div class="absolute left-[15px] top-[68px] bottom-0 w-1 bg-outline-variant/30 hidden md:block"></div>
+    <div class="space-y-6 md:space-y-10">
+        <!-- Milestone 1 -->
+        <div class="timeline-item relative pl-0 md:pl-gutter group">
+            <div class="timeline-dot absolute left-[-21px] top-2 w-3 h-3 border-2 border-primary bg-surface rounded-full hidden md:block z-20"></div>
+            <div class="bg-surface p-4 md:p-6 border-l-2 md:border border-primary transition-all duration-300 hover:bg-primary hover:text-on-primary group-hover:-translate-y-1 group-hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="font-label-sm text-xs border border-current px-2 py-0.5 uppercase tracking-widest group-hover:border-on-primary badge-purple">01</span>
+                    <h3 class="font-headline-md text-base md:text-headline-md uppercase">End-to-End Lifecycle</h3>
+                </div>
+                <p class="font-body-lg text-body-md md:text-body-lg text-on-surface-variant group-hover:text-surface-dim">
+                    AI strategy and discovery in sustainability, legal, HR, non-profit and social impact sectors.
+                </p>
+            </div>
+        </div>
+        <!-- Milestone 2 -->
+        <div class="timeline-item relative pl-0 md:pl-gutter group">
+            <div class="timeline-dot absolute left-[-21px] top-2 w-3 h-3 border-2 border-primary bg-surface rounded-full hidden md:block z-20"></div>
+            <div class="bg-surface p-4 md:p-6 border-l-2 md:border border-primary transition-all duration-300 hover:bg-primary hover:text-on-primary group-hover:-translate-y-1 group-hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="font-label-sm text-xs border border-current px-2 py-0.5 uppercase tracking-widest group-hover:border-on-primary badge-orange">02</span>
+                    <h3 class="font-headline-md text-base md:text-headline-md uppercase">Rapid Prototyping &amp; Technical Execution</h3>
+                </div>
+                <p class="font-body-lg text-body-md md:text-body-lg text-on-surface-variant group-hover:text-surface-dim">
+                    Delivered functional AI and NLP solutions (Python, JavaScript) with human-centric UI/UX.
+                </p>
+            </div>
+        </div>
+        <!-- Milestone 3 -->
+        <div class="timeline-item relative pl-0 md:pl-gutter group">
+            <div class="timeline-dot absolute left-[-21px] top-2 w-3 h-3 border-2 border-primary bg-surface rounded-full hidden md:block z-20"></div>
+            <div class="bg-surface p-4 md:p-6 border-l-2 md:border border-primary transition-all duration-300 hover:bg-primary hover:text-on-primary group-hover:-translate-y-1 group-hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="font-label-sm text-xs border border-current px-2 py-0.5 uppercase tracking-widest group-hover:border-on-primary badge-teal">03</span>
+                    <h3 class="font-headline-md text-base md:text-headline-md uppercase">Commercial Growth</h3>
+                </div>
+                <p class="font-body-lg text-body-md md:text-body-lg text-on-surface-variant group-hover:text-surface-dim">
+                    Drove B2B sales pipelines, bridging technical feasibility and enterprise adoption.
+                </p>
+            </div>
+        </div>
+        <!-- Milestone 4 -->
+        <div class="timeline-item relative pl-0 md:pl-gutter group">
+            <div class="timeline-dot absolute left-[-21px] top-2 w-3 h-3 border-2 border-primary bg-surface rounded-full hidden md:block z-20"></div>
+            <div class="bg-surface p-4 md:p-6 border-l-2 md:border border-primary transition-all duration-300 hover:bg-primary hover:text-on-primary group-hover:-translate-y-1 group-hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="font-label-sm text-xs border border-current px-2 py-0.5 uppercase tracking-widest group-hover:border-on-primary badge-gold">04</span>
+                    <h3 class="font-headline-md text-base md:text-headline-md uppercase">GO-TO-MARKET</h3>
+                </div>
+                <p class="font-body-lg text-body-md md:text-body-lg text-on-surface-variant group-hover:text-surface-dim">
+                    Translated complex analytics into actionable insights for C-suite and government stakeholders.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Screenshots -->
+<section class="col-span-1 md:col-span-10 md:col-start-2 relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-gutter">
+    <div class="border border-primary p-2">
+        <div class="aspect-video bg-surface-container-high flex items-center justify-center">
+            <span class="font-label-sm uppercase text-on-surface-variant">Screenshot 01</span>
+        </div>
+    </div>
+    <div class="border border-primary p-2">
+        <div class="aspect-video bg-surface-container-high flex items-center justify-center">
+            <span class="font-label-sm uppercase text-on-surface-variant">Screenshot 02</span>
+        </div>
+    </div>
+</section>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+    async function loadComponent(id, file) {
+        const response = await fetch(file);
+        const data = await response.text();
+        document.getElementById(id).innerHTML = data;
+    }
+    loadComponent('header-placeholder', 'header.html');
+    loadComponent('footer-placeholder', 'footer.html');
+</script>
+<script>
+    document.addEventListener('click', (e) => {
+        const toggle = e.target.closest('#mobile-menu-toggle');
+        if (!toggle) return;
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = toggle.querySelector('.material-symbols-outlined');
+        if (mobileMenu) {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            if (menuIcon) {
+                menuIcon.textContent = isHidden ? 'close' : 'menu';
+            }
+        }
+    });
+</script>
+</body>
+</html>

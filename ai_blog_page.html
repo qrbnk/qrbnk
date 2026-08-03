@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Research & Insights Log</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&amp;family=Chivo:wght@700;800;900&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#000000",
+                      "primary-container": "#1b1b1b",
+                      "background": "#f9f9f9",
+                      "surface": "#f9f9f9",
+                      "surface-bright": "#f9f9f9",
+                      "surface-container-low": "#f3f3f3",
+                      "surface-container": "#eeeeee",
+                      "surface-container-high": "#e8e8e8",
+                      "secondary": "#5d5e5f",
+                      "on-surface": "#1b1b1b",
+                      "on-surface-variant": "#4c4546",
+                      "outline-variant": "#cfc4c5",
+                      "border-muted": "#E5E5E5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-sm": "8px",
+                      "gutter": "32px",
+                      "stack-lg": "48px",
+                      "section-gap": "160px",
+                      "stack-md": "24px",
+                      "margin-mobile": "24px",
+                      "margin-desktop": "80px",
+                      "section-padding": "80px"
+              },
+              "fontFamily": {
+                      "label-sm": ["JetBrains Mono"],
+                      "headline-lg-mobile": ["Chivo"],
+                      "display-xl": ["Chivo"],
+                      "headline-lg": ["Chivo"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "display-lg": ["Chivo"],
+                      "headline-md": ["Chivo"]
+              },
+              "fontSize": {
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "display-xl": ["120px", {"lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                      "headline-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "display-lg": ["80px", {"lineHeight": "84px", "letterSpacing": "-0.03em", "fontWeight": "900"}],
+                      "headline-md": ["24px", {"lineHeight": "30px", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .ambient-shadow {
+            box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.03);
+        }
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 14px;
+            border: 1px solid #000;
+            background: transparent;
+            color: #000;
+            transition: all 0.2s ease;
+        }
+        .chip:hover {
+            background: #000;
+            color: #fff;
+        }
+        .chip.active {
+            background: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-background text-primary font-body-md selection:bg-primary selection:text-white">
+
+<!-- Header Area -->
+<header class="bg-surface/80 backdrop-blur-md sticky top-0 border-b border-outline-variant/30 shadow-sm z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto h-20">
+<a class="font-headline-lg text-headline-lg text-primary tracking-tighter hover:opacity-80 transition-opacity" href="portfolio_page.html">Portfolio</a>
+<button class="inline-flex items-center justify-center px-6 py-3 bg-primary text-on-primary rounded-full font-label-md text-label-md hover:opacity-90 transition-transform duration-200">
+  <a class="font-label-sm rounded-none text-sm tracking-widest uppercase text-white" href="portfolio_page.html">Back to Work</a>
+</button>
+</div>
+</header>
+
+<main class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop pt-stack-lg pb-section-gap">
+    
+<!-- Blog Title / Hero -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-16">
+<div class="col-span-1 md:col-span-12">
+<span class="font-label-sm text-label-sm uppercase text-secondary tracking-widest block mb-4">// Internal Knowledge Base</span>
+<h1 class="font-display-xl text-headline-lg-mobile md:text-display-xl tracking-tighter mb-4">Daily AI Research Log</h1>
+<p class="font-body-lg text-body-lg max-w-3xl text-on-surface-variant">
+    A digital workspace documenting frontier AI tools, custom prototypes, and synthesized breakthroughs spanning voice intelligence, clinical frameworks, and cross-functional product strategy.
+</p>
+</div>
+</section>
+
+<!-- Filter Navigation -->
+<section class="border-t border-primary pt-6 mb-16">
+<div class="flex flex-wrap gap-2">
+<span class="chip active font-label-sm text-label-sm cursor-pointer">All Research</span>
+<span class="chip font-label-sm text-label-sm cursor-pointer">Voice Intelligence</span>
+<span class="chip font-label-sm text-label-sm cursor-pointer">Digital Health AI</span>
+<span class="chip font-label-sm text-label-sm cursor-pointer">UI Prototyping</span>
+<span class="chip font-label-sm text-label-sm cursor-pointer">Technical Case Studies</span>
+</div>
+</section>
+
+<!-- Digital Content Grid Architecture -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+    
+    <!-- Left/Main Column: Aggregated Logs & Notebook Summaries -->
+    <div class="lg:col-span-8 flex flex-col gap-12">
+        
+        <!-- Entry 1: Voice-First Intelligence Systems -->
+        <article class="bg-surface-bright p-8 border border-outline-variant/40 ambient-shadow relative group">
+            <div class="flex justify-between items-start flex-wrap gap-4 mb-6">
+                <div>
+                    <span class="font-label-sm text-label-sm uppercase bg-primary text-white px-3 py-1 inline-block mb-3">Module 01</span>
+                    <h2 class="font-headline-md text-headline-md text-on-surface">From Raw Audio to Contextual Insights</h2>
+                </div>
+                <span class="font-label-sm text-label-sm text-secondary">ANALYSIS LOG // 01</span>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                Exploration of unstructured speech processing engines. Architecting pipelines that ingest raw voice data from stakeholder syncs, clinical consultations, or interviews, and instantly translate them into clean, structural executive breakdowns and action matrices.
+            </p>
+            
+            <!-- Technical Mockup representation from canvas -->
+            <div class="bg-surface-container-low p-6 border border-outline-variant/20 mb-6 flex flex-col md:flex-row items-center gap-6">
+                <div class="w-full md:w-1/3 bg-white border border-primary p-4 text-center">
+                    <span class="material-symbols-outlined text-3xl mb-2" style="font-variation-settings: 'FILL' 1">mic</span>
+                    <div class="h-2 w-24 bg-primary mx-auto rounded-full mb-1"></div>
+                    <div class="h-1 w-16 bg-secondary mx-auto rounded-full"></div>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h4 class="font-label-sm text-label-sm uppercase text-primary mb-2">Validated UX Paradigm</h4>
+                    <p class="font-body-md text-sm text-on-surface-variant">
+                        Tested audio note card configurations optimized for rapid scanning. Summarization filters prioritize high-leverage business items, reducing cognitive overhead for multi-hat product leads.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Entry 2: The Breakdown of Digital Health AI -->
+        <article class="bg-surface-bright p-8 border border-outline-variant/40 ambient-shadow relative group">
+            <div class="flex justify-between items-start flex-wrap gap-4 mb-6">
+                <div>
+                    <span class="font-label-sm text-label-sm uppercase bg-primary text-white px-3 py-1 inline-block mb-3">Module 02</span>
+                    <h2 class="font-headline-md text-headline-md text-on-surface">Clinical Frameworks & Anatomy Mapping</h2>
+                </div>
+                <span class="font-label-sm text-label-sm text-secondary">ANALYSIS LOG // 02</span>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                Deconstructing how computer vision models map specific anatomical segments (such as complex airway and circulatory path data) during surgical environments or diagnostic reviews. Integrating medical protocol writing alongside technical architecture blueprints.
+            </p>
+            
+            <!-- Graphic Element: Simulating the medical/diagram visual files from the canvas -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div class="bg-surface-container border border-outline-variant/30 p-6 flex flex-col justify-between min-h-[140px]">
+                    <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1">schema</span>
+                    <span class="font-label-sm text-label-sm text-primary uppercase mt-4">Structural Mapping Layout</span>
+                </div>
+                <div class="bg-surface-container border border-outline-variant/30 p-6 flex flex-col justify-between min-h-[140px]">
+                    <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1">clinical_notes</span>
+                    <span class="font-label-sm text-label-sm text-primary uppercase mt-4">Regulatory Protocol Specs</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- Entry 3: Executive Translations & Partner Alignments -->
+        <article class="bg-surface-bright p-8 border border-outline-variant/40 ambient-shadow relative group">
+            <div class="flex justify-between items-start flex-wrap gap-4 mb-6">
+                <div>
+                    <span class="font-label-sm text-label-sm uppercase bg-primary text-white px-3 py-1 inline-block mb-3">Module 03</span>
+                    <h2 class="font-headline-md text-headline-md text-on-surface">Translating Architecture into Partner Strategy</h2>
+                </div>
+                <span class="font-label-sm text-label-sm text-secondary">ANALYSIS LOG // 03</span>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                Documentation of live transformation briefs presented directly to senior executives and hospital stakeholders. Converting dense engineering logic, GitHub research repositories, and raw technical requirements into highly polished, scannable corporate slide sets.
+            </p>
+        </article>
+
+    </div>
+
+    <!-- Right Column: Canvas Context, Tool Tags, and Repositories -->
+    <div class="lg:col-span-4 flex flex-col gap-8 position sticky top-24">
+        
+        <!-- Live Environment Stats -->
+        <div class="bg-surface-container-low border border-outline-variant/30 p-6">
+            <h3 class="font-label-sm text-label-sm uppercase text-primary mb-4">// System Summary</h3>
+            <ul class="flex flex-col gap-3 font-body-md text-sm text-on-surface-variant">
+                <li class="flex justify-between border-b border-outline-variant/20 pb-2">
+                    <span>Source Canvas</span>
+                    <span class="font-label-sm font-semibold text-primary">image_73ccb9.jpg</span>
+                </li>
+                <li class="flex justify-between border-b border-outline-variant/20 pb-2">
+                    <span>Repository Count</span>
+                    <span class="font-label-sm font-semibold text-primary">24 Active Syncs</span>
+                </li>
+                <li class="flex justify-between border-b border-outline-variant/20 pb-2">
+                    <span>Core Focus</span>
+                    <span class="font-label-sm font-semibold text-primary">Healthcare & ML UX</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Discovered/Monitored Tech Stack Index from your canvas notes -->
+        <div class="bg-surface-bright border border-outline-variant/30 p-6">
+            <h3 class="font-label-sm text-label-sm uppercase text-primary mb-4">// Stack & Prototypes Linked</h3>
+            <div class="flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-1 bg-surface-container text-xs font-label-sm uppercase">OpenAI Whisper API</span>
+                <span class="px-2.5 py-1 bg-surface-container text-xs font-label-sm uppercase">Custom UI Sandboxes</span>
+                <span class="px-2.5 py-1 bg-surface-container text-xs font-label-sm uppercase">Figma Canvas Hubs</span>
+                <span class="px-2.5 py-1 bg-surface-container text-xs font-label-sm uppercase">GitHub Research Repos</span>
+                <span class="px-2.5 py-1 bg-surface-container text-xs font-label-sm uppercase">Medical CV Models</span>
+                <span class="px-2.5 py-1 bg-surface-container text-xs font-label-sm uppercase">Executive Deck Kits</span>
+                <span class="px-2.5 py-1 bg-surface-container text-xs font-label-sm uppercase">LLM Summarizers</span>
+            </div>
+        </div>
+
+        <!-- Interactive Back-to-Top Indicator -->
+        <div class="p-6 border border-primary text-center group hover:bg-primary transition-colors duration-200 cursor-pointer">
+            <a class="font-label-sm text-label-sm uppercase tracking-wider block text-primary group-hover:text-white" href="#">
+                Top of Workspace ↑
+            </a>
+        </div>
+
+    </div>
+</div>
+</main>
+
+<!-- Unified Minimalist Footer -->
+<footer class="bg-background py-section-padding border-t border-outline-variant/20 full-width w-full">
+<div class="max-w-[1440px] mx-auto px-margin-mobile flex flex-col md:flex-row justify-between items-center gap-base">
+<p class="font-body-md text-body-md text-on-surface-variant">© 2026 Daryna Vakulenko All Rights Reserved</p>
+<div class="flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Email</a>
+</div>
+<a class="font-headline-lg text-headline-lg text-primary opacity-80 hover:opacity-100 transition-opacity" href="portfolio_page.html">
+    Portfolio
+</a>
+</div>
+</footer>
+
+</body></html>

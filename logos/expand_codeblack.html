@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Code Black Academy - Experience</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;500;700&amp;family=Inter:wght@400;500;700&amp;family=Jetbrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"primary-fixed-dim": "#c6c6c6", "surface-dim": "#dadada", primary: "#000000", background: "#f9f9f9", "on-secondary": "#ffffff", "secondary-container": "#e0dfe0", "on-error-container": "#93000a", secondary: "#5d5e5f", "outline-variant": "#cfc4c5", "on-surface": "#1b1b1b", "surface-container-low": "#f3f3f3", "secondary-fixed-dim": "#c6c6c7", "on-primary": "#ffffff", error: "#ba1a1a", "surface-tint": "#5e5e5e", "error-container": "#ffdad6", "secondary-fixed": "#e3e2e3", "inverse-primary": "#c6c6c6", "on-primary-fixed": "#1b1b1b", "surface-container": "#eeeeee", "surface-container-high": "#e8e8e8", "surface-bright": "#f9f9f9", "tertiary-container": "#1b1b1b", "on-error": "#ffffff", "on-secondary-container": "#626364", "on-surface-variant": "#4c4546", "surface-container-lowest": "#ffffff", "on-primary-container": "#848484", "on-secondary-fixed-variant": "#464748", "tertiary-fixed": "#e2e2e2", "on-tertiary-fixed-variant": "#474747", "inverse-surface": "#303030", "primary-fixed": "#e2e2e2", "on-background": "#1b1b1b", "on-tertiary-container": "#848484", "primary-container": "#1b1b1b", "surface-variant": "#e2e2e2", "inverse-on-surface": "#f1f1f1", "on-tertiary-fixed": "#1b1b1b", "tertiary-fixed-dim": "#c6c6c6", "on-secondary-fixed": "#1a1c1d", "on-tertiary": "#ffffff", tertiary: "#000000", "surface-container-highest": "#e2e2e2", "on-primary-fixed-variant": "#474747", surface: "#f9f9f9", outline: "#7e7576", "surface-alt": "#F8F8F8", "border-muted": "#E5E5E5"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"section-padding": "80px", base: "8px", "margin-mobile": "24px", "container-max": "1120px", gutter: "32px", "stack-md": "24px", "stack-sm": "8px", "margin-desktop": "80px", "section-gap": "160px", "stack-lg": "48px"}, fontFamily: {"body-md": ["Inter"], caption: ["Hanken Grotesk"], "body-lg": ["Inter"], "headline-lg-mobile": ["Chivo"], "label-md": ["JetBrains Mono"], "headline-lg": ["Chivo"], "headline-xl": ["JetBrains Mono"], "headline-md": ["Chivo"], "label-sm": ["JetBrains Mono"], "display-xl": ["Chivo"], "display-lg": ["Chivo"]}, fontSize: {"body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], caption: ["12px", {lineHeight: "1.4", letterSpacing: "0.05em", fontWeight: "500"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}], "headline-lg-mobile": ["32px", {lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "800"}], "label-md": ["14px", {lineHeight: "1.4", fontWeight: "500"}], "headline-lg": ["48px", {lineHeight: "52px", letterSpacing: "-0.02em", fontWeight: "800"}], "headline-xl": ["48px", {lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700"}], "headline-md": ["24px", {lineHeight: "30px", fontWeight: "700"}], "label-sm": ["12px", {lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "500"}], "display-xl": ["120px", {lineHeight: "110px", letterSpacing: "-0.04em", fontWeight: "900"}], "display-lg": ["80px", {lineHeight: "84px", letterSpacing: "-0.03em", fontWeight: "900"}]}}}};</script>
+<style>
+        .ambient-shadow {
+            box-shadow: 0px 4px 20px rgba(55, 93, 251, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col font-body-md">
+<!-- TopAppBar Component from JSON -->
+<header class="bg-surface/80 dark:bg-surface-container/80 backdrop-blur-md full-width top-0 sticky border-b border-outline-variant/30 shadow-sm z-50">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-20">
+<a class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed-dim tracking-tighter hover:opacity-80 transition-opacity" href="home.html">Portfolio</a>
+<div class="hidden md:flex items-center gap-6">
+</div>
+<button class="hidden md:inline-flex items-center justify-center px-6 py-3 bg-primary text-on-primary rounded-full font-label-md text-label-md hover:opacity-90 scale-95 active:scale-90 transition-transform duration-200">
+  <a class="btn-primary px-5 py-3 font-label-sm rounded-none text-sm tracking-widest uppercase" href="portfolio_page.html">Portfolio</a>
+            </button>
+<button class="md:hidden text-on-surface p-2" id="mobile-menu-toggle">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<div id="mobile-menu" class="hidden md:hidden bg-surface border-b border-primary w-full px-margin-mobile py-6 flex flex-col gap-4 shadow-lg absolute top-20 left-0 z-40">
+    <a href="home.html" class="font-label-sm uppercase tracking-widest text-primary py-3 border-b border-outline-variant/30 flex items-center justify-between">
+        Home <span class="material-symbols-outlined">chevron_right</span>
+    </a>
+    <a href="portfolio_page.html" class="font-label-sm uppercase tracking-widest text-primary py-3 border-b border-outline-variant/30 flex items-center justify-between">
+        Portfolio <span class="material-symbols-outlined">chevron_right</span>
+    </a>
+    <a href="mailto:info@darynavakulenko.com" class="font-label-sm uppercase tracking-widest text-primary py-3 flex items-center justify-between">
+        Contact <span class="material-symbols-outlined">mail</span>
+    </a>
+</div>
+<main class="flex-grow">
+  <div class="w-full mb-8">
+    <a href="portfolio_page.html" class="inline-flex items-center gap-2 px-5 py-3 font-label-sm text-sm tracking-widest uppercase border border-primary hover:bg-primary hover:text-white transition-colors w-fit">
+        <span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
+        Back to Portfolio
+    </a>
+</div>
+<section class="py-section-padding px-margin-mobile md:px-gutter w-full relative overflow-hidden">
+<!-- Background Decorative Element -->
+<div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-fixed-dim/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+<div class="max-w-container-max mx-auto relative z-10">
+<!-- Header Area -->
+<div class="text-center mb-16 md:mb-24">
+<h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface mb-4">Code Black Academy</h1>
+<div class="inline-flex items-center gap-3 bg-surface-container-low px-6 py-2 rounded-full border border-outline-variant/30 shadow-sm">
+<span class="font-label-md text-label-md text-secondary">2020 – 2022</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="font-label-md text-label-md text-secondary">Ed-Tech Startup</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="font-label-md text-label-md text-secondary">Kyiv, Ukraine</span>
+</div>
+</div>
+<!-- Visual Timeline Area -->
+ 
+<div class="relative w-full max-w-4xl mx-auto py-12 md:py-20 min-h-[600px]">
+<!-- WebGL Animated Timeline Curve -->
+<!-- STITCH_SHADER_START:ANIMATION_10 class="absolute inset-0 w-full h-full pointer-events-none" -->
+<div class="absolute inset-0 w-full h-full pointer-events-none" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_10" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_10');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+
+void main() {
+    vec2 uv = v_texCoord;
+    
+    // Create a smooth, organic flow effect using sine waves
+    float speed = 0.5;
+    float frequency = 4.0;
+    float amplitude = 0.005;
+    
+    // Horizontal and vertical shifts based on time and position
+    float xShift = sin(uv.y * frequency + u_time * speed) * amplitude;
+    float yShift = cos(uv.x * frequency + u_time * speed * 0.8) * amplitude;
+    
+    // Deform the coordinates
+    vec2 distortedUv = uv + vec2(xShift, yShift);
+    
+    // Define the curve path (matching the visual timeline curve)
+    // The curve roughly follows an S-shape from top-left to bottom-right
+    float curveWidth = 0.003;
+    float curvePath = (distortedUv.x - 0.5) - 0.35 * sin(distortedUv.y * 3.14159);
+    
+    // Calculate the distance to the curve
+    float dist = abs(curvePath);
+    
+    // Smooth the curve line
+    float line = smoothstep(curveWidth, 0.0, dist);
+    
+    // Apply a pulse/glow effect along the line
+    float glow = line * (0.5 + 0.5 * sin(u_time * 2.0 - distortedUv.y * 5.0));
+    
+    // Color: Using a subtle silver/gray for the "flowing" line
+    vec3 lineColor = vec3(0.1, 0.1, 0.1); // Dark gray
+    
+    // Combine base line and glow
+    vec3 finalColor = lineColor * line + vec3(0.0, 0.0, 0.0) * glow;
+    
+    // Alpha for transparency
+    float alpha = line * 0.3; // Subdued opacity for elegance
+    
+    gl_FragColor = vec4(finalColor, alpha);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_10 -->
+<!-- Mobile Vertical Line (Hidden on Desktop) -->
+<div class="md:hidden absolute left-8 top-0 bottom-0 w-0.5 bg-primary-fixed-dim/30 z-0"></div>
+<!-- Timeline Content Grid -->
+<div class="relative z-10 flex flex-col gap-12 md:gap-24">
+<!-- Item 1 -->
+<div class="flex flex-col md:flex-row items-start md:items-center gap-6 group relative">
+<div class="md:hidden absolute left-8 top-6 w-3 h-3 -translate-x-1.5 rounded-full bg-primary border-4 border-surface shadow-sm z-10"></div>
+<div class="md:w-1/2 flex justify-end pr-0 md:pr-12 md:-mt-12 order-2 md:order-1 ml-16 md:ml-0">
+<div class="bg-surface-bright p-6 md:p-8 rounded-xl ambient-shadow border border-outline-variant/20 max-w-sm w-full transform transition-transform group-hover:-translate-y-1 group-hover:shadow-md">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-container/10 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">strategy</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface leading-snug">
+                                            Advising on design, strategy and communications
+                                        </p>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 order-1 md:order-2 hidden md:block">
+<!-- Spacer for layout -->
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col md:flex-row items-start md:items-center gap-6 group relative">
+<div class="md:hidden absolute left-8 top-6 w-3 h-3 -translate-x-1.5 rounded-full bg-primary border-4 border-surface shadow-sm z-10"></div>
+<div class="md:w-1/2 hidden md:block order-1">
+<!-- Spacer for layout -->
+</div>
+<div class="md:w-1/2 flex justify-start pl-0 md:pl-12 md:-mt-8 order-2 ml-16 md:ml-0">
+<div class="bg-surface-bright p-6 md:p-8 rounded-xl ambient-shadow border border-outline-variant/20 max-w-sm w-full transform transition-transform group-hover:-translate-y-1 group-hover:shadow-md">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center shrink-0 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">campaign</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface leading-snug">
+                                            Digital marketing, social media content, and medical writing
+                                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex flex-col md:flex-row items-start md:items-center gap-6 group relative">
+<div class="md:hidden absolute left-8 top-6 w-3 h-3 -translate-x-1.5 rounded-full bg-primary border-4 border-surface shadow-sm z-10"></div>
+<div class="md:w-1/2 flex justify-end pr-0 md:pr-12 md:mt-4 order-2 md:order-1 ml-16 md:ml-0">
+<div class="bg-surface-bright p-6 md:p-8 rounded-xl ambient-shadow border border-outline-variant/20 max-w-sm w-full transform transition-transform group-hover:-translate-y-1 group-hover:shadow-md">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-container/10 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface leading-snug">
+                                            Data analytics to drive lead acquisition
+                                        </p>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 order-1 md:order-2 hidden md:block">
+<!-- Spacer for layout -->
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex flex-col md:flex-row items-start md:items-center gap-6 group relative">
+<div class="md:hidden absolute left-8 top-6 w-3 h-3 -translate-x-1.5 rounded-full bg-primary border-4 border-surface shadow-sm z-10"></div>
+<div class="md:w-1/2 hidden md:block order-1">
+<!-- Spacer for layout -->
+</div>
+<div class="md:w-1/2 flex justify-start pl-0 md:pl-12 md:mt-12 order-2 ml-16 md:ml-0">
+<div class="bg-surface-bright p-6 md:p-8 rounded-xl ambient-shadow border border-outline-variant/20 max-w-sm w-full transform transition-transform group-hover:-translate-y-1 group-hover:shadow-md">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center shrink-0 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">medical_information</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface leading-snug">
+                                            Developed high-level medical content and educational frameworks
+                                        </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Core Team Member Badge -->
+<div class="mt-16 text-center">
+<div class="inline-flex items-center gap-2 px-6 py-3 bg-surface-container rounded-full shadow-sm border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Core Team Member</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component from JSON -->
+<footer class="bg-background dark:bg-on-background py-section-padding border-t border-outline-variant/20 full-width w-full">
+<div class="max-w-container-max mx-auto px-margin-mobile flex flex-col md:flex-row justify-between items-center gap-base">
+<p class="font-body-md text-body-md text-on-surface-variant">© 2026 Daryna Vakulenko All Rights Reserved</p>
+<div class="flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="https://www.linkedin.com/in/daryna-vakulenko/" target="_blank">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="mailto:info@darynavakulenko.com">Email</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="https://www.behance.net/qrbnk" target="_blank">Behance</a>
+</div>
+<a class="font-headline-lg text-headline-lg text-primary opacity-80 hover:opacity-100 transition-opacity" href="home.html">
+                Portfolio
+            </a>
+</div>
+</footer>
+<script>
+    // Mobile Menu Toggle
+    document.addEventListener('click', (e) => {
+        const toggle = e.target.closest('#mobile-menu-toggle');
+        if (!toggle) return;
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = toggle.querySelector('.material-symbols-outlined');
+        if (mobileMenu) {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            // Toggle icon between menu and close
+            if (menuIcon) {
+                menuIcon.textContent = isHidden ? 'close' : 'menu';
+            }
+        }
+    });
+</script>
+</body></html>

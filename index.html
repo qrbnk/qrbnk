@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daryna Vakulenko - Digital Transformation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts for Brand Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700;800;900&amp;family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "tertiary-fixed-dim": "#c6c6c6",
+                "primary-fixed-dim": "#c6c6c6",
+                "outline": "#7e7576",
+                "surface-container-low": "#f5f3f3",
+                "secondary-fixed-dim": "#c6c6c7",
+                "background": "#fbf9f9",
+                "on-secondary-fixed": "#1a1c1c",
+                "on-primary": "#ffffff",
+                "surface-container": "#efeded",
+                "surface-bright": "#fbf9f9",
+                "surface-container-highest": "#e3e2e2",
+                "surface-container-high": "#e9e8e7",
+                "on-tertiary-container": "#848484",
+                "tertiary-container": "#1b1b1b",
+                "primary-container": "#1b1b1b",
+                "on-error": "#ffffff",
+                "secondary": "#5d5f5f",
+                "tertiary": "#000000",
+                "surface-tint": "#5e5e5e",
+                "on-surface-variant": "#4c4546",
+                "on-secondary": "#ffffff",
+                "on-secondary-fixed-variant": "#454747",
+                "primary": "#000000",
+                "surface": "#fbf9f9",
+                "inverse-surface": "#303031",
+                "on-primary-container": "#848484",
+                "surface-dim": "#dbdad9",
+                "on-primary-fixed": "#1b1b1b",
+                "on-background": "#1b1c1c",
+                "secondary-fixed": "#e2e2e2",
+                "on-tertiary": "#ffffff",
+                "tertiary-fixed": "#e2e2e2",
+                "on-surface": "#1b1c1c",
+                "inverse-on-surface": "#f2f0f0",
+                "on-primary-fixed-variant": "#474747",
+                "on-tertiary-fixed-variant": "#474747",
+                "error-container": "#ffdad6",
+                "outline-variant": "#cfc4c5",
+                "on-error-container": "#93000a",
+                "surface-container-lowest": "#ffffff",
+                "inverse-primary": "#c6c6c6",
+                "error": "#ba1a1a",
+                "secondary-container": "#dfe0e0",
+                "on-tertiary-fixed": "#1b1b1b",
+                "surface-variant": "#e3e2e2",
+                "primary-fixed": "#e2e2e2",
+                "on-secondary-container": "#616363",
+                "g": "#000000",
+                "bd": "#E0E0DB",
+                "ov": "#44474d",
+                "bm": "#74777e",
+                "sf2": "#000000"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "gutter": "24px",
+                "margin-desktop": "64px",
+                "unit": "4px",
+                "margin-mobile": "20px",
+                "max-width": "1440px"
+        },
+        "fontFamily": {
+                "label-caps": ["Inter"],
+                "headline-lg-mobile": ["Chivo"],
+                "display-lg-mobile": ["Chivo"],
+                "body-lg": ["Inter"],
+                "headline-lg": ["Chivo"],
+                "display-lg": ["Chivo"],
+                "body-md": ["Inter"],
+                "serif": ["Source Serif 4", "serif"],
+                "sans": ["Hanken Grotesk", "sans-serif"],
+                "mono": ["JetBrains Mono", "monospace"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            cursor: none; /* Hide standard cursor for the lens frame */
+            overflow-x: hidden;
+            background-color: #fbf9f9;
+        }
+
+        .interactive-target {
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), color 0.3s ease;
+            display: inline-block;
+        }
+
+        @keyframes wavyMotion {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .wave-char {
+            display: inline-block;
+            animation: wavyMotion 3s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        /* Magnifier Overlay Container */
+        .magnifier-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9998;
+            will-change: clip-path;
+            background: transparent;
+        }
+
+        .magnified-content {
+            width: 100%;
+            height: 100%;
+            will-change: transform, transform-origin;
+            pointer-events: none;
+        }
+
+        /* Glass Lens Border Ring (Joan Gaspar Loupe Style) */
+        .magnifier-lens-ring {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(0, 0, 0, 0.65);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12), inset 0 0 4px rgba(255, 255, 255, 0.8);
+            pointer-events: none;
+            z-index: 9999;
+            will-change: transform;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        @media (pointer: coarse) {
+            body, html { cursor: auto; }
+            .magnifier-wrapper, .magnifier-lens-ring { display: none !important; }
+        }
+
+        .title { font-family: "Source Serif 4", serif; letter-spacing: -0.01em; }
+        .label-mono { font-family: "JetBrains Mono", monospace; letter-spacing: 0.03em; }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-sans">
+
+<!-- Main Content Container -->
+<div class="w-full h-full min-h-screen relative flex flex-col justify-center items-center" id="content-container">
+<header class="absolute top-0 left-0 w-full px-6 md:px-10 py-8 z-20 pointer-events-none">
+  <a href="home.html" class="inline-block pointer-events-auto">
+    <p class="label-mono text-xs text-primary hover:text-secondary transition-colors duration-300 interactive-target">click on text to enter</p>
+  </a>
+</header>
+
+<main class="flex-grow flex flex-col justify-center items-center w-full px-6 md:px-10 relative z-10">
+  <a href="home.html" class="inline-block max-w-5xl text-center">
+    <h1 class="title text-5xl md:text-7xl lg:text-8xl text-primary hover:text-secondary transition-colors duration-300 interactive-target" style="line-height:1.08">daryna vakulenko digital transformation london, uk</h1>
+  </a>
+</main>
+</div>
+
+<!-- Script for Optical Magnifying Glass Logic -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Apply wavy text effect to title
+            const titleElement = document.querySelector('h1.title');
+            if (titleElement) {
+                const text = titleElement.textContent.trim();
+                const words = text.split(' ');
+                titleElement.innerHTML = '';
+                let charIndex = 0;
+
+                words.forEach((word, wordIndex) => {
+                    const wordSpan = document.createElement('span');
+                    wordSpan.className = 'inline-block whitespace-nowrap';
+
+                    for (const char of word) {
+                        const charSpan = document.createElement('span');
+                        charSpan.textContent = char;
+                        charSpan.className = 'wave-char';
+                        charSpan.style.animationDelay = `${charIndex * 0.05}s`;
+                        wordSpan.appendChild(charSpan);
+                        charIndex++;
+                    }
+
+                    titleElement.appendChild(wordSpan);
+
+                    if (wordIndex < words.length - 1) {
+                        const spaceSpan = document.createElement('span');
+                        spaceSpan.innerHTML = '&nbsp;';
+                        spaceSpan.className = 'inline-block';
+                        titleElement.appendChild(spaceSpan);
+                        charIndex++;
+                    }
+                });
+            }
+
+            // Setup Magnifier DOM layers
+            const originalContainer = document.getElementById('content-container');
+            
+            const magnifierWrapper = document.createElement('div');
+            magnifierWrapper.className = 'magnifier-wrapper';
+            magnifierWrapper.setAttribute('aria-hidden', 'true');
+            
+            const clonedContent = originalContainer.cloneNode(true);
+            clonedContent.id = 'cloned-content';
+            clonedContent.className = 'magnified-content absolute top-0 left-0 flex flex-col w-full h-full';
+            
+            clonedContent.querySelectorAll('*').forEach(el => {
+                el.removeAttribute('id');
+                el.setAttribute('tabindex', '-1');
+            });
+            
+            magnifierWrapper.appendChild(clonedContent);
+            document.body.appendChild(magnifierWrapper);
+
+            // Circular lens frame
+            const lensRing = document.createElement('div');
+            lensRing.className = 'magnifier-lens-ring';
+            document.body.appendChild(lensRing);
+
+            let mouseX = window.innerWidth / 2;
+            let mouseY = window.innerHeight / 2;
+            let lensX = mouseX;
+            let lensY = mouseY;
+            const lensRadius = 35; // 70px diameter lens
+
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            function animateLens() {
+                lensX += (mouseX - lensX) * 0.25;
+                lensY += (mouseY - lensY) * 0.25;
+                
+                const scrollX = window.scrollX;
+                const scrollY = window.scrollY;
+
+                // Update clipping region and lens frame positioning
+                magnifierWrapper.style.clipPath = `circle(${lensRadius}px at ${lensX}px ${lensY}px)`;
+                lensRing.style.transform = `translate(${lensX}px, ${lensY}px) translate(-50%, -50%)`;
+                
+                // Scale magnified view centered precisely on cursor coordinates
+                clonedContent.style.transformOrigin = `${lensX + scrollX}px ${lensY + scrollY}px`;
+                clonedContent.style.transform = `scale(1.8)`;
+                
+                requestAnimationFrame(animateLens);
+            }
+            animateLens();
+        });
+    </script>
+</body>
+</html>

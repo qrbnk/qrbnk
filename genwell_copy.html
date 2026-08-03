@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Train Garden — Case Study</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container": "#eeeeee",
+          "tertiary-container": "#1b1b1b",
+          "on-secondary-fixed-variant": "#464748",
+          "secondary-fixed": "#e3e2e3",
+          "primary-container": "#1b1b1b",
+          "on-primary-fixed-variant": "#474747",
+          "on-background": "#1b1b1b",
+          "tertiary": "#000000",
+          "inverse-surface": "#303030",
+          "border-muted": "#E5E5E5",
+          "surface-container-low": "#f3f3f3",
+          "surface-container-lowest": "#ffffff",
+          "primary-fixed-dim": "#c6c6c6",
+          "on-secondary-container": "#626364",
+          "on-error": "#ffffff",
+          "tertiary-fixed-dim": "#c6c6c6",
+          "on-primary-fixed": "#1b1b1b",
+          "surface-dim": "#dadada",
+          "inverse-primary": "#c6c6c6",
+          "surface-variant": "#e2e2e2",
+          "surface-container-highest": "#e2e2e2",
+          "secondary-container": "#e0dfe0",
+          "secondary": "#5d5e5f",
+          "surface": "#f9f9f9",
+          "on-error-container": "#93000a",
+          "surface-alt": "#F8F8F8",
+          "on-tertiary": "#ffffff",
+          "on-tertiary-container": "#848484",
+          "on-primary-container": "#848484",
+          "on-primary": "#ffffff",
+          "surface-bright": "#f9f9f9",
+          "primary": "#000000",
+          "error-container": "#ffdad6",
+          "on-tertiary-fixed": "#1b1b1b",
+          "background": "#f9f9f9",
+          "on-secondary-fixed": "#1a1c1d",
+          "on-surface-variant": "#4c4546",
+          "error": "#ba1a1a",
+          "on-surface": "#1b1b1b",
+          "on-secondary": "#ffffff",
+          "secondary-fixed-dim": "#c6c6c7",
+          "surface-container-high": "#e8e8e8",
+          "surface-tint": "#5e5e5e",
+          "outline": "#7e7576",
+          "on-tertiary-fixed-variant": "#474747",
+          "primary-fixed": "#e2e2e2",
+          "outline-variant": "#cfc4c5",
+          "tertiary-fixed": "#e2e2e2",
+          "inverse-on-surface": "#f1f1f1"
+        },
+        "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        "spacing": {
+          "margin-desktop": "80px", "section-gap": "160px", "margin-mobile": "24px",
+          "stack-lg": "48px", "gutter": "32px", "stack-sm": "8px", "stack-md": "24px",
+          "section-padding": "80px", "container-max": "1120px", "base": "8px"
+        },
+        "fontFamily": {
+          "headline-md": ["Chivo"], "label-sm": ["JetBrains Mono"], "body-md": ["Inter"],
+          "display-lg": ["Chivo"], "body-lg": ["Inter"], "headline-lg-mobile": ["Chivo"],
+          "headline-lg": ["Chivo"], "display-xl": ["Chivo"]
+        },
+        "fontSize": {
+          "headline-md": ["24px", { "lineHeight": "30px", "fontWeight": "700" }],
+          "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+          "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+          "display-lg": ["80px", { "lineHeight": "84px", "letterSpacing": "-0.03em", "fontWeight": "900" }],
+          "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+          "headline-lg-mobile": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+          "headline-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+          "display-xl": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "900" }]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { background-color: #f9f9f9; color: #1b1b1b; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+  .material-symbols-outlined { font-family: 'Material Symbols Outlined'; font-weight: normal; font-style: normal; font-size: 24px; line-height: 1; display: inline-block; }
+  .chip { display: inline-flex; align-items: center; padding: 4px 10px; border: 1px solid #000; background: transparent; color: #000; transition: all 0.2s; font-size: 12px; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; }
+  .chip:hover { background: #000; color: #fff; }
+  .gallery-item { aspect-ratio: 16/10; overflow: hidden; background: #eee; border: 1px solid #000; position: relative; }
+  .gallery-item img, .gallery-item video { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+  .gallery-item:hover img, .gallery-item:hover video { transform: scale(1.03); }
+  .placeholder-note { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; padding: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #7e7576; background: #f3f3f3; }
+  .video-frame { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border: 1px solid #000; }
+  .video-frame iframe, .video-frame video { position: absolute; inset: 0; width: 100%; height: 100%; }
+</style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col font-body-md text-body-md selection:bg-primary selection:text-on-primary">
+
+<header class="bg-surface/80 backdrop-blur-md sticky top-0 full-width z-50 border-b border-outline-variant/30 shadow-sm">
+  <div id="header-placeholder"></div>
+</header>
+
+<div id="mobile-menu" class="hidden md:hidden bg-surface border-b border-primary w-full px-margin-mobile py-6 flex flex-col gap-4 shadow-lg absolute top-20 left-0 z-40">
+  <a href="home.html" class="font-label-sm uppercase tracking-widest text-primary py-3 border-b border-outline-variant/30 flex items-center justify-between">Home <span class="material-symbols-outlined">chevron_right</span></a>
+  <a href="portfolio_page.html" class="font-label-sm uppercase tracking-widest text-primary py-3 border-b border-outline-variant/30 flex items-center justify-between">Portfolio <span class="material-symbols-outlined">chevron_right</span></a>
+  <a href="mailto:info@darynavakulenko.com" class="font-label-sm uppercase tracking-widest text-primary py-3 flex items-center justify-between">Contact <span class="material-symbols-outlined">mail</span></a>
+</div>
+
+<main class="flex-grow w-full max-w-[1120px] mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-16">
+
+  <div class="mb-8 md:mb-12">
+    <a href="portfolio_page.html" class="inline-flex items-center gap-2 px-4 py-2.5 md:px-5 md:py-3 font-label-sm text-xs md:text-sm tracking-widest uppercase border border-primary hover:bg-primary hover:text-white transition-colors w-fit">
+      <span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
+      Back to Portfolio
+    </a>
+  </div>
+
+  <!-- Hero -->
+  <section class="mb-10 md:mb-16">
+    <span class="font-label-sm text-xs uppercase tracking-widest text-on-surface-variant block mb-3">Own Build — AI Career Coaching Platform</span>
+    <h1 class="font-display-xl text-4xl md:text-display-xl tracking-tighter mb-3 md:mb-4 uppercase leading-none">Train Garden</h1>
+    <p class="font-body-lg text-body-md md:text-body-lg max-w-2xl text-on-surface-variant mb-8">A full-stack AI career coaching platform helping people navigate sustainability and green economy careers in London.</p>
+
+    <div class="gallery-item w-full" style="aspect-ratio: 16/9;">
+      <div class="placeholder-note">[ Swap this for a hero screenshot or a looping product GIF — the main dashboard or coaching flow works well here ]</div>
+    </div>
+  </section>
+
+  <!-- Meta strip -->
+  <section class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-gutter mb-10 md:mb-16 border-t border-primary pt-6 md:pt-stack-lg">
+    <div class="col-span-1 md:col-span-3">
+      <h3 class="font-label-sm text-xs uppercase text-on-surface-variant mb-2 md:mb-stack-sm">Role</h3>
+      <p class="font-body-md text-body-md">AI Transformation Delivery Lead</p>
+    </div>
+    <div class="col-span-1 md:col-span-3">
+      <h3 class="font-label-sm text-xs uppercase text-on-surface-variant mb-2 md:mb-stack-sm">Timeline</h3>
+      <p class="font-body-md text-body-md">July 2024 – Present</p>
+    </div>
+    <div class="col-span-1 md:col-span-2">
+      <h3 class="font-label-sm text-xs uppercase text-on-surface-variant mb-2 md:mb-stack-sm">Location</h3>
+      <p class="font-body-md text-body-md">London, UK</p>
+    </div>
+    <div class="col-span-1 md:col-span-4">
+      <h3 class="font-label-sm text-xs uppercase text-on-surface-variant mb-2 md:mb-stack-sm">Tech Stack</h3>
+      <div class="flex flex-wrap gap-2">
+        <span class="chip">Python</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">NLP / LLM</span>
+        <span class="chip">AI Agents</span>
+        <span class="chip">Prototyping</span>
+      </div>
+    </div>
+    <div class="col-span-1 md:col-span-12">
+      <h3 class="font-label-sm text-xs uppercase text-on-surface-variant mb-2 md:mb-stack-sm mt-6">Core Competencies</h3>
+      <div class="flex flex-wrap gap-2">
+        <span class="chip">UI/UX</span>
+        <span class="chip">Brand Strategy</span>
+        <span class="chip">Marketing</span>
+        <span class="chip">Strategy</span>
+        <span class="chip">Social Impact</span>
+        <span class="chip">Pitching</span>
+        <span class="chip">Funding</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Brief -->
+  <section class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-gutter mb-10 md:mb-16">
+    <div class="col-span-1 md:col-span-4">
+      <h2 class="font-headline-md text-lg md:text-headline-md uppercase">The Brief</h2>
+    </div>
+    <div class="col-span-1 md:col-span-8">
+      <p class="font-body-lg text-body-md md:text-body-lg text-on-surface-variant">
+        [Placeholder — add 2-3 sentences on the specific problem Train Garden solves: e.g. what makes green-economy career paths hard to navigate today, who the platform is for (job seekers? employers? both?), and what gap existed before this was built. This is the part a hiring manager or prospective client reads first, so it's worth writing in your own words rather than mine.]
+      </p>
+    </div>
+  </section>
+
+  <!-- The Approach -->
+  <section class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-gutter mb-10 md:mb-16">
+    <div class="col-span-1 md:col-span-4">
+      <h2 class="font-headline-md text-lg md:text-headline-md uppercase">The Approach</h2>
+    </div>
+    <div class="col-span-1 md:col-span-8 space-y-6">
+      <div class="border-l-2 border-primary pl-4 md:pl-6">
+        <h3 class="font-label-sm text-xs uppercase tracking-widest mb-1">End-to-End Lifecycle</h3>
+        <p class="font-body-md text-on-surface-variant">Led AI strategy and discovery across sustainability, legal, HR, non-profit, and social impact use cases before scoping the build.</p>
+      </div>
+      <div class="border-l-2 border-primary pl-4 md:pl-6">
+        <h3 class="font-label-sm text-xs uppercase tracking-widest mb-1">Rapid Prototyping &amp; Technical Execution</h3>
+        <p class="font-body-md text-on-surface-variant">Built functional AI and NLP solutions in Python and JavaScript, with UI/UX designed around how people actually make career decisions rather than a generic job-board pattern.</p>
+      </div>
+      <div class="border-l-2 border-primary pl-4 md:pl-6">
+        <h3 class="font-label-sm text-xs uppercase tracking-widest mb-1">Commercial Growth</h3>
+        <p class="font-body-md text-on-surface-variant">Drove B2B sales pipelines directly, bridging technical feasibility with what enterprise partners could actually adopt.</p>
+      </div>
+      <div class="border-l-2 border-primary pl-4 md:pl-6">
+        <h3 class="font-label-sm text-xs uppercase tracking-widest mb-1">Go-to-Market</h3>
+        <p class="font-body-md text-on-surface-variant">Translated complex analytics into messaging that landed with C-suite and government stakeholders.</p>
+      </div>
+      <p class="font-body-md text-on-surface-variant italic">
+        [Optional — if there's a specific decision you're proud of (why AI-first rather than a directory, why this data model, why this partner sequence), add one or two of those here. That "why," not just the "what," is what separates a consultant's case study from a CV bullet.]
+      </p>
+    </div>
+  </section>
+
+  <!-- The Build -->
+  <section class="mb-10 md:mb-16">
+    <h2 class="font-headline-md text-lg md:text-headline-md uppercase mb-6 md:mb-8">The Build</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+      <div class="gallery-item">
+        <div class="placeholder-note">[ Screenshot: onboarding / career-path input flow ]</div>
+      </div>
+      <div class="gallery-item">
+        <div class="placeholder-note">[ Screenshot: AI coaching / recommendation output ]</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video walkthrough -->
+  <section class="mb-10 md:mb-16">
+    <h2 class="font-headline-md text-lg md:text-headline-md uppercase mb-6 md:mb-8">Walkthrough</h2>
+    <div class="video-frame">
+      <div class="placeholder-note" style="position:absolute; inset:0; background:#111; color:#999;">[ Add a Loom link, YouTube embed, or self-hosted screen recording of the product in use — 60-90 seconds is plenty ]</div>
+    </div>
+  </section>
+
+  <!-- Outcome -->
+  <section class="border-t border-primary pt-6 md:pt-stack-lg">
+    <h2 class="font-headline-md text-lg md:text-headline-md uppercase mb-6 md:mb-8">Outcome</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-gutter">
+      <div class="p-6 border border-primary text-center">
+        <div class="font-display-lg text-2xl md:text-4xl mb-2">[ ? ]</div>
+        <div class="font-label-sm text-xs uppercase text-on-surface-variant">[e.g. users onboarded, employer partners signed, funding raised]</div>
+      </div>
+      <div class="p-6 border border-primary text-center">
+        <div class="font-display-lg text-2xl md:text-4xl mb-2">[ ? ]</div>
+        <div class="font-label-sm text-xs uppercase text-on-surface-variant">[e.g. pilot partners in sustainability/legal/HR sectors]</div>
+      </div>
+      <div class="p-6 border border-primary text-center">
+        <div class="font-display-lg text-2xl md:text-4xl mb-2">Live</div>
+        <div class="font-label-sm text-xs uppercase text-on-surface-variant">Status — link to product if publicly accessible</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+    async function loadComponent(id, file) {
+        const response = await fetch(file);
+        const data = await response.text();
+        document.getElementById(id).innerHTML = data;
+    }
+    loadComponent('header-placeholder', 'header.html');
+    loadComponent('footer-placeholder', 'footer.html');
+</script>
+<script>
+    document.addEventListener('click', (e) => {
+        const toggle = e.target.closest('#mobile-menu-toggle');
+        if (!toggle) return;
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = toggle.querySelector('.material-symbols-outlined');
+        if (mobileMenu) {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            if (menuIcon) {
+                menuIcon.textContent = isHidden ? 'close' : 'menu';
+            }
+        }
+    });
+</script>
+</body>
+</html>

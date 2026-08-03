@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Code Black Academy - Portfolio Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-container-highest": "#e2e2e2",
+                "hover-overlay": "rgba(0, 0, 0, 0.04)",
+                "inverse-on-surface": "#f1f1f1",
+                "on-secondary-container": "#616363",
+                "surface-container-low": "#f3f3f3",
+                "outline": "#7e7576",
+                "tertiary-fixed": "#e2e2e2",
+                "interface-border": "#E5E5E5",
+                "primary-fixed-dim": "#c6c6c6",
+                "on-tertiary-fixed": "#1b1b1b",
+                "on-primary-fixed-variant": "#474747",
+                "on-error-container": "#93000a",
+                "secondary-container": "#dfe0e0",
+                "surface-variant": "#e2e2e2",
+                "surface-bright": "#f9f9f9",
+                "primary": "#000000",
+                "on-primary": "#ffffff",
+                "inverse-primary": "#c6c6c6",
+                "on-surface-variant": "#4c4546",
+                "on-tertiary": "#ffffff",
+                "on-background": "#1b1b1b",
+                "surface": "#f9f9f9",
+                "background": "#f9f9f9",
+                "on-error": "#ffffff",
+                "tertiary-container": "#1b1b1b",
+                "surface-tint": "#5e5e5e",
+                "on-surface": "#1b1b1b",
+                "on-primary-fixed": "#1b1b1b",
+                "on-secondary-fixed-variant": "#454747",
+                "error-container": "#ffdad6",
+                "inverse-surface": "#303030",
+                "surface-dim": "#dadada",
+                "surface-container-lowest": "#ffffff",
+                "secondary": "#5d5f5f",
+                "error": "#ba1a1a",
+                "on-secondary-fixed": "#1a1c1c",
+                "on-tertiary-fixed-variant": "#474747",
+                "primary-fixed": "#e2e2e2",
+                "surface-container-high": "#e8e8e8",
+                "on-primary-container": "#848484",
+                "on-tertiary-container": "#848484",
+                "surface-container": "#eeeeee",
+                "secondary-fixed": "#e2e2e2",
+                "tertiary": "#000000",
+                "outline-variant": "#cfc4c5",
+                "primary-container": "#1b1b1b",
+                "secondary-fixed-dim": "#c6c6c7",
+                "tertiary-fixed-dim": "#c6c6c6",
+                "on-secondary": "#ffffff"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "stack-md": "1.5rem",
+                "grid-margin": "2rem",
+                "grid-gutter": "1px",
+                "stack-sm": "0.5rem",
+                "stack-lg": "4rem",
+                "container-max": "1120px",
+                "section-padding": "80px",
+                "base": "8px",
+                "margin-mobile": "24px",
+                "margin-desktop": "80px"
+        },
+        "fontFamily": {
+                "label-caps": [
+                        "Archivo Narrow", "sans-serif"
+                ],
+                "headline-lg-mobile": [
+                        "Hanken Grotesk", "sans-serif"
+                ],
+                "display-lg": [
+                        "Hanken Grotesk", "sans-serif"
+                ],
+                "body-md": [
+                        "Hanken Grotesk", "sans-serif"
+                ],
+                "label-md": [
+                        "Archivo Narrow", "sans-serif"
+                ],
+                "headline-lg": [
+                        "Hanken Grotesk", "sans-serif"
+                ]
+        },
+        "fontSize": {
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "1.0",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "24px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg": [
+                        "80px",
+                        {
+                                "lineHeight": "1.0",
+                                "letterSpacing": "-0.04em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "1.4",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .project-overlay {
+      opacity: 0;
+      transition: opacity 0.4s ease;
+  }
+  .group:hover .project-overlay {
+      opacity: 1;
+  }
+  .project-image {
+      transition: transform 0.6s ease, filter 0.6s ease;
+      filter: grayscale(100%);
+  }
+  .group:hover .project-image {
+      transform: scale(1.05);
+      filter: grayscale(0%);
+  }
+</style>
+</head>
+<body class="bg-background text-primary font-body-md antialiased min-h-screen flex flex-col items-center justify-center">
+<!-- Header Component (from original design) -->
+<header class="bg-surface/80 dark:bg-surface-container/80 backdrop-blur-md full-width top-0 sticky border-b border-outline-variant/30 shadow-sm z-50 w-full">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto h-20">
+<a class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed-dim tracking-tighter hover:opacity-80 transition-opacity" href="home.html">Portfolio</a>
+<div class="hidden md:flex items-center gap-6">
+</div>
+<button class="hidden md:inline-flex items-center justify-center px-6 py-3 bg-primary text-on-primary rounded-full font-label-md text-label-md hover:opacity-90 scale-95 active:scale-90 transition-transform duration-200">
+<a class="btn-primary px-5 py-3 font-label-sm rounded-none text-sm tracking-widest uppercase" href="portfolio_page.html">Portfolio</a>
+</button>
+<button class="md:hidden flex items-center justify-center p-2" id="mobile-menu-toggle">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<div class="hidden md:hidden bg-surface border-b border-primary w-full px-4 py-6 flex flex-col gap-4 shadow-lg absolute top-20 left-0 z-40" id="mobile-menu">
+<a class="font-label-caps uppercase text-primary py-3 border-b border-interface-border flex items-center justify-between" href="home.html">
+        Home <span class="material-symbols-outlined">chevron_right</span>
+</a>
+<a class="font-label-caps uppercase text-primary py-3 border-b border-interface-border flex items-center justify-between font-bold" href="portfolio_page.html">
+        Portfolio <span class="material-symbols-outlined">chevron_right</span>
+</a>
+<a class="font-label-caps uppercase text-primary py-3 flex items-center justify-between" href="mailto:info@darynavakulenko.com">
+        Contact <span class="material-symbols-outlined">mail</span>
+</a>
+</div>
+<!-- Main Canvas -->
+<main class="flex-grow w-full mx-auto">
+<!-- Section Header -->
+<div class="px-4 md:px-8 py-12 flex justify-between items-end border-b border-primary">
+<h1 class="font-display-lg text-display-lg">Experience</h1>
+<span class="font-label-caps pb-2">5 projects</span>
+</div>
+<!-- Portfolio Grid (MVRDV Style) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-grid-gutter bg-primary border-b border-primary w-full">
+<!-- Project: Train Garden -->
+<article class="group relative overflow-hidden bg-surface aspect-square flex items-center justify-center cursor-pointer">
+<img alt="Train Garden" class="absolute inset-0 w-full h-full object-cover project-image bg-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLLHSxUPAS7rbyHPNAzjqMMPkOxrNHPraRIM0OLZfFZJSikdqUkaewll6KTIdu3ec42PK9A-zdY9KgzDjxw2aid_yaxkHFa0kMf83fvZjUE-dU0tdoBNH-PrfOr3oRSZc5c-xxZqcfsjFmsnw9HH9XnClbH60y1_9F9GoW4htmiLkaXLIYXSvj0agt1ECE6MYNA5QMScY_5LWh1yaJq9dpsb7Vq-l_jyOQpz7fwnlkzHxGoo6jNjCLgxd39dZgg1WUbUOrq7It8UvU" style="object-fit: contain; padding: 2rem; background: white;"/>
+<div class="project-overlay absolute inset-0 bg-primary/90 text-on-primary p-6 flex flex-col justify-between">
+<div class="flex flex-wrap gap-2">
+<span class="font-label-caps border border-on-primary px-2 py-1">AI Strategy &amp; Transformation</span>
+<span class="font-label-caps border border-on-primary px-2 py-1">Stealth Pre-Seed Startup</span>
+<span class="font-label-caps border border-primary bg-on-primary text-primary px-2 py-1">July 2024 - Present</span>
+</div>
+<div>
+<h2 class="font-headline-lg-mobile mb-1">AI Transformation Delivery Lead</h2>
+<h2 class="font-body-md opacity-80 mb-4">Train Garden</h2>
+<p class="font-label-md opacity-90 line-clamp-3 mb-6">A green skills and recruitment platform designed to strengthen the talent pipeline for the growing green economy.</p>
+<div class="flex flex-wrap gap-3">
+<a class="font-label-caps border border-on-primary px-4 py-2 hover:bg-on-primary hover:text-primary transition-colors" href="AI Green Career Explorer.pdf" target="_blank">PDF</a>
+<a class="font-label-caps bg-on-primary text-primary px-4 py-2 hover:bg-transparent hover:text-on-primary hover:border-on-primary border border-on-primary transition-colors" href="train_garden_extended.html">Expand</a>
+</div>
+</div>
+</div>
+</article>
+<!-- Project 5: Tegus by AlphaSense -->
+<article class="group relative overflow-hidden bg-surface aspect-square flex items-center justify-center cursor-pointer">
+<img alt="Tegus by AlphaSense" class="absolute inset-0 w-full h-full object-cover project-image bg-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkA6fQrcyRZJX2vdwI2XKJlecDyZCNcfooCRcfosHtUaUCQF2AUHylnQxjoHUmtEq1-nmAa-6aNUAl2pR-FReT7KpGuo-K5XxXBohyx6I6ZzzF1xgAB4OIb2TBRL0spdTNCvpmst0pNWTy30krJk47MigY-G94XiYqZ3AqvbbShpxCXFMJgMJnwFWzTgrBhssh7neXipQenyn8BAjzwiVAe5v-V39eTBrpdn3rz-Z329oBuG4gRN88OPly6clhrd3JHtkSKPHhNf1Q" style="object-fit: contain; padding: 2rem; background: white;"/>
+<div class="project-overlay absolute inset-0 bg-primary/90 text-on-primary p-6 flex flex-col justify-between">
+<div class="flex flex-wrap gap-2">
+<span class="font-label-caps border border-on-primary px-2 py-1">Consulting</span>
+<span class="font-label-caps border border-primary bg-on-primary text-primary px-2 py-1">2024 - Present</span>
+</div>
+<div>
+<h2 class="font-headline-lg-mobile mb-1">AI Consultant</h2>
+<h2 class="font-body-md opacity-80 mb-4">Tegus by AlphaSense</h2>
+<p class="font-label-md opacity-90 line-clamp-3 mb-6">AI-powered market intelligence and search platform used by financial institutions, consulting firms, and corporations for deep research, competitor tracking, and trend analysis.</p>
+<div class="flex flex-wrap gap-3">
+<a class="font-label-caps border border-on-primary px-4 py-2 hover:bg-on-primary hover:text-primary transition-colors flex items-center gap-1" href="https://www.alpha-sense.com" target="_blank">
+                    AlphaSense <span class="material-symbols-outlined" style="font-size: 14px;">arrow_outward</span>
+</a>
+<a class="font-label-caps bg-on-primary text-primary px-4 py-2 hover:bg-transparent hover:text-on-primary hover:border-on-primary border border-on-primary transition-colors" href="tegus_expanded.html">Expand</a>
+</div>
+</div>
+</div>
+</article>
+<!-- Project 4: Outlier -->
+<article class="group relative overflow-hidden bg-surface aspect-square flex items-center justify-center cursor-pointer">
+<img alt="Outlier" class="absolute inset-0 w-full h-full object-cover project-image bg-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmBcWYWZG8QhAqMawS8Wr4joZbmLWrJEVd-V62z884vtj2-ViS_jJJTGzaIbeO9lDUH9FPJj11Ceh7ncRtNvqVcdnpJPa4MaSxpT4IGderNlaJlRTSrZ9Zn49TsIu_XgPZnedLyZRpoU9cHfHbn4GrxLHKi0aYyszOKQdUdByB_wj1As9dKaQtTam3-8DC3qC2aSU9XM0hMGNaUMBjilaGjHuwsE6NmR8BXWWz2Hd2WuPYwX1-SoetMiDgiK8aSj-O7VikDiAEGytY" style="object-fit: contain; padding: 2rem; background: white;"/>
+<div class="project-overlay absolute inset-0 bg-primary/90 text-on-primary p-6 flex flex-col justify-between">
+<div class="flex flex-wrap gap-2">
+<span class="font-label-caps border border-on-primary px-2 py-1">AI Evaluation</span>
+<span class="font-label-caps border border-primary bg-on-primary text-primary px-2 py-1">2022</span>
+</div>
+<div>
+<h2 class="font-headline-lg-mobile mb-1">AI Training Expert</h2>
+<h2 class="font-body-md opacity-80 mb-4">Outlier</h2>
+<p class="font-label-md opacity-90 line-clamp-3 mb-6">Outlier is an online platform focusing on evaluation, factuality, and improvement of artificial intelligence models.</p>
+<div class="flex flex-wrap gap-3">
+<a class="font-label-caps border border-on-primary px-4 py-2 hover:bg-on-primary hover:text-primary transition-colors flex items-center gap-1" href="https://outlier.ai" target="_blank">
+                    Outlier.AI <span class="material-symbols-outlined" style="font-size: 14px;">arrow_outward</span>
+</a>
+<a class="font-label-caps bg-on-primary text-primary px-4 py-2 hover:bg-transparent hover:text-on-primary hover:border-on-primary border border-on-primary transition-colors" href="outlier_extended.html">Expand</a>
+</div>
+</div>
+</div>
+</article>
+<!-- Project 3: Sirkka Health -->
+<article class="group relative overflow-hidden bg-surface aspect-square flex items-center justify-center cursor-pointer">
+<img alt="Sirkka Health" class="absolute inset-0 w-full h-full object-cover project-image bg-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtKvvYjv9brs6HVJHLAwX7Hwthpy7kYXTnWteX6-aYhO8SvpTsRingosbO0f7ChxHNhpem8B4zJinMzyo3hZ_xP5Wwe43lvq5Ecxf8ZQfl6t857crbcCDNoGOWs-bDWnH2BuPb5nOrtL0ccOlq3bVudWE68z5HMA1qsuA1h21m5PfjoV7SBQ4tIkph3FS86CbjhLpkc9pImnHW6uJyrbGySXZafsrDedPpO0Xrxh-mxt4SthvQFh6z8DLQwS5LTrXC2wxpIGwc4h58" style="object-fit: contain; padding: 2rem; background: white;"/>
+<div class="project-overlay absolute inset-0 bg-primary/90 text-on-primary p-6 flex flex-col justify-between">
+<div class="flex flex-wrap gap-2">
+<span class="font-label-caps border border-on-primary px-2 py-1">Seed Startup</span>
+<span class="font-label-caps border border-on-primary px-2 py-1">London, United Kingdom</span>
+<span class="font-label-caps border border-primary bg-on-primary text-primary px-2 py-1">2022 - 2024</span>
+</div>
+<div>
+<h2 class="font-headline-lg-mobile mb-1">Digital Health Lead</h2>
+<h2 class="font-body-md opacity-80 mb-4">Sirkka Health</h2>
+<p class="font-label-md opacity-90 line-clamp-3 mb-6">Health-tech medical assistance platform 
+developing user-friendly software and building a nationwide network of clinicians, to provide mobile medical services to people's home and communities.</p>
+<div class="flex flex-wrap gap-3">
+<a class="font-label-caps border border-on-primary px-4 py-2 hover:bg-on-primary hover:text-primary transition-colors flex items-center gap-1" href="https://www.sirkkahealth.com" target="_blank">
+                    sirkkahealth.com <span class="material-symbols-outlined" style="font-size: 14px;">arrow_outward</span>
+</a>
+<a class="font-label-caps bg-on-primary text-primary px-4 py-2 hover:bg-transparent hover:text-on-primary hover:border-on-primary border border-on-primary transition-colors" href="sirkka_health_expanded.html">Expand</a>
+</div>
+</div>
+</div>
+</article>
+<!-- Project 2: Genwell Medical -->
+<article class="group relative overflow-hidden bg-surface aspect-square flex items-center justify-center cursor-pointer">
+<img alt="Genwell Medical Inc" class="absolute inset-0 w-full h-full object-cover project-image bg-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGJyNveNznlMC-osfBSb63BNvWjpQib8ycLPdgiH47Z760ml0zpakY2hic_otCOer6Br0AI6wea9zjaDWCIaqCz8Y36dvTL_3Kh8M6XN2QVp_lmBOgU25AQBxsSn8_77oS0icwUksTr0rMZJ_FrURQ_w_7_jQbYKsAvon3rNNH8IuhMrREa5pBHn5QkIAZLLkuQH7pwajTMDbSt4K7pIkmCxHWdAFDloD8mID3rUURQ7ad6Vf3fifd0g4sIjymsOUFQCQL6pWghRqR" style="object-fit: contain; padding: 2rem; background: white;"/>
+<div class="project-overlay absolute inset-0 bg-primary/90 text-on-primary p-6 flex flex-col justify-between">
+<div class="flex flex-wrap gap-2">
+<span class="font-label-caps border border-on-primary px-2 py-1">Medical Billing Services</span>
+<span class="font-label-caps border border-on-primary px-2 py-1">Princeton, NJ, United States</span>
+<span class="font-label-caps border border-primary bg-on-primary text-primary px-2 py-1">2018 - 2022</span>
+</div>
+<div>
+<h2 class="font-headline-lg-mobile mb-1">Account Executive</h2>
+<h2 class="font-body-md opacity-80 mb-4">Genwell Medical, Inc.</h2>
+<p class="font-label-md opacity-90 line-clamp-3 mb-6">Medical billing support &amp; revenue cycle management.</p>
+<div class="flex flex-wrap gap-3">
+<a class="font-label-caps border border-on-primary px-4 py-2 hover:bg-on-primary hover:text-primary transition-colors flex items-center gap-1" href="http://www.genwellmedical.com/" target="_blank">
+                    genwellmedical.com <span class="material-symbols-outlined" style="font-size: 14px;">arrow_outward</span>
+</a>
+<a class="font-label-caps bg-on-primary text-primary px-4 py-2 hover:bg-transparent hover:text-on-primary hover:border-on-primary border border-on-primary transition-colors" href="genwell_medical_expanded.html">Expand</a>
+</div>
+</div>
+</div>
+</article>
+<!-- Project 1: Code Black Academy -->
+<article class="group relative overflow-hidden bg-surface aspect-square flex items-center justify-center cursor-pointer">
+<img alt="Code Black Academy Platform" class="absolute inset-0 w-full h-full object-cover project-image bg-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9a32tpEq7jBxECNjZNEsVnGJCPNC2ilnfGPRU6wocy16sMkJu06qghNiK7pr1_5S1_P3t_tWmCvUYvPsCSdDyDMXJU4ZsMnSuKLOahvrh03iyuzunUaNZK4a0l5BUfz6JMXvCHAIDg6ingzl1KkIzCPRraQ9RT0DClBNZUB9NdL_ZuPlvFO7IOd1itTo67PX7SaA-Wet6LDt68KTgya4XGVPPh-650XYsYk-pzf450spZKbQSLIBkAL5fMWvj-YcUkp45RGzS7b0E" style="object-fit: contain; padding: 2rem; background: white;"/>
+<div class="project-overlay absolute inset-0 bg-primary/90 text-on-primary p-6 flex flex-col justify-between">
+<div class="flex flex-wrap gap-2">
+<span class="font-label-caps border border-on-primary px-2 py-1">Pre-seed Startup</span>
+<span class="font-label-caps border border-on-primary px-2 py-1">Kyiv, Ukraine</span>
+<span class="font-label-caps border border-primary bg-on-primary text-primary px-2 py-1">2020 - 2022</span>
+</div>
+<div>
+<h2 class="font-headline-lg-mobile mb-1">Head of Communications</h2>
+<h2 class="font-body-md opacity-80 mb-4">Code Black Academy</h2>
+<p class="font-label-md opacity-90 line-clamp-3 mb-6">Ed-Tech platform designed to upskill medical students and doctors.</p>
+<div class="flex flex-wrap gap-3">
+<a class="font-label-caps border border-on-primary px-4 py-2 hover:bg-on-primary hover:text-primary transition-colors flex items-center gap-1" href="https://codeblack.com.ua" target="_blank">
+                    codeblack.com.ua <span class="material-symbols-outlined" style="font-size: 14px;">arrow_outward</span>
+</a>
+<a class="font-label-caps border border-on-primary px-4 py-2 hover:bg-on-primary hover:text-primary transition-colors" href="code_black.pdf" target="_blank">PDF</a>
+<a class="font-label-caps bg-on-primary text-primary px-4 py-2 hover:bg-transparent hover:text-on-primary hover:border-on-primary border border-on-primary transition-colors" href="expand_codeblack.html">Expand</a>
+</div>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Footer Component (from original design) -->
+<footer class="bg-background py-section-padding border-t border-outline-variant/20 full-width w-full mt-auto">
+<div class="max-w-container-max mx-auto px-margin-mobile flex flex-col md:flex-row justify-between items-center gap-base text-center md:text-left">
+<!-- Copyright Notice (Appears first on desktop, bottom on mobile) -->
+<p class="font-body-md text-body-md text-on-surface-variant order-3 md:order-1">
+            © 2026 Daryna Vakulenko All Rights Reserved
+        </p>
+<!-- Navigation/Social Links (Appears middle on desktop, middle on mobile) -->
+<div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-1 order-2 md:order-2">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md py-3 md:py-1 inline-block" href="https://www.linkedin.com/in/daryna-vakulenko/" target="_blank">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md py-3 md:py-1 inline-block" href="mailto:info@darynavakulenko.com">Email</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md py-3 md:py-1 inline-block" href="https://www.behance.net/qrbnk" target="_blank">Behance</a>
+</div>
+<!-- Branding Link (Appears last on desktop, top on mobile) -->
+<a class="font-headline-lg text-headline-lg text-primary opacity-80 hover:opacity-100 transition-opacity order-1 md:order-3 mb-4 md:mb-0" href="home.html">
+            Portfolio
+        </a>
+</div>
+</footer>
+<script>
+    // Mobile Menu Toggle
+    document.addEventListener('click', (e) => {
+        const toggle = e.target.closest('#mobile-menu-toggle');
+        if (!toggle) return;
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = toggle.querySelector('.material-symbols-outlined');
+        if (mobileMenu) {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            if (menuIcon) {
+                menuIcon.textContent = isHidden ? 'close' : 'menu';
+            }
+        }
+    });
+</script>
+</body></html>

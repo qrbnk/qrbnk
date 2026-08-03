@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: sans-serif; margin: 0; padding: 20px; }
+
+        /* The main container for your cards */
+        .contact-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Each individual card */
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        /* Image styling */
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* Button styling */
+        .btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 12px;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: opacity 0.3s;
+        }
+
+        .btn:hover { opacity: 0.9; }
+
+        /* Unique button colors */
+        .btn-linkedin { background-color: #095eb4; }
+        .btn-mail { background-color: #b4300c; }
+        .btn-instagram { background-color: #0c836b; }
+    </style>
+</head>
+<body>
+
+    <div class="contact-wrapper">
+        <!-- LinkedIn -->
+        <div class="card">
+            <img src="path-to-your-linkedin-card.png" alt="LinkedIn">
+            <a href="https://linkedin.com/in/yourprofile" class="btn btn-linkedin">LinkedIn</a>
+        </div>
+
+        <!-- Mail -->
+        <div class="card">
+            <img src="path-to-your-mail-card.png" alt="Mail">
+            <a href="mailto:your@email.com" class="btn btn-mail">Mail</a>
+        </div>
+
+        <!-- Instagram -->
+        <div class="card">
+            <img src="path-to-your-instagram-card.png" alt="Instagram">
+            <a href="https://instagram.com/yourhandle" class="btn btn-instagram">Instagram</a>
+        </div>
+    </div>
+
+</body>
+</html>

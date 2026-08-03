@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tegus by AlphaSense | Visual CV</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@700;800;900&amp;family=Inter:wght@400&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#1b1b1b",
+                        "surface-dim": "#dadada",
+                        "inverse-primary": "#c6c6c6",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-highest": "#e2e2e2",
+                        "secondary-container": "#e0dfe0",
+                        "secondary": "#5d5e5f",
+                        "surface-container": "#eeeeee",
+                        "surface": "#f9f9f9",
+                        "on-error-container": "#93000a",
+                        "surface-alt": "#F8F8F8",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#848484",
+                        "tertiary-container": "#1b1b1b",
+                        "on-secondary-fixed-variant": "#464748",
+                        "secondary-fixed": "#e3e2e3",
+                        "primary-container": "#1b1b1b",
+                        "on-primary-fixed-variant": "#474747",
+                        "on-background": "#1b1b1b",
+                        "tertiary": "#000000",
+                        "inverse-surface": "#303030",
+                        "border-muted": "#E5E5E5",
+                        "surface-container-low": "#f3f3f3",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "on-secondary-container": "#626364",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "surface-container-high": "#e8e8e8",
+                        "surface-tint": "#5e5e5e",
+                        "outline": "#7e7576",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "primary-fixed": "#e2e2e2",
+                        "outline-variant": "#cfc4c5",
+                        "tertiary-fixed": "#e2e2e2",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-primary-container": "#848484",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "primary": "#000000",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "background": "#f9f9f9",
+                        "on-secondary-fixed": "#1a1c1d",
+                        "on-surface-variant": "#4c4546",
+                        "error": "#ba1a1a",
+                        "on-surface": "#1b1b1b",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#c6c6c7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "stack-md": "24px",
+                        "stack-lg": "48px",
+                        "gutter": "32px",
+                        "section-gap": "160px",
+                        "margin-mobile": "24px",
+                        "margin-desktop": "80px",
+                        "section-padding": "80px",
+                        "container-max": "1120px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-sm": ["JetBrains Mono"],
+                        "label-md": ["JetBrains Mono"],
+                        "caption": ["Hanken Grotesk"],
+                        "headline-md": ["Chivo"],
+                        "headline-lg-mobile": ["Chivo"],
+                        "headline-lg": ["Chivo"],
+                        "headline-xl": ["JetBrains Mono"],
+                        "display-lg": ["Chivo"],
+                        "display-xl": ["Chivo"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "caption": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "30px", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg": ["80px", { "lineHeight": "84px", "letterSpacing": "-0.03em", "fontWeight": "900" }],
+                        "display-xl": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "900" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .timeline-spine {
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: theme('colors.outline-variant');
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .timeline-spine {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        .flowing-bg {
+            background: linear-gradient(135deg, theme('colors.background') 0%, theme('colors.surface-alt') 100%);
+            background-size: 400% 400%;
+            animation: gradientFlow 15s ease infinite;
+        }
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background flowing-bg font-body-md text-body-md antialiased min-h-screen flex flex-col">
+<header class="bg-surface/80 backdrop-blur-md full-width top-0 sticky border-b border-outline-variant/30 shadow-sm z-50">
+    <div id="header-placeholder"></div>
+</header>
+<div id="mobile-menu" class="hidden md:hidden bg-surface border-b border-primary w-full px-margin-mobile py-6 flex flex-col gap-4 shadow-lg absolute top-20 left-0 z-40">
+    <a href="home.html" class="font-label-sm uppercase tracking-widest text-primary py-3 border-b border-outline-variant/30 flex items-center justify-between">
+        Home <span class="material-symbols-outlined">chevron_right</span>
+    </a>
+    <a href="portfolio_page.html" class="font-label-sm uppercase tracking-widest text-primary py-3 border-b border-outline-variant/30 flex items-center justify-between">
+        Portfolio <span class="material-symbols-outlined">chevron_right</span>
+    </a>
+    <a href="mailto:info@darynavakulenko.com" class="font-label-sm uppercase tracking-widest text-primary py-3 flex items-center justify-between">
+        Contact <span class="material-symbols-outlined">mail</span>
+    </a>
+</div>
+
+<main class="flex-grow px-margin-mobile md:px-margin-desktop py-8 md:py-16 max-w-[1440px] mx-auto w-full relative">
+<div class="w-full mb-6 md:mb-8">
+    <a href="portfolio_page.html" class="inline-flex items-center gap-2 px-4 py-2.5 md:px-5 md:py-3 font-label-sm text-xs md:text-sm tracking-widest uppercase border border-primary hover:bg-primary hover:text-white transition-colors w-fit">
+        <span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
+        Back to Portfolio
+    </a>
+</div>
+
+<!-- Header Section -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-gutter mb-10 md:mb-20">
+<div class="col-span-1 md:col-span-12">
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-2">Experience / Case Study</p>
+<h1 class="font-display-xl text-3xl md:text-display-xl text-primary mb-4 tracking-tighter">Tegus by AlphaSense</h1>
+</div>
+
+<div class="col-span-1 md:col-span-4 border-t-2 border-primary pt-3 md:pt-stack-sm">
+<h3 class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-1">Role</h3>
+<p class="font-headline-md text-lg md:text-headline-md text-primary">Consultant</p>
+</div>
+<div class="col-span-1 md:col-span-4 border-t-2 border-primary pt-3 md:pt-stack-sm">
+<h3 class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-1">Timeline</h3>
+<p class="font-headline-md text-lg md:text-headline-md text-primary">April 2024 – Present</p>
+</div>
+<div class="col-span-1 md:col-span-4 border-t-2 border-primary pt-3 md:pt-stack-sm">
+<h3 class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-1">Location</h3>
+<p class="font-headline-md text-lg md:text-headline-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-lg md:text-xl">public</span>
+                    London, UK / Remote / Global
+                </p>
+</div>
+
+<div class="col-span-1 md:col-span-8 md:col-start-5 mt-4 md:mt-8">
+<p class="font-body-lg text-body-md md:text-body-lg text-on-surface-variant leading-relaxed">
+                    Delivering strategic advisory and market intelligence to institutional investors and corporate entities, pinpointing commercial friction points and growth vectors in HealthTech, AI, and medical billing software.
+                </p>
+<div class="flex flex-wrap gap-2 md:gap-3 mt-4 md:mt-6">
+<span class="border border-primary px-3 py-1 font-label-sm text-xs md:text-label-sm text-primary uppercase">Consulting</span>
+<span class="border border-primary px-3 py-1 font-label-sm text-xs md:text-label-sm text-primary uppercase">Advisory</span>
+<span class="border border-primary px-3 py-1 font-label-sm text-xs md:text-label-sm text-primary uppercase">HealthTech</span>
+<span class="border border-primary px-3 py-1 font-label-sm text-xs md:text-label-sm text-primary uppercase">AI</span>
+<span class="border border-primary px-3 py-1 font-label-sm text-xs md:text-label-sm text-primary uppercase">Medical Billing Software</span>
+</div>
+</div>
+</section>
+
+<!-- Timeline Section -->
+<section class="relative py-4 md:py-8 mb-10 md:mb-16">
+<div class="text-center mb-8 md:mb-12">
+<h2 class="font-display-lg text-2xl md:text-display-lg tracking-tighter">Impact Timeline</h2>
+</div>
+<div class="relative w-full max-w-4xl mx-auto">
+<div class="timeline-spine"></div>
+
+<!-- Milestone 1 -->
+<div class="relative flex flex-col md:flex-row justify-between items-start md:items-center w-full mb-8 md:mb-12 group pl-10 md:pl-0">
+<div class="order-2 md:order-1 w-full md:w-5/12 text-left md:text-right md:pr-8">
+<h3 class="font-headline-md text-lg md:text-headline-md text-primary mb-1 md:mb-2">Strategic Advisory</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Delivered market intelligence to institutional investors and corporate entities.</p>
+</div>
+<div class="absolute left-3 md:static z-10 order-1 md:order-2 flex items-center justify-center w-6 h-6 md:w-8 md:h-8 bg-background border-2 border-primary rounded-full group-hover:bg-primary transition-colors duration-300">
+<div class="w-2 h-2 md:w-3 md:h-3 bg-primary rounded-full group-hover:bg-background transition-colors duration-300"></div>
+</div>
+<div class="order-3 w-full md:w-5/12 md:pl-8 hidden md:block"></div>
+</div>
+
+<!-- Milestone 2 -->
+<div class="relative flex flex-col md:flex-row justify-between items-start md:items-center w-full mb-8 md:mb-12 group pl-10 md:pl-0">
+<div class="order-1 w-full md:w-5/12 md:pr-8 hidden md:block text-right"></div>
+<div class="absolute left-3 md:static z-10 order-1 md:order-2 flex items-center justify-center w-6 h-6 md:w-8 md:h-8 bg-background border-2 border-primary rounded-full group-hover:bg-primary transition-colors duration-300">
+<div class="w-2 h-2 md:w-3 md:h-3 bg-primary rounded-full group-hover:bg-background transition-colors duration-300"></div>
+</div>
+<div class="order-2 md:order-3 w-full md:w-5/12 md:pl-8 text-left">
+<h3 class="font-headline-md text-lg md:text-headline-md text-primary mb-1 md:mb-2">Market Intelligence</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Pinpointed commercial friction points and growth vectors in HealthTech.</p>
+</div>
+</div>
+
+<!-- Milestone 3 -->
+<div class="relative flex flex-col md:flex-row justify-between items-start md:items-center w-full group pl-10 md:pl-0">
+<div class="order-2 md:order-1 w-full md:w-5/12 text-left md:text-right md:pr-8">
+<h3 class="font-headline-md text-lg md:text-headline-md text-primary mb-1 md:mb-2">AI &amp; Billing Expertise</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Analyzed developments in AI and medical billing software.</p>
+</div>
+<div class="absolute left-3 md:static z-10 order-1 md:order-2 flex items-center justify-center w-6 h-6 md:w-8 md:h-8 bg-background border-2 border-primary rounded-full group-hover:bg-primary transition-colors duration-300">
+<div class="w-2 h-2 md:w-3 md:h-3 bg-primary rounded-full group-hover:bg-background transition-colors duration-300"></div>
+</div>
+<div class="order-3 w-full md:w-5/12 md:pl-8 hidden md:block"></div>
+</div>
+
+</div>
+</section>
+</main>
+<div id="footer-placeholder"></div>
+
+<script>
+    async function loadComponent(id, file) {
+        const response = await fetch(file);
+        const data = await response.text();
+        document.getElementById(id).innerHTML = data;
+    }
+    loadComponent('header-placeholder', 'header.html');
+    loadComponent('footer-placeholder', 'footer.html');
+</script>
+<script>
+    document.addEventListener('click', (e) => {
+        const toggle = e.target.closest('#mobile-menu-toggle');
+        if (!toggle) return;
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = toggle.querySelector('.material-symbols-outlined');
+        if (mobileMenu) {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            if (menuIcon) {
+                menuIcon.textContent = isHidden ? 'close' : 'menu';
+            }
+        }
+    });
+</script>
+</body>
+</html>

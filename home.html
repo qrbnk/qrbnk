@@ -1,0 +1,681 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Daryna Vakulenko | Digital Transformation Strategist</title>
+<!-- Link Manifest Configuration -->
+<link href="site.webmanifest" rel="manifest">
+<!-- Global Framework Core Foundations -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Chivo:wght@300;400;700;800;900&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- External Animation Ecosystem Foundations -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<!-- Local Theme & Plugin Stylesheets -->
+<link href="dashicons.min.css" rel="stylesheet">
+<link href="admin-bar_min.css" rel="stylesheet">
+<link href="jquery.fancybox.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#dadada",
+                        "secondary": "#5d5e5f",
+                        "on-surface-variant": "#4c4546",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e2e2e2",
+                        "primary-fixed": "#e2e2e2",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "background": "#f9f9f9",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#1b1b1b",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "surface-alt": "#F8F8F8",
+                        "outline": "#7e7576",
+                        "primary-container": "#1b1b1b",
+                        "on-primary-fixed-variant": "#474747",
+                        "surface-bright": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "on-secondary-container": "#636465",
+                        "surface-container-low": "#f3f3f4",
+                        "on-primary-container": "#848484",
+                        "tertiary-container": "#1b1b1b",
+                        "inverse-on-surface": "#f0f1f1",
+                        "secondary-container": "#e2e2e2",
+                        "secondary-fixed": "#e2e2e2",
+                        "outline-variant": "#cfc4c5",
+                        "on-tertiary-container": "#848484",
+                        "primary": "#000000",
+                        "on-background": "#1a1c1c",
+                        "on-surface": "#1a1c1c",
+                        "surface-variant": "#e2e2e2",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-primary": "#c6c6c6",
+                        "surface-tint": "#5e5e5e",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#000000",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#2f3131",
+                        "border-muted": "#E5E5E5",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#eeeeee",
+                        "error": "#ba1a1a"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "section-gap": "160px",
+                        "margin-mobile": "24px",
+                        "margin-desktop": "80px",
+                        "stack-lg": "48px",
+                        "stack-sm": "8px",
+                        "stack-md": "24px",
+                        "gutter": "32px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Chivo"],
+                        "headline-md": ["Chivo"],
+                        "headline-lg-mobile": ["Chivo"],
+                        "display-xl": ["Chivo"],
+                        "display-lg": ["Chivo"],
+                        "label-sm": ["JetBrains Mono"]
+                    },
+                    fontSize: {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-md": ["24px", {"lineHeight": "30px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "display-xl": ["120px", {"lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "display-lg": ["80px", {"lineHeight": "84px", "letterSpacing": "-0.03em", "fontWeight": "900"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        };
+    </script>
+<script src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js" type="module"></script>
+<style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f9f9f9; 
+            padding-top: 32px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Semi-Transparent Wavy Gradient Background Overlay */
+        .wavy-gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+            opacity: 0.55;
+        }
+
+        .gradient-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            will-change: transform;
+            animation: floatWave 20s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+        }
+
+        /* Left shape colors: Teal Green (#5C9E8B) & Terracotta (#885852) */
+        .blob-1 {
+            width: 55vw;
+            height: 55vw;
+            top: -10vw;
+            left: -10vw;
+            background: radial-gradient(circle, rgba(92, 158, 139, 0.7) 0%, rgba(136, 88, 82, 0.5) 70%, transparent 100%);
+        }
+
+        /* Right shape colors: Crimson Red (#E53935) & Slate Blue (#627D98) */
+        .blob-2 {
+            width: 60vw;
+            height: 60vw;
+            bottom: -15vw;
+            right: -10vw;
+            background: radial-gradient(circle, rgba(229, 57, 53, 0.6) 0%, rgba(98, 125, 152, 0.55) 75%, transparent 100%);
+            animation-delay: -6s;
+        }
+
+        /* Middle fluid blending wave blob */
+        .blob-3 {
+            width: 50vw;
+            height: 50vw;
+            top: 25%;
+            left: 20%;
+            background: radial-gradient(circle, rgba(98, 125, 152, 0.45) 0%, rgba(92, 158, 139, 0.45) 50%, rgba(136, 88, 82, 0.35) 100%);
+            animation-delay: -12s;
+        }
+
+        @keyframes floatWave {
+            0% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+                border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%;
+            }
+            33% {
+                transform: translate(6%, 8%) rotate(45deg) scale(1.1);
+                border-radius: 60% 40% 30% 70% / 50% 30% 70% 50%;
+            }
+            66% {
+                transform: translate(-4%, 10%) rotate(90deg) scale(0.95);
+                border-radius: 30% 70% 70% 30% / 30% 60% 40% 70%;
+            }
+            100% {
+                transform: translate(8%, -6%) rotate(135deg) scale(1.05);
+                border-radius: 50% 50% 40% 60% / 60% 40% 60% 40%;
+            }
+        }
+
+        .svg-wave-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0.22;
+            mix-blend-mode: overlay;
+        }
+
+        #wpadminbar {
+            direction: ltr;
+            color: #ffffff;
+            background: #000000;
+            height: 32px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-width: 240px;
+            z-index: 99999;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 500;
+            line-height: 2.9;
+        }
+
+        #wpadminbar .quicklinks {
+            height: 32px;
+            display: flex;
+            justify-content: space-between;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        #wpadminbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        #wpadminbar a.ab-item {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0 4px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: opacity 0.2s ease-in-out;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        #wpadminbar .ab-top-menu > li:hover > a.ab-item {
+            opacity: 0.7;
+        }
+
+        #wpadminbar .dashicons {
+            font-size: 14px;
+            width: 14px;
+            height: 14px;
+            display: inline-block;
+            line-height: 1;
+        }
+
+        @media screen and (max-width: 782px) {
+            body { padding-top: 46px; }
+            #wpadminbar { height: 46px; }
+            #wpadminbar .quicklinks { height: 46px; padding: 0 20px; }
+            #wpadminbar a.ab-item { height: 46px; font-size: 12px; }
+            #wpadminbar .hidden-mobile { display: none !important; }
+        }
+
+        .editorial-container {
+            border: 1px solid #000000;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(8px);
+        }
+
+        .btn-primary {
+            background-color: #000000;
+            color: #ffffff;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-primary:hover {
+            background-color: #333333;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #000000;
+            border: 1px solid #000000;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-secondary:hover {
+            background-color: #000000;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .micro-heading {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            letter-spacing: 0.15em;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: #5d5e5f;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Wavy Character Animation */
+        @keyframes wavyMotion {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .wave-char {
+            display: inline-block;
+            animation: wavyMotion 3s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .wave-char { animation: none; }
+            .gradient-blob { animation: none; }
+        }
+
+        .fade-in-ready { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in-active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary/10">
+
+<!-- Semi-Transparent Wavy Gradient Layer -->
+<div aria-hidden="true" class="wavy-gradient-bg">
+    <div class="gradient-blob blob-1"></div>
+    <div class="gradient-blob blob-2"></div>
+    <div class="gradient-blob blob-3"></div>
+    <svg class="svg-wave-overlay" preserveAspectRatio="none" viewBox="0 0 1440 800" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,192L60,202.7C120,213,240,235,360,213.3C480,192,600,128,720,128C840,128,960,192,1080,208C1200,224,1320,192,1380,176L1440,160L1440,800L1380,800C1320,800,1200,800,1080,800C960,800,840,800,720,800C600,800,480,800,360,800C240,800,120,800,60,800L0,800Z" fill="url(#waveGrad)"></path>
+        <defs>
+            <linearGradient id="waveGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+                <stop offset="0%" stop-color="#5C9E8B" stop-opacity="0.35"></stop>
+                <stop offset="50%" stop-color="#885852" stop-opacity="0.25"></stop>
+                <stop offset="100%" stop-color="#627D98" stop-opacity="0.35"></stop>
+            </linearGradient>
+        </defs>
+    </svg>
+</div>
+
+<!-- WP Admin Bar Styling Overhaul -->
+<div id="wpadminbar">
+<div aria-label="Toolbar" class="quicklinks" id="wp-toolbar" role="navigation">
+<ul class="ab-top-menu" id="wp-admin-bar-root-default">
+<li class="" id="wp-admin-bar-site-name">
+<a class="ab-item" href="home.html">
+<span class="dashicons dashicons-admin-home"></span>
+<span class="font-bold">DARYNA VAKULENKO</span>
+</a>
+</li>
+<li class="hidden-mobile" id="wp-admin-bar-what">
+    <a class="ab-item" href="portfolio_page.html">Portfolio</a>
+</li>
+<li class="hidden-mobile" id="wp-admin-bar-how">
+<a class="ab-item" href="#how">How</a>
+</li>
+<li class="hidden-mobile" id="wp-admin-bar-built">
+<a class="ab-item" href="#built">Execution</a>
+</li>
+<li class="hidden-mobile" id="wp-admin-bar-impact">
+<a class="ab-item" href="#impact">Value</a>
+</li>
+</ul>
+<ul class="ab-top-secondary ab-top-menu" id="wp-admin-bar-top-secondary">
+<li class="" id="wp-admin-bar-home">
+<a class="ab-item" href="home.html">
+<span>Home</span>
+</a>
+</li>
+<li class="" id="wp-admin-bar-my-account">
+<a class="ab-item get-in-touch-btn" href="mailto:info@darynavakulenko.com" target="_blank">
+<span class="">Contact</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+
+<!-- Main Flow Wrapper -->
+<div class="relative z-10" id="page-flow-wrapper">
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-transparent border-b border-black">
+  <div class="relative z-10 text-center px-6 max-w-6xl py-12">
+  <span class="micro-heading mb-12 block">
+              STRATEGY + EXECUTION + DESIGN / 2026
+          </span>
+  <div class="relative flex items-center justify-center mb-12">
+  <h1 class="font-headline-lg text-headline-lg-mobile md:text-display-lg lg:text-display-xl text-primary leading-none uppercase tracking-tight">
+      Daryna Vakulenko
+  </h1>
+  </div>
+  <p class="wavy-text text-xl md:text-3xl lg:text-4xl text-secondary max-w-4xl mx-auto leading-relaxed mb-16 font-light">
+              I bridge the gap between technical execution, commercial growth, and human-centric innovation.
+          </p>
+  <div class="flex flex-col md:flex-row gap-6 justify-center">
+  <a class="btn-primary px-12 py-5 font-label-sm rounded-none text-sm tracking-widest uppercase" href="portfolio_page.html">Portfolio</a>
+  <a class="btn-secondary get-in-touch-btn px-12 py-5 font-label-sm rounded-none text-sm tracking-widest uppercase" href="mailto:info@darynavakulenko.com">Get in Touch</a>
+  </div>
+  </div>
+  </section>
+
+  <main class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-16 space-y-16">
+  <!-- Section 1: Grid-based Content -->
+  <section class="fade-in-ready fade-in-active" id="what">
+      <div class="grid lg:grid-cols-12 gap-gutter">
+          <div class="lg:col-span-7">
+              <h2 class="micro-heading mb-6">What I Actually Do</h2>
+              <h3 class="font-headline-lg text-primary uppercase text-3xl mb-6">Full Cycle Transformation.</h3>
+              <p class="text-xl md:text-3xl lg:text-4xl text-on-surface-variant mb-12 leading-relaxed font-light">
+                  I handle the full cycle of digital transformation and deployment. With a background in medicine and a proven track record across health tech, education, and enterprise B2B sales, I specialize in identifying hidden friction points and creating lasting solutions to complex challenges. 
+              </p>
+              <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
+                  <div class="space-y-2 border-t border-black pt-6">
+                      <span class="font-label-sm block text-primary mb-2">01. INDUSTRY</span>
+                      <p class="font-body-md text-on-surface-variant">End-to-end deployment in healthcare, EdTech, and non-profit initiatives.</p>
+                  </div>
+                  <div class="space-y-2 border-t border-black pt-6">
+                      <span class="font-label-sm block text-primary mb-2">02. COMMERCIAL</span>
+                      <p class="font-body-md text-on-surface-variant">Business development and sales across SMEs and corporate clients.</p>
+                  </div>
+                  <div class="space-y-2 border-t border-black pt-16">
+                      <span class="font-label-sm block text-primary mb-2">03. TECHNICAL</span>
+                      <p class="font-body-md text-on-surface-variant">Program management and AI prototyping (NLP/LLMs, Python, JS).</p>
+                  </div>
+                  <div class="space-y-2 border-t border-black pt-16">
+                      <span class="font-label-sm block text-primary mb-2">04. BRAND</span>
+                      <p class="font-body-md text-on-surface-variant">Creative marketing, visual content, and storytelling strategy.</p>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="lg:col-span-5 relative flex items-center justify-center">
+              <div class="editorial-container p-0 flex items-center justify-center overflow-hidden h-[200px] w-full">
+                  <model-viewer alt="3D Component" ar-status="not-presenting" auto-rotate="" autoplay="" camera-controls="" camera-orbit="0deg 40deg 0.8m" camera-target="10m 25m 10m" src="Untitled.glb" style="width: 100%; height: 100%; display: block; --poster-color: transparent;">
+                  </model-viewer>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Section 2: Clean, High-Contrast Cards -->
+  <section class="fade-in-ready fade-in-active" id="how">
+  <div class="border-y border-black py-16 mb-16 bg-white/50 backdrop-blur-sm">
+  <h2 class="micro-heading mb-6 text-center">How I Know What Works</h2>
+  <div class="max-w-4xl mx-auto text-center px-4">
+  <h3 class="font-headline-md text-headline-lg text-primary uppercase mb-8">A Unique Perspective.</h3>
+  <p class="text-xl md:text-3xl lg:text-4xl text-on-surface-variant leading-relaxed font-light">
+                      I am a trained doctor who pivoted into the tech sector. This path gave me a unique lens: I understand the deeply human side of systems implementation just as well as the technical and commercial realities.
+                  </p>
+  </div>
+  </div>
+  <div class="grid md:grid-cols-3 gap-0 border-x border-black grid-cols-1 bg-white/70 backdrop-blur-sm">
+  <div class="p-12 border-r border-black last:border-r-0 hover:bg-black hover:text-white transition-colors duration-300 border-b">
+  <span class="font-label-sm mb-12 block">FOUNDATION</span>
+  <h4 class="font-headline-md text-2xl mb-6 uppercase">PEOPLE</h4>
+  <p class="font-body-md leading-relaxed opacity-80">Understanding the human side of implementation.</p>
+  </div>
+  <div class="p-12 border-r border-black last:border-r-0 hover:bg-black hover:text-white transition-colors duration-300 border-b">
+  <span class="font-label-sm mb-12 block">CAPABILITY</span>
+  <h4 class="font-headline-md text-2xl mb-6 uppercase">Technical</h4>
+  <p class="font-body-md leading-relaxed opacity-80">Navigating complex technical challenges to deliver real lasting solutions .</p>
+  </div>
+  <div class="p-12 border-r border-black last:border-r-0 hover:bg-black hover:text-white transition-colors duration-300 border-b">
+  <span class="font-label-sm mb-12 block">ALIGNEMNT</span>
+  <h4 class="font-headline-md text-2xl mb-6 uppercase">Commercial</h4>
+  <p class="font-body-md leading-relaxed opacity-80">Aligning technical side with commercial and the current market.</p>
+  </div>
+  </div>
+  </section>
+
+  <!-- Section 3: Large Editorial Block -->
+  <section class="fade-in-ready fade-in-active py-stack-lg" id="built">
+      <div class="grid lg:grid-cols-2 gap-0 border border-black grid-cols-1">
+          <div class="p-6 sm:p-12 md:p-24 bg-white/80 backdrop-blur-sm">
+              <h2 class="micro-heading mb-12">How It Was Built</h2>
+              <p class="text-xl md:text-3xl lg:text-4xl text-on-surface-variant mb-0 leading-relaxed font-light">
+                  I have scaled startups, managed high-value digital health portfolios, and trained AI models on complex clinical data. By moving fluidly across clinical practice, B2B sales, and AI development, I ensure that innovations aren't just built, they are successfully adopted and commercialized.
+              </p>
+          </div>
+          
+          <div class="grid grid-cols-2 bg-black">
+              <div class="p-8 md:p-12 border-b border-r border-white/20 flex flex-col justify-center items-center text-center">
+                  <div class="font-headline-lg text-white text-2xl md:text-4xl mb-2">Doctor</div>
+                  <div class="font-label-sm text-white/50">Clinical</div>
+              </div>
+              <div class="p-8 md:p-12 border-b border-white/20 flex flex-col justify-center items-center text-center">
+                  <div class="font-headline-lg text-white text-2xl md:text-4xl mb-2">Builder</div>
+                  <div class="font-label-sm text-white/50">Technical</div>
+              </div>
+              <div class="p-8 md:p-12 border-r border-white/20 flex flex-col justify-center items-center text-center">
+                  <div class="font-headline-lg text-white text-2xl md:text-4xl mb-2">Scaler</div>
+                  <div class="font-label-sm text-white/50">Growth</div>
+              </div>
+              <div class="p-8 md:p-12 flex flex-col justify-center items-center text-center">
+                  <div class="font-headline-lg text-white text-2xl md:text-4xl mb-2">Creative</div>
+                  <div class="font-label-sm text-white/50">Brand</div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Section 4: Focused Impact -->
+  <section class="fade-in-ready fade-in-active py-stack-lg" id="impact">
+      <div class="max-w-4xl mx-auto">
+
+  <h3 class="font-headline-lg text-headline-lg text-center uppercase mb-12"> Impact</h3>
+  <p class="text-xl md:text-3xl lg:text-4xl leading-relaxed text-center mb-24 opacity-80 font-light text-on-surface-variant">
+                  The situations I am best suited for are those in transition. If you are looking for someone who can translate technical complexity into real-world business results, I am ready to partner.
+              </p>
+  <div class="space-y-0">
+  <div class="editorial-container p-12 border-b-0 hover:bg-surface-container-low transition-colors group cursor-default">
+  <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+  <span class="font-label-sm">01. AI INTEGRATION</span>
+  <p class="font-headline-md text-xl md:w-2/3 group-hover:translate-x-2 transition-transform">Healthcare or enterprise orgs integrating AI and uncovering friction.</p>
+  </div>
+  </div>
+  <div class="editorial-container p-12 border-b-0 hover:bg-surface-container-low transition-colors group cursor-default">
+  <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+  <span class="font-label-sm">02. LEADERSHIP</span>
+  <p class="font-headline-md text-xl md:w-2/3 group-hover:translate-x-2 transition-transform">Teams needing a partner for both technical delivery and GTM strategy.</p>
+  </div>
+  </div>
+  <div class="editorial-container p-12 hover:bg-surface-container-low transition-colors group cursor-default">
+  <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+  <span class="font-label-sm">03. EXECUTION</span>
+  <p class="font-headline-md text-xl md:w-2/3 group-hover:translate-x-2 transition-transform">Projects stuck in the gap between "idea" and "result."</p>
+  </div>
+  </div>
+  </div>
+  </div>
+  </section>
+
+  </main>
+
+  <footer class="w-full py-24 bg-black text-white">
+  <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+  <div class="flex flex-col md:flex-row justify-between items-start gap-16 mb-24">
+  <div class="font-headline-lg text-4xl uppercase tracking-tighter">Daryna<br>Vakulenko</div>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-12 grid-cols-1">
+  <div class="flex flex-col gap-4">
+  <span class="font-label-sm opacity-40">NAVIGATION</span>
+  <a class="font-label-sm hover:underline" href="#what">WHAT</a>
+  <a class="font-label-sm hover:underline" href="#how">HOW</a>
+  <a class="font-label-sm hover:underline" href="#built">EXECUTION</a>
+  </div>
+  <div class="flex flex-col gap-4">
+  <span class="font-label-sm opacity-40">SOCIAL</span>
+  <a class="font-label-sm hover:underline" href="https://linkedin.com/in/daryna-vakulenko" target="_blank">LINKEDIN</a>
+  <a class="font-label-sm hover:underline" href="https://www.behance.net/qrbnk" target="_blank">BEHANCE</a>
+  </div>
+
+  </div>
+  </div>
+  <div class="flex flex-col md:flex-row justify-between items-center border-t border-white/20 pt-12 text-center">
+  <div class="font-label-sm opacity-40 uppercase">© 2026 Daryna Vakulenko. ALL RIGHTS RESERVED.</div>
+  </div>
+  </div>
+  </footer>
+</div>
+
+<!-- SYSTEM SCRIPTS -->
+<script src="jquery.min.js"></script>
+<script src="jquery-migrate.min.js"></script>
+<script src="jquery.fancybox.min.js"></script>
+<script src="third.js"></script>
+<script src="smush-lazy-load.min.js"></script>
+<script src="wp-emoji-release.min.js"></script>
+<script src="general.js"></script>
+
+<script id="native-ui-handlers">
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.wavy-text').forEach(el => {
+            const text = el.textContent.trim();
+            const words = text.split(' ');
+            el.innerHTML = '';
+            let charIndex = 0;
+
+            words.forEach((word, wordIndex) => {
+                const wordSpan = document.createElement('span');
+                wordSpan.className = 'inline-block whitespace-nowrap';
+
+                for (const char of word) {
+                    const charSpan = document.createElement('span');
+                    charSpan.textContent = char;
+                    charSpan.className = 'wave-char';
+                    charSpan.style.animationDelay = `${charIndex * 0.04}s`;
+                    wordSpan.appendChild(charSpan);
+                    charIndex++;
+                }
+
+                el.appendChild(wordSpan);
+
+                if (wordIndex < words.length - 1) {
+                    const spaceSpan = document.createElement('span');
+                    spaceSpan.innerHTML = '&nbsp;';
+                    spaceSpan.className = 'inline-block';
+                    el.appendChild(spaceSpan);
+                    charIndex++;
+                }
+            });
+        });
+
+        const contactButtons = document.querySelectorAll('.get-in-touch-btn, a[href^="mailto:"]');
+        contactButtons.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const mailtoTarget = this.getAttribute('href');
+
+                if (typeof gsap !== 'undefined') {
+                    gsap.to("#page-flow-wrapper > *", {
+                        duration: 1.4,
+                        y: 100,
+                        opacity: 0,
+                        scale: 0.96,
+                        filter: "blur(10px)",
+                        stagger: {
+                            amount: 0.3,
+                            from: "top"
+                        },
+                        ease: "sine.inOut",
+                        onComplete: () => {
+                            window.location.href = mailtoTarget;
+                        }
+                    });
+                } else {
+                    window.location.href = mailtoTarget;
+                }
+            });
+        });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const adminBarOffset = window.innerWidth <= 782 ? 46 : 32;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - adminBarOffset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'auto'
+                });
+            }
+        });
+    });
+
+    const observerOptions = {
+        threshold: 0.05,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-active');
+            }
+        });
+    }, observerOptions);
+</script>
+</body></html>
