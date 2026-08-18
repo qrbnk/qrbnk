@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>In Custody — How It Works</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "surface": "#fff8f2",
+              "surface-bright": "#fff8f2",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#fff2de",
+              "surface-container": "#ffecc9",
+              "on-surface": "#251a00",
+              "on-surface-variant": "#4c4546",
+              "outline": "#7e7576",
+              "primary": "#000000",
+              "on-primary": "#ffffff",
+              "background": "#fff8f2",
+              "on-background": "#251a00",
+              "tertiary-purple": "#6D4DA3",
+              "neutral-amber": "#FFC52F"
+            },
+            "borderRadius": {
+              "DEFAULT": "0px","sm": "0px","md": "0px","lg": "0px","xl": "0px","2xl": "0px","3xl": "0px","full": "0px"
+            },
+            "spacing": {
+              "margin-desktop": "80px","margin-mobile": "24px","gutter": "32px","section-gap": "160px","stack-sm": "8px","stack-md": "24px","stack-lg": "48px"
+            },
+            "fontFamily": {
+              "headline-md": ["Chivo"],"label-sm": ["JetBrains Mono"],"body-md": ["Inter"],"display-lg": ["Chivo"],"body-lg": ["Inter"],"headline-lg-mobile": ["Chivo"],"headline-lg": ["Chivo"],"display-xl": ["Chivo"]
+            },
+            "fontSize": {
+              "headline-md": ["24px", { "lineHeight": "30px", "fontWeight": "700" }],
+              "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+              "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+              "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+              "headline-lg-mobile": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+              "headline-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+              "display-xl": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "900" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+    body { background-color: #fff8f2; color: #251a00; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    .material-symbols-outlined { font-family: 'Material Symbols Outlined'; font-weight: normal; font-style: normal; font-size: 24px; line-height: 1; display: inline-block; }
+    .step-num { font-family: "Chivo", sans-serif; }
+</style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md selection:bg-neutral-amber selection:text-primary">
+<header class="bg-background/95 sticky top-0 full-width z-50 border-b border-primary">
+    <div id="header-placeholder"></div>
+</header>
+
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-gutter relative">
+
+<div class="col-span-1 md:col-span-12 mb-2 flex flex-wrap items-center gap-3">
+    <a href="portfolio_page.html" class="inline-flex items-center gap-2 px-4 py-2.5 md:px-5 md:py-3 font-label-sm text-xs md:text-sm tracking-widest uppercase border border-primary text-primary hover:bg-primary hover:text-on-primary transition-colors w-fit">
+        <span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
+        Back to Portfolio
+    </a>
+    <a href="in_custody.html" class="inline-flex items-center gap-2 px-4 py-2.5 md:px-5 md:py-3 font-label-sm text-xs md:text-sm tracking-widest uppercase border border-primary text-primary hover:bg-neutral-amber hover:text-primary transition-colors w-fit">
+        Back to Overview
+    </a>
+</div>
+
+<header class="col-span-1 md:col-span-10 md:col-start-2 mb-10 md:mb-16 z-10 relative">
+    <h1 class="font-display-xl text-4xl md:text-display-xl text-primary mb-2 uppercase leading-none tracking-tighter">
+        How It Works
+    </h1>
+    <div class="flex flex-wrap items-center gap-2 md:gap-4 font-label-sm text-xs md:text-label-sm text-primary border-t-2 border-primary pt-3 md:pt-stack-sm w-full max-w-3xl uppercase">
+        <span>in_Custody</span>
+        <span class="w-1.5 h-1.5 bg-primary"></span>
+        <span>From Custody to Career</span>
+    </div>
+</header>
+
+<article class="col-span-1 md:col-span-10 md:col-start-2 relative z-10 mb-16 md:mb-24">
+
+    <!-- Steps -->
+    <div class="relative">
+        <div class="hidden md:block absolute left-[19px] top-2 bottom-2 w-px bg-primary/30"></div>
+
+        <div class="flex gap-5 md:gap-8 mb-10 md:mb-12">
+            <div class="step-num shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary text-on-primary flex items-center justify-center text-sm md:text-base font-bold z-10">1</div>
+            <div class="pt-0.5 md:pt-1">
+                <h3 class="font-headline-md text-lg md:text-headline-md text-primary mb-2">Track</h3>
+                <p class="font-body-md text-sm md:text-body-md text-on-surface-variant leading-relaxed max-w-2xl">
+                    While people in custody work on vocational projects, staff log the skills they develop as they go &#8212; replacing paper-based, manual record-keeping with one system.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex gap-5 md:gap-8 mb-10 md:mb-12">
+            <div class="step-num shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary text-on-primary flex items-center justify-center text-sm md:text-base font-bold z-10">2</div>
+            <div class="pt-0.5 md:pt-1">
+                <h3 class="font-headline-md text-lg md:text-headline-md text-primary mb-2">Visualise</h3>
+                <p class="font-body-md text-sm md:text-body-md text-on-surface-variant leading-relaxed max-w-2xl">
+                    Those skills are displayed back to the participant on an interactive dashboard &#8212; showing what they've learned, how far they've come, and what's still ahead.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex gap-5 md:gap-8 mb-10 md:mb-12">
+            <div class="step-num shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary text-on-primary flex items-center justify-center text-sm md:text-base font-bold z-10">3</div>
+            <div class="pt-0.5 md:pt-1">
+                <h3 class="font-headline-md text-lg md:text-headline-md text-primary mb-2">Match</h3>
+                <p class="font-body-md text-sm md:text-body-md text-on-surface-variant leading-relaxed max-w-2xl">
+                    The platform maps those same skills onto real job opportunities in the market &#8212; giving each participant a concrete sense of where their training could actually lead.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex gap-5 md:gap-8 mb-10 md:mb-12">
+            <div class="step-num shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary text-on-primary flex items-center justify-center text-sm md:text-base font-bold z-10">4</div>
+            <div class="pt-0.5 md:pt-1">
+                <h3 class="font-headline-md text-lg md:text-headline-md text-primary mb-2">Build confidence</h3>
+                <p class="font-body-md text-sm md:text-body-md text-on-surface-variant leading-relaxed max-w-2xl">
+                    Presenting skills and progress in an interactive, visual way is designed to lift confidence and motivation &#8212; both linked to lower reoffending risk on release.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex gap-5 md:gap-8">
+            <div class="step-num shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary text-on-primary flex items-center justify-center text-sm md:text-base font-bold z-10">5</div>
+            <div class="pt-0.5 md:pt-1">
+                <h3 class="font-headline-md text-lg md:text-headline-md text-primary mb-2">Support staff</h3>
+                <p class="font-body-md text-sm md:text-body-md text-on-surface-variant leading-relaxed max-w-2xl">
+                    Every step above also removes work from staff &#8212; one system to manage the whole training process, instead of scattered manual tracking.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Research callout -->
+    <div class="border-2 border-primary bg-surface-container-low p-6 md:p-8 mt-14 md:mt-20">
+        <h4 class="font-label-sm text-xs md:text-label-sm uppercase tracking-widest mb-3 text-primary">Research Goal</h4>
+        <p class="font-body-md text-sm md:text-body-md text-on-surface leading-relaxed max-w-2xl">
+            Part of the project is aimed at researching the tool's influence on confidence levels among people in custody, and how it helps them find work after release &#8212; including its wider effect on reoffending rates and employment outcomes across the UK.
+        </p>
+    </div>
+
+</article>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+    async function loadComponent(id, file) {
+        const response = await fetch(file);
+        const data = await response.text();
+        document.getElementById(id).innerHTML = data;
+    }
+    loadComponent('header-placeholder', 'header.html');
+    loadComponent('footer-placeholder', 'footer.html');
+</script>
+</body>
+</html>

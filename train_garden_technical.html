@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Train Garden - Technical Architecture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "surface": "#fff8f2",
+              "surface-dim": "#ffd578",
+              "surface-bright": "#fff8f2",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#fff2de",
+              "surface-container": "#ffecc9",
+              "surface-container-high": "#ffe5b4",
+              "surface-container-highest": "#ffdf9d",
+              "on-surface": "#251a00",
+              "on-surface-variant": "#4c4546",
+              "inverse-surface": "#3f2e00",
+              "inverse-on-surface": "#ffefd4",
+              "outline": "#7e7576",
+              "outline-variant": "#cfc4c5",
+              "surface-tint": "#5e5e5e",
+              "primary": "#000000",
+              "on-primary": "#ffffff",
+              "primary-container": "#1b1b1b",
+              "on-primary-container": "#848484",
+              "inverse-primary": "#c6c6c6",
+              "secondary": "#5d5e5f",
+              "on-secondary": "#ffffff",
+              "secondary-container": "#e0dfe0",
+              "on-secondary-container": "#626364",
+              "tertiary": "#000000",
+              "on-tertiary": "#ffffff",
+              "tertiary-container": "#270058",
+              "on-tertiary-container": "#9473cc",
+              "error": "#ba1a1a",
+              "on-error": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-error-container": "#93000a",
+              "primary-fixed": "#e2e2e2",
+              "primary-fixed-dim": "#c6c6c6",
+              "on-primary-fixed": "#1b1b1b",
+              "on-primary-fixed-variant": "#474747",
+              "secondary-fixed": "#e3e2e3",
+              "secondary-fixed-dim": "#c6c6c7",
+              "on-secondary-fixed": "#1a1c1d",
+              "on-secondary-fixed-variant": "#464748",
+              "tertiary-fixed": "#ecdcff",
+              "tertiary-fixed-dim": "#d5bbff",
+              "on-tertiary-fixed": "#270058",
+              "on-tertiary-fixed-variant": "#553589",
+              "background": "#fff8f2",
+              "on-background": "#251a00",
+              "surface-variant": "#ffdf9d",
+              "tertiary-purple": "#6D4DA3",
+              "neutral-amber": "#FFC52F"
+            },
+            "borderRadius": {
+              "DEFAULT": "0px",
+              "sm": "0px",
+              "md": "0px",
+              "lg": "0px",
+              "xl": "0px",
+              "2xl": "0px",
+              "3xl": "0px",
+              "full": "0px"
+            },
+            "spacing": {
+              "margin-desktop": "80px",
+              "margin-mobile": "24px",
+              "gutter": "32px",
+              "section-gap": "160px",
+              "stack-sm": "8px",
+              "stack-md": "24px",
+              "stack-lg": "48px"
+            },
+            "fontFamily": {
+              "headline-md": ["Chivo"],
+              "label-sm": ["JetBrains Mono"],
+              "body-md": ["Inter"],
+              "display-lg": ["Chivo"],
+              "body-lg": ["Inter"],
+              "headline-lg-mobile": ["Chivo"],
+              "headline-lg": ["Chivo"],
+              "display-xl": ["Chivo"]
+            },
+            "fontSize": {
+              "headline-md": ["24px", { "lineHeight": "30px", "fontWeight": "700" }],
+              "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+              "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+              "display-lg": ["80px", { "lineHeight": "84px", "letterSpacing": "-0.03em", "fontWeight": "900" }],
+              "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+              "headline-lg-mobile": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+              "headline-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+              "display-xl": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "900" }]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #fff8f2;
+            color: #251a00;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            display: inline-block;
+        }
+        .timeline-dot {
+            transition: all 0.3s ease;
+        }
+        .timeline-item:hover .timeline-dot {
+            transform: scale(1.5);
+            background-color: #000;
+            border-color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md selection:bg-neutral-amber selection:text-primary">
+<header class="bg-background/95 sticky top-0 full-width z-50 border-b border-primary">
+    <div id="header-placeholder"></div>
+</header>
+<div id="mobile-menu" class="hidden md:hidden bg-background border-b border-primary w-full px-margin-mobile py-6 flex flex-col gap-4 absolute top-20 left-0 z-40">
+    <a href="home.html" class="font-label-sm uppercase tracking-widest text-primary py-3 border-b border-primary flex items-center justify-between hover:text-neutral-amber transition-colors">
+        Home <span class="material-symbols-outlined">chevron_right</span>
+    </a>
+    <a href="portfolio_page.html" class="font-label-sm uppercase tracking-widest text-primary py-3 border-b border-primary flex items-center justify-between hover:text-neutral-amber transition-colors">
+        Portfolio <span class="material-symbols-outlined">chevron_right</span>
+    </a>
+    <a href="mailto:info@darynavakulenko.com" class="font-label-sm uppercase tracking-widest text-primary py-3 flex items-center justify-between hover:text-neutral-amber transition-colors">
+        Contact <span class="material-symbols-outlined">mail</span>
+    </a>
+</div>
+
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-gutter relative">
+<div class="col-span-1 md:col-span-12 mb-2 flex flex-wrap items-center gap-3">
+    <a href="portfolio_page.html" class="inline-flex items-center gap-2 px-4 py-2.5 md:px-5 md:py-3 font-label-sm text-xs md:text-sm tracking-widest uppercase border border-primary text-primary hover:bg-primary hover:text-on-primary transition-colors w-fit">
+        <span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
+        Back to Portfolio
+    </a>
+    <a href="train_garden_extended.html" class="inline-flex items-center gap-2 px-4 py-2.5 md:px-5 md:py-3 font-label-sm text-xs md:text-sm tracking-widest uppercase border border-primary text-primary hover:bg-neutral-amber hover:text-primary transition-colors w-fit">
+        View Delivery / Strategy Case Study
+        <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+    </a>
+</div>
+
+<header class="col-span-1 md:col-span-10 md:col-start-2 mb-8 md:mb-12 z-10 relative">
+    <h1 class="font-display-xl text-4xl md:text-display-xl text-primary mb-2 uppercase leading-none tracking-tighter">
+        Train Garden
+    </h1>
+    <h2 class="font-headline-lg text-2xl md:text-headline-lg text-primary mb-4">
+        System Architecture &amp; Engineering
+    </h2>
+    <div class="flex flex-wrap items-center gap-2 md:gap-4 font-label-sm text-xs md:text-label-sm text-primary border-t-2 border-primary pt-3 md:pt-stack-sm w-full max-w-2xl mb-6 uppercase">
+        <span>Technical Case Study</span>
+        <span class="w-1.5 h-1.5 bg-primary"></span>
+        <span>Full-Stack, Multi-Agent AI Platform</span>
+        <span class="w-1.5 h-1.5 bg-primary"></span>
+        <span>London, UK</span>
+    </div>
+    <p class="font-body-lg text-body-md md:text-body-lg text-on-surface max-w-2xl mb-6">
+        Train Garden is a full-stack, multi-agent AI career platform built to match candidates to green-economy roles and generate UK-compliant Social Value reporting for hiring companies.
+    </p>
+
+    <aside class="border-t-2 border-primary pt-3 md:pt-stack-sm">
+        <h4 class="font-label-sm text-xs md:text-label-sm uppercase tracking-widest mb-3 text-primary">Stack</h4>
+        <div class="flex flex-wrap gap-1.5 md:gap-2">
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">Flask</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">LangGraph</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">LangChain</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">Ollama / Llama 3.1</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">ChromaDB</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">Sentence-Transformers</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">SQLite</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">python-docx / PyPDF</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">faster-whisper</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">python</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">javascript</span>
+        </div>
+    </aside>
+</header>
+
+<article class="col-span-1 md:col-span-10 md:col-start-2 relative mb-12 border-2 border-primary bg-surface-container-lowest overflow-hidden">
+  <img 
+    src="social-value.png" 
+    alt="Social Value" 
+    class="w-full h-auto object-contain max-h-[800Spx] mx-auto" 
+  />
+</article>
+
+<section class="col-span-1 md:col-span-10 md:col-start-2 relative z-10 mb-16">
+    <h3 class="font-label-sm text-xs uppercase tracking-widest text-primary mb-4 border-b-2 border-primary pb-2">Architecture</h3>
+    <div class="bg-surface-bright border-2 border-primary p-4 md:p-8 overflow-x-auto">
+        <pre class="font-label-sm text-[11px] md:text-xs leading-relaxed text-primary whitespace-pre">Flask + Flask-CORS API
+  &#9500;&#9472; LangGraph Companion Agent (StateGraph, SqliteSaver checkpointer)
+  &#9474;     retrieve &#8594; chat &#8594; save_memory, per-user persistent state
+  &#9500;&#9472; LangGraph Research Agent (separate StateGraph + checkpointer)
+  &#9474;     DuckDuckGo search &#8594; reflection node &#8594; adequacy check &#8594; respond
+  &#9500;&#9472; Dual Vector Memory
+  &#9474;     &#9500;&#9472; ChromaDB + all-MiniLM-L6-v2 (semantic user memory)
+  &#9474;     &#9492;&#9472; Ollama nomic-embed-text (context retrieval)
+  &#9500;&#9472; Multi-Tenant Vaults (candidate / company / partner / admin)
+  &#9474;     lock-protected, atomic-write JSON persistence
+  &#9500;&#9472; Semantic Matching &#8594; batched cosine similarity vs. string matching
+  &#9492;&#9472; Social Value Engine &#8594; National TOMs calc + PPN 002 narrative generation</pre>
+    </div>
+</section>
+
+<section class="col-span-1 md:col-span-10 md:col-start-2 relative z-10">
+<h3 class="font-label-sm text-xs uppercase tracking-widest text-primary mb-4 border-b-2 border-primary pb-2">Engineering Decisions</h3>
+<div class="grid md:grid-cols-2 gap-4 md:gap-6">
+<!-- Decision 1 -->
+<div class="group bg-surface-bright p-5 md:p-6 border-2 border-primary transition-all duration-300 hover:bg-primary hover:text-on-primary">
+<div class="flex items-center gap-3 mb-2">
+<span class="font-label-sm text-xs border border-current px-2 py-0.5 uppercase tracking-widest text-tertiary-purple group-hover:text-neutral-amber group-hover:border-neutral-amber">01</span>
+<h4 class="font-headline-md text-base md:text-headline-md uppercase">Concurrency-Safe Persistence</h4>
+</div>
+<p class="font-body-lg text-body-md md:text-body-lg text-on-surface group-hover:text-on-primary">
+    A process-wide thread lock plus atomic temp-file replacement around every vault and session write, so concurrent requests can't corrupt candidate or company data mid-write.
+</p>
+</div>
+<!-- Decision 2 -->
+<div class="group bg-surface-bright p-5 md:p-6 border-2 border-primary transition-all duration-300 hover:bg-primary hover:text-on-primary">
+<div class="flex items-center gap-3 mb-2">
+<span class="font-label-sm text-xs border border-current px-2 py-0.5 uppercase tracking-widest text-tertiary-purple group-hover:text-neutral-amber group-hover:border-neutral-amber">02</span>
+<h4 class="font-headline-md text-base md:text-headline-md uppercase">Fault-Tolerant LLM Parsing</h4>
+</div>
+<p class="font-body-lg text-body-md md:text-body-lg text-on-surface group-hover:text-on-primary">
+    A balanced-brace JSON slicer with regex recovery, so structured extractions still succeed when a model returns a truncated or malformed response.
+</p>
+</div>
+<!-- Decision 3 -->
+<div class="group bg-surface-bright p-5 md:p-6 border-2 border-primary transition-all duration-300 hover:bg-primary hover:text-on-primary">
+<div class="flex items-center gap-3 mb-2">
+<span class="font-label-sm text-xs border border-current px-2 py-0.5 uppercase tracking-widest text-tertiary-purple group-hover:text-neutral-amber group-hover:border-neutral-amber">03</span>
+<h4 class="font-headline-md text-base md:text-headline-md uppercase">Semantic Match Calibration</h4>
+</div>
+<p class="font-body-lg text-body-md md:text-body-lg text-on-surface group-hover:text-on-primary">
+    Skill and job matching runs on batched cosine similarity rather than string matching, with confidence scores logged so match thresholds can be tuned against real outcomes over time.
+</p>
+</div>
+<!-- Decision 4 -->
+<div class="group bg-surface-bright p-5 md:p-6 border-2 border-primary transition-all duration-300 hover:bg-primary hover:text-on-primary">
+<div class="flex items-center gap-3 mb-2">
+<span class="font-label-sm text-xs border border-current px-2 py-0.5 uppercase tracking-widest text-tertiary-purple group-hover:text-neutral-amber group-hover:border-neutral-amber">04</span>
+<h4 class="font-headline-md text-base md:text-headline-md uppercase">Procurement-Ready Social Value</h4>
+</div>
+<p class="font-body-lg text-body-md md:text-body-lg text-on-surface group-hover:text-on-primary">
+    Real-time National TOMs monetisation (NT1/NT3/NT4 proxy values) plus a grounded PPN 002 narrative generator, output in the format central government tenders require.
+</p>
+</div>
+<!-- Decision 5 -->
+<div class="group bg-surface-bright p-5 md:p-6 border-2 border-primary transition-all duration-300 hover:bg-primary hover:text-on-primary">
+<div class="flex items-center gap-3 mb-2">
+<span class="font-label-sm text-xs border border-current px-2 py-0.5 uppercase tracking-widest text-tertiary-purple group-hover:text-neutral-amber group-hover:border-neutral-amber">05</span>
+<h4 class="font-headline-md text-base md:text-headline-md uppercase">Link Verification Engine</h4>
+</div>
+<p class="font-body-lg text-body-md md:text-body-lg text-on-surface group-hover:text-on-primary">
+    Multi-threaded HEAD/GET checks confirm external resources actually resolve before they're shown to a candidate, falling back to a live search query if a link is dead.
+</p>
+</div>
+<!-- Decision 6 -->
+<div class="group bg-surface-bright p-5 md:p-6 border-2 border-primary transition-all duration-300 hover:bg-primary hover:text-on-primary">
+<div class="flex items-center gap-3 mb-2">
+<span class="font-label-sm text-xs border border-current px-2 py-0.5 uppercase tracking-widest text-tertiary-purple group-hover:text-neutral-amber group-hover:border-neutral-amber">06</span>
+<h4 class="font-headline-md text-base md:text-headline-md uppercase">Consent-Decoupled Privacy</h4>
+</div>
+<p class="font-body-lg text-body-md md:text-body-lg text-on-surface group-hover:text-on-primary">
+    Candidate matching visibility is decoupled from social value consent, so a candidate can be matched to roles without automatically opting their data into a company's reporting.
+</p>
+</div>
+</div>
+</section>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+    async function loadComponent(id, file) {
+        const response = await fetch(file);
+        const data = await response.text();
+        document.getElementById(id).innerHTML = data;
+    }
+    loadComponent('header-placeholder', 'header.html');
+    loadComponent('footer-placeholder', 'footer.html');
+</script>
+<script>
+    document.addEventListener('click', (e) => {
+        const toggle = e.target.closest('#mobile-menu-toggle');
+        if (!toggle) return;
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = toggle.querySelector('.material-symbols-outlined');
+        if (mobileMenu) {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            if (menuIcon) {
+                menuIcon.textContent = isHidden ? 'close' : 'menu';
+            }
+        }
+    });
+</script>
+</body>
+</html>

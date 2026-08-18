@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>In Custody (Train Garden) — Staff Gateway Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "surface": "#fff8f2",
+              "surface-bright": "#fff8f2",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#fff2de",
+              "surface-container": "#ffecc9",
+              "on-surface": "#251a00",
+              "on-surface-variant": "#4c4546",
+              "outline": "#7e7576",
+              "primary": "#000000",
+              "on-primary": "#ffffff",
+              "background": "#fff8f2",
+              "on-background": "#251a00",
+              "tertiary-purple": "#6D4DA3",
+              "neutral-amber": "#FFC52F"
+            },
+            "borderRadius": {
+              "DEFAULT": "0px","sm": "0px","md": "0px","lg": "0px","xl": "0px","2xl": "0px","3xl": "0px","full": "0px"
+            },
+            "spacing": {
+              "margin-desktop": "80px","margin-mobile": "24px","gutter": "32px","section-gap": "160px","stack-sm": "8px","stack-md": "24px","stack-lg": "48px"
+            },
+            "fontFamily": {
+              "headline-md": ["Chivo"],"label-sm": ["JetBrains Mono"],"body-md": ["Inter"],"display-lg": ["Chivo"],"body-lg": ["Inter"],"headline-lg-mobile": ["Chivo"],"headline-lg": ["Chivo"],"display-xl": ["Chivo"]
+            },
+            "fontSize": {
+              "headline-md": ["24px", { "lineHeight": "30px", "fontWeight": "700" }],
+              "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+              "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+              "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+              "headline-lg-mobile": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+              "headline-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+              "display-xl": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "900" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+    body { background-color: #fff8f2; color: #251a00; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    .material-symbols-outlined { font-family: 'Material Symbols Outlined'; font-weight: normal; font-style: normal; font-size: 24px; line-height: 1; display: inline-block; }
+    .screenshot-placeholder {
+        background-image: repeating-linear-gradient(45deg, #f3ead9 0, #f3ead9 12px, #fff8f2 12px, #fff8f2 24px);
+    }
+</style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md selection:bg-neutral-amber selection:text-primary">
+<header class="bg-background/95 sticky top-0 full-width z-50 border-b border-primary">
+    <div id="header-placeholder"></div>
+</header>
+
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-5 md:py-1 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-gutter relative">
+
+<div class="col-span-1 md:col-span-12 mb-2 flex flex-wrap items-center gap-3">
+    <a href="portfolio_page.html" class="inline-flex items-center gap-2 px-4 py-2.5 md:px-5 md:py-3 font-label-sm text-xs md:text-sm tracking-widest uppercase border border-primary text-primary hover:bg-primary hover:text-on-primary transition-colors w-fit">
+        <span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
+        Back to Portfolio
+    </a>
+</div>
+
+<header class="col-span-1 md:col-span-10 md:col-start-2 z-10 relative">
+    <h1 class="font-display-xl text-4xl md:text-display-xl text-primary uppercase leading-none tracking-tighter">
+        in_Custody
+    </h1>
+    <div class="flex flex-wrap items-center gap-2 md:gap-4 font-label-sm text-xs md:text-label-sm text-primary border-t-2 border-primary pt-3 md:pt-stack-sm w-full max-w-3xl uppercase">
+        <span>Product Overview</span>
+        <span class="w-1.5 h-1.5 bg-primary"></span>
+        <span>Prison Technology / GovTech</span>
+        <span class="w-1.5 h-1.5 bg-primary"></span>
+        <span>UK</span>
+    </div>
+</header>
+
+<article class="col-span-1 md:col-span-10 md:col-start-2 relative z-10 mb-16">
+    <p class="font-body-lg text-body-md md:text-body-lg text-on-surface leading-relaxed mb-5">
+        A platform used to track and analyse the skills people in-custody develop while working on projects in custodial environments. <br /> 
+        A tool will track the skills, visually display it on a platform, showcase progress and real job opportunities on the market the individual may reach. By showcasing skills, progress in interactive and innovative way it will also boost confidence levels and motivation, which in turn will reduce reoffending rates. <br />
+        The platform is also designed to help staff members manage the process more efficiently, replacing current manual processes. <br />
+        Part of the project is aimed at research on the influence of the tool on the confidence levels of people in-custody and how it can help them find a job after release. <br />
+        Additionally, how the tool can help to decrease reoffending rates and improve employment rates in the UK. <br />
+    </p>
+    <!-- Screenshots -->
+ <!-- Screenshots -->
+    <div class="flex flex-col gap-6 mb-8">
+        <div class="border-2 border-primary bg-surface-container-lowest overflow-hidden w-full">
+            <img src="1.png" alt="In Custody — training timeline and career opportunity matching" class="w-full h-auto object-contain" />
+        </div>
+        <div class="border-2 border-primary bg-surface-container-lowest overflow-hidden w-full">
+            <img src="2.png" alt="In Custody — staff view of participant dashboard, skill tree and competency matrix" class="w-full h-auto object-contain" />
+        </div>
+    </div>
+
+    <!-- Stack -->
+    <aside class="border-t-2 border-primary pt-3 md:pt-stack-sm">
+        <h4 class="font-label-sm text-xs md:text-label-sm uppercase tracking-widest mb-3 text-primary">Stack</h4>
+        <div class="flex flex-wrap gap-1.5 md:gap-2">
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">FastAPI</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">SQLAlchemy / SQLite</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">Ollama / Llama 3.1 (on-device)</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">fpdf2</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">Chart.js</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">Tailwind CSS</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">JavaScript</span>
+            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">Python</span>
+        </div>
+    </aside>
+
+</article>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+    async function loadComponent(id, file) {
+        const response = await fetch(file);
+        const data = await response.text();
+        document.getElementById(id).innerHTML = data;
+    }
+    loadComponent('header-placeholder', 'header.html');
+    loadComponent('footer-placeholder', 'footer.html');
+</script>
+</body>
+</html>
