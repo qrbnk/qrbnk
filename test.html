@@ -1,136 +1,711 @@
-<!DOCTYPE html>
-<html class="light" lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>In Custody (Train Garden) — Staff Gateway Overview</title>
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Daryna Vakulenko | Digital Transformation Strategist</title>
+<!-- Link Manifest Configuration -->
+<link href="site.webmanifest" rel="manifest">
+<!-- Global Framework Core Foundations -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Chivo:wght@300;400;700;800;900&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- External Animation Ecosystem Foundations -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<!-- Local Theme & Plugin Stylesheets -->
+<link href="dashicons.min.css" rel="stylesheet">
+<link href="admin-bar_min.css" rel="stylesheet">
+<link href="jquery.fancybox.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-              "surface": "#fff8f2",
-              "surface-bright": "#fff8f2",
-              "surface-container-lowest": "#ffffff",
-              "surface-container-low": "#fff2de",
-              "surface-container": "#ffecc9",
-              "on-surface": "#251a00",
-              "on-surface-variant": "#4c4546",
-              "outline": "#7e7576",
-              "primary": "#000000",
-              "on-primary": "#ffffff",
-              "background": "#fff8f2",
-              "on-background": "#251a00",
-              "tertiary-purple": "#6D4DA3",
-              "neutral-amber": "#FFC52F"
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#dadada",
+                        "secondary": "#5d5e5f",
+                        "on-surface-variant": "#4c4546",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e2e2e2",
+                        "primary-fixed": "#e2e2e2",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "background": "#f9f9f9",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#1b1b1b",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "surface-alt": "#F8F8F8",
+                        "outline": "#7e7576",
+                        "primary-container": "#1b1b1b",
+                        "on-primary-fixed-variant": "#474747",
+                        "surface-bright": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "on-secondary-container": "#636465",
+                        "surface-container-low": "#f3f3f4",
+                        "on-primary-container": "#848484",
+                        "tertiary-container": "#1b1b1b",
+                        "inverse-on-surface": "#f0f1f1",
+                        "secondary-container": "#e2e2e2",
+                        "secondary-fixed": "#e2e2e2",
+                        "outline-variant": "#cfc4c5",
+                        "on-tertiary-container": "#848484",
+                        "primary": "#000000",
+                        "on-background": "#1a1c1c",
+                        "on-surface": "#1a1c1c",
+                        "surface-variant": "#e2e2e2",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-primary": "#c6c6c6",
+                        "surface-tint": "#5e5e5e",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#000000",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#2f3131",
+                        "border-muted": "#E5E5E5",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#eeeeee",
+                        "error": "#ba1a1a"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "section-gap": "160px",
+                        "margin-mobile": "24px",
+                        "margin-desktop": "80px",
+                        "stack-lg": "48px",
+                        "stack-sm": "8px",
+                        "stack-md": "24px",
+                        "gutter": "32px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Chivo"],
+                        "headline-md": ["Chivo"],
+                        "headline-lg-mobile": ["Chivo"],
+                        "display-xl": ["Chivo"],
+                        "display-lg": ["Chivo"],
+                        "label-sm": ["JetBrains Mono"]
+                    },
+                    fontSize: {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-md": ["24px", {"lineHeight": "30px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "display-xl": ["120px", {"lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "display-lg": ["80px", {"lineHeight": "84px", "letterSpacing": "-0.03em", "fontWeight": "900"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}]
+                    }
+                },
             },
-            "borderRadius": {
-              "DEFAULT": "0px","sm": "0px","md": "0px","lg": "0px","xl": "0px","2xl": "0px","3xl": "0px","full": "0px"
-            },
-            "spacing": {
-              "margin-desktop": "80px","margin-mobile": "24px","gutter": "32px","section-gap": "160px","stack-sm": "8px","stack-md": "24px","stack-lg": "48px"
-            },
-            "fontFamily": {
-              "headline-md": ["Chivo"],"label-sm": ["JetBrains Mono"],"body-md": ["Inter"],"display-lg": ["Chivo"],"body-lg": ["Inter"],"headline-lg-mobile": ["Chivo"],"headline-lg": ["Chivo"],"display-xl": ["Chivo"]
-            },
-            "fontSize": {
-              "headline-md": ["24px", { "lineHeight": "30px", "fontWeight": "700" }],
-              "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
-              "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
-              "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
-              "headline-lg-mobile": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
-              "headline-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
-              "display-xl": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "900" }]
-            }
-          }
-        }
-      }
+        };
     </script>
 <style>
-    body { background-color: #fff8f2; color: #251a00; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-    .material-symbols-outlined { font-family: 'Material Symbols Outlined'; font-weight: normal; font-style: normal; font-size: 24px; line-height: 1; display: inline-block; }
-    .screenshot-placeholder {
-        background-image: repeating-linear-gradient(45deg, #f3ead9 0, #f3ead9 12px, #fff8f2 12px, #fff8f2 24px);
+    body { 
+        font-family: 'Inter', sans-serif; 
+        background-color: #f9f9f9; 
+        padding-top: 32px;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    /* Semi-Transparent Wavy Gradient Background Overlay */
+    .wavy-gradient-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
+        pointer-events: none;
+        overflow: hidden;
+        opacity: 0.55;
+    }
+
+    .gradient-blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(90px);
+        will-change: transform;
+        animation: floatWave 20s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+    }
+
+    .blob-1 {
+        width: 55vw;
+        height: 55vw;
+        top: -10vw;
+        left: -10vw;
+        background: radial-gradient(circle, rgba(92, 158, 139, 0.7) 0%, rgba(136, 88, 82, 0.5) 70%, transparent 100%);
+    }
+
+    .blob-2 {
+        width: 60vw;
+        height: 60vw;
+        bottom: -15vw;
+        right: -10vw;
+        background: radial-gradient(circle, rgba(229, 57, 53, 0.6) 0%, rgba(98, 125, 152, 0.55) 75%, transparent 100%);
+        animation-delay: -6s;
+    }
+
+    .blob-3 {
+        width: 50vw;
+        height: 50vw;
+        top: 25%;
+        left: 20%;
+        background: radial-gradient(circle, rgba(98, 125, 152, 0.45) 0%, rgba(92, 158, 139, 0.45) 50%, rgba(136, 88, 82, 0.35) 100%);
+        animation-delay: -12s;
+    }
+
+    @keyframes floatWave {
+        0% { transform: translate(0, 0) rotate(0deg) scale(1); border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%; }
+        33% { transform: translate(6%, 8%) rotate(45deg) scale(1.1); border-radius: 60% 40% 30% 70% / 50% 30% 70% 50%; }
+        66% { transform: translate(-4%, 10%) rotate(90deg) scale(0.95); border-radius: 30% 70% 70% 30% / 30% 60% 40% 70%; }
+        100% { transform: translate(8%, -6%) rotate(135deg) scale(1.05); border-radius: 50% 50% 40% 60% / 60% 40% 60% 40%; }
+    }
+
+    .svg-wave-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0.22;
+        mix-blend-mode: overlay;
+    }
+
+    #wpadminbar {
+        direction: ltr;
+        color: #ffffff;
+        background: #000000;
+        height: 32px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-width: 240px;
+        z-index: 99999;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 2.9;
+    }
+
+    #wpadminbar .quicklinks {
+        height: 32px;
+        display: flex;
+        justify-content: space-between;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 40px;
+    }
+
+    #wpadminbar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    #wpadminbar a.ab-item {
+        color: #ffffff;
+        text-decoration: none;
+        padding: 0 4px;
+        height: 32px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: opacity 0.2s ease-in-out;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    #wpadminbar .ab-top-menu > li:hover > a.ab-item { opacity: 0.7; }
+    #wpadminbar .dashicons { font-size: 14px; width: 14px; height: 14px; display: inline-block; line-height: 1; }
+
+    .editorial-container {
+        border: 1px solid #000000;
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(8px);
+    }
+
+    .btn-primary {
+        background-color: #000000;
+        color: #ffffff;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .btn-primary:hover { background-color: #333333; transform: translateY(-2px); }
+
+    .btn-secondary {
+        background-color: transparent;
+        color: #000000;
+        border: 1px solid #000000;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .btn-secondary:hover { background-color: #000000; color: #ffffff; transform: translateY(-2px); }
+
+    .micro-heading {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        letter-spacing: 0.15em;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: #5d5e5f;
+    }
+
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+
+    @keyframes wavyMotion {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+    }
+
+    .wave-char {
+        display: inline-block;
+        animation: wavyMotion 3s ease-in-out infinite;
+        will-change: transform;
+    }
+
+    .fade-in-ready { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .fade-in-active { opacity: 1; transform: translateY(0); }
+
+    /* ========================================== */
+    /* MOBILE OVERRIDES (MUST REMAIN AT BOTTOM) */
+    /* ========================================== */
+    @media (max-width: 768px) {
+        .gradient-blob {
+            animation: none !important;
+            filter: blur(30px) !important;
+            opacity: 0.35;
+        }
+        .wavy-gradient-bg { opacity: 0.3; }
+        .svg-wave-overlay { mix-blend-mode: normal !important; opacity: 0.1; }
+        .editorial-container, .backdrop-blur-sm, .backdrop-blur-md {
+            backdrop-filter: none !important;
+            background-color: rgba(255, 255, 255, 0.95) !important;
+        }
+        .wave-char { animation: none !important; } /* Stops CPU letter thrashing on mobile */
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .wave-char { animation: none; }
+        .gradient-blob { animation: none; }
+    }
+
+    @media screen and (max-width: 782px) {
+        body { padding-top: 46px; }
+        #wpadminbar { height: 46px; }
+        #wpadminbar .quicklinks { height: 46px; padding: 0 20px; }
+        #wpadminbar a.ab-item { height: 46px; font-size: 12px; }
+        #wpadminbar .hidden-mobile { display: none !important; }
     }
 </style>
+
 </head>
-<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md selection:bg-neutral-amber selection:text-primary">
-<header class="bg-background/95 sticky top-0 full-width z-50 border-b border-primary">
-    <div id="header-placeholder"></div>
-</header>
+<body class="bg-background text-on-background selection:bg-primary/10">
 
-<main class="flex-grow w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-5 md:py-1 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-gutter relative">
-
-<div class="col-span-1 md:col-span-12 mb-2 flex flex-wrap items-center gap-3">
-    <a href="portfolio_page.html" class="inline-flex items-center gap-2 px-4 py-2.5 md:px-5 md:py-3 font-label-sm text-xs md:text-sm tracking-widest uppercase border border-primary text-primary hover:bg-primary hover:text-on-primary transition-colors w-fit">
-        <span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
-        Back to Portfolio
-    </a>
+<!-- Semi-Transparent Wavy Gradient Layer -->
+<div aria-hidden="true" class="wavy-gradient-bg">
+    <div class="gradient-blob blob-1"></div>
+    <div class="gradient-blob blob-2"></div>
+    <div class="gradient-blob blob-3"></div>
+    <svg class="svg-wave-overlay" preserveAspectRatio="none" viewBox="0 0 1440 800" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,192L60,202.7C120,213,240,235,360,213.3C480,192,600,128,720,128C840,128,960,192,1080,208C1200,224,1320,192,1380,176L1440,160L1440,800L1380,800C1320,800,1200,800,1080,800C960,800,840,800,720,800C600,800,480,800,360,800C240,800,120,800,60,800L0,800Z" fill="url(#waveGrad)"></path>
+        <defs>
+            <linearGradient id="waveGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+                <stop offset="0%" stop-color="#5C9E8B" stop-opacity="0.35"></stop>
+                <stop offset="50%" stop-color="#885852" stop-opacity="0.25"></stop>
+                <stop offset="100%" stop-color="#627D98" stop-opacity="0.35"></stop>
+            </linearGradient>
+        </defs>
+    </svg>
 </div>
 
-<header class="col-span-1 md:col-span-10 md:col-start-2 z-10 relative">
-    <h1 class="font-display-xl text-4xl md:text-display-xl text-primary uppercase leading-none tracking-tighter">
-        in_Custody
-    </h1>
-    <div class="flex flex-wrap items-center gap-2 md:gap-4 font-label-sm text-xs md:text-label-sm text-primary border-t-2 border-primary pt-3 md:pt-stack-sm w-full max-w-3xl uppercase">
-        <span>Product Overview</span>
-        <span class="w-1.5 h-1.5 bg-primary"></span>
-        <span>Prison Technology / GovTech</span>
-        <span class="w-1.5 h-1.5 bg-primary"></span>
-        <span>UK</span>
-    </div>
-</header>
+<!-- WP Admin Bar Styling Overhaul -->
+<div id="wpadminbar">
+<div aria-label="Toolbar" class="quicklinks" id="wp-toolbar" role="navigation">
+<ul class="ab-top-menu" id="wp-admin-bar-root-default">
+<li class="" id="wp-admin-bar-site-name">
+<a class="ab-item" href="home.html">
+<span class="dashicons dashicons-admin-home"></span>
+<span class="font-bold">DARYNA VAKULENKO</span>
+</a>
+</li>
+<li class="hidden-mobile" id="wp-admin-bar-what">
+    <a class="ab-item" href="portfolio_page.html">Portfolio</a>
+</li>
+<li class="hidden-mobile" id="wp-admin-bar-how">
+<a class="ab-item" href="#how">How</a>
+</li>
+<li class="hidden-mobile" id="wp-admin-bar-services">
+<a class="ab-item" href="#services">Services</a>
+</li>
+<li class="hidden-mobile" id="wp-admin-bar-built">
+<a class="ab-item" href="#built">Execution</a>
+</li>
+<li class="hidden-mobile" id="wp-admin-bar-impact">
+<a class="ab-item" href="#impact">Value</a>
+</li>
+</ul>
+<ul class="ab-top-secondary ab-top-menu" id="wp-admin-bar-top-secondary">
+<li class="" id="wp-admin-bar-home">
+<a class="ab-item" href="home.html">
+<span>Home</span>
+</a>
+</li>
+<li class="" id="wp-admin-bar-my-account">
+<a class="ab-item get-in-touch-btn" href="mailto:info@darynavakulenko.com" target="_blank">
+<span class="">Contact</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
 
-<article class="col-span-1 md:col-span-10 md:col-start-2 relative z-10 mb-16">
-    <p class="font-body-lg text-body-md md:text-body-lg text-on-surface leading-relaxed mb-5">
-        A platform used to track and analyse the skills people in-custody develop while working on projects in custodial environments. <br /> 
-        A tool will track the skills, visually display it on a platform, showcase progress and real job opportunities on the market the individual may reach. By showcasing skills, progress in interactive and innovative way it will also boost confidence levels and motivation, which in turn will reduce reoffending rates. <br />
-        The platform is also designed to help staff members manage the process more efficiently, replacing current manual processes. <br />
-        Part of the project is aimed at research on the influence of the tool on the confidence levels of people in-custody and how it can help them find a job after release. <br />
-        Additionally, how the tool can help to decrease reoffending rates and improve employment rates in the UK. <br />
-    </p>
-    <!-- Screenshots -->
- <!-- Screenshots -->
-    <div class="flex flex-col gap-6 mb-8">
-        <div class="border-2 border-primary bg-surface-container-lowest overflow-hidden w-full">
-            <img src="1.png" alt="In Custody — training timeline and career opportunity matching" class="w-full h-auto object-contain" />
-        </div>
-        <div class="border-2 border-primary bg-surface-container-lowest overflow-hidden w-full">
-            <img src="2.png" alt="In Custody — staff view of participant dashboard, skill tree and competency matrix" class="w-full h-auto object-contain" />
-        </div>
-    </div>
+<!-- Main Flow Wrapper -->
+<div class="relative z-10" id="page-flow-wrapper">
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-transparent border-b border-black">
+  <div class="relative z-10 text-center px-6 max-w-6xl py-12">
+  <span class="micro-heading mb-12 block">
+              STRATEGY + EXECUTION + DESIGN / 2026
+          </span>
+  <div class="relative flex items-center justify-center mb-12">
+  <h1 class="font-headline-lg text-headline-lg-mobile md:text-display-lg lg:text-display-xl text-primary leading-none uppercase tracking-tight">
+      Daryna Vakulenko
+  </h1>
+  </div>
+  <p class="wavy-text text-xl md:text-3xl lg:text-4xl text-secondary max-w-4xl mx-auto leading-relaxed mb-16 font-light">
+              I help healthcare and AI-driven organisations turn digital ideas into working, adopted products.
+          </p>
+  <p class="text-sm md:text-base text-secondary max-w-3xl mx-auto leading-relaxed mb-16 font-light tracking-wide uppercase font-label-sm">
+              Digital Transformation &middot; AI Strategy &middot; Product Development &middot; Go-to-Market
+          </p>
+  <div class="flex flex-col md:flex-row gap-6 justify-center">
+  <a class="btn-primary px-12 py-5 font-label-sm rounded-none text-sm tracking-widest uppercase" href="portfolio_page.html">Portfolio</a>
+  <a class="btn-secondary px-12 py-5 font-label-sm rounded-none text-sm tracking-widest uppercase" href="#services">Services</a>
+  <a class="btn-secondary get-in-touch-btn px-12 py-5 font-label-sm rounded-none text-sm tracking-widest uppercase" href="mailto:info@darynavakulenko.com">Get in Touch</a>
+  </div>
+  </div>
+  </section>
 
-    <!-- Stack -->
-    <aside class="border-t-2 border-primary pt-3 md:pt-stack-sm">
-        <h4 class="font-label-sm text-xs md:text-label-sm uppercase tracking-widest mb-3 text-primary">Stack</h4>
-        <div class="flex flex-wrap gap-1.5 md:gap-2">
-            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">FastAPI</span>
-            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">SQLAlchemy / SQLite</span>
-            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">Ollama / Llama 3.1 (on-device)</span>
-            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">fpdf2</span>
-            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">Chart.js</span>
-            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">Tailwind CSS</span>
-            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">JavaScript</span>
-            <span class="border border-primary px-2.5 py-1 font-label-sm text-xs uppercase hover:bg-neutral-amber hover:text-primary transition-colors cursor-default">Python</span>
-        </div>
-    </aside>
+  <main class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-16 space-y-16">
+ <!-- Section 1: Grid-based Content (Updated) -->
+  <section class="fade-in-ready fade-in-active" id="what">
+      <div class="max-w-4xl mx-auto text-center px-4">
+          <h2 class="micro-heading mb-6">What I Actually Do</h2>
+          <h3 class="font-headline-lg text-primary uppercase text-3xl mb-6">Full Cycle Transformation.</h3>
+          <p class="text-xl md:text-3xl lg:text-4xl text-on-surface-variant mb-12 leading-relaxed font-light">
+              I handle the full cycle of digital transformation and deployment. With a background in medicine and a proven track record across health tech, education, and enterprise B2B sales, I specialize in identifying hidden friction points and creating lasting solutions to complex challenges. 
+          </p>
+          
+          <div class="grid md:grid-cols-2 gap-x-12 gap-y-8 text-left">
+              <div class="space-y-2 border-t border-black pt-6">
+                  <span class="font-label-sm block text-primary mb-2">01. INDUSTRY</span>
+                  <p class="font-body-md text-on-surface-variant">End-to-end deployment in healthcare, EdTech, and non-profit initiatives.</p>
+              </div>
+              <div class="space-y-2 border-t border-black pt-6">
+                  <span class="font-label-sm block text-primary mb-2">02. COMMERCIAL</span>
+                  <p class="font-body-md text-on-surface-variant">Business development and sales across SMEs and corporate clients.</p>
+              </div>
+              <div class="space-y-2 border-t border-black pt-16">
+                  <span class="font-label-sm block text-primary mb-2">03. TECHNICAL</span>
+                  <p class="font-body-md text-on-surface-variant">Program management and AI prototyping (NLP/LLMs, Python, JS).</p>
+              </div>
+              <div class="space-y-2 border-t border-black pt-16">
+                  <span class="font-label-sm block text-primary mb-2">04. BRAND</span>
+                  <p class="font-body-md text-on-surface-variant">Creative marketing, visual content, and storytelling strategy.</p>
+              </div>
+          </div>
+      </div>
+  </section>
 
-</article>
-</main>
+  <!-- Section 2: Clean, High-Contrast Cards -->
+  <section class="fade-in-ready fade-in-active" id="how">
+  <div class="border-y border-black py-16 mb-16 bg-white/50 backdrop-blur-sm">
+  <h2 class="micro-heading mb-6 text-center">How I Know What Works</h2>
+  <div class="max-w-4xl mx-auto text-center px-4">
+  <h3 class="font-headline-md text-headline-lg text-primary uppercase mb-8">A Unique Perspective.</h3>
+  <p class="text-xl md:text-3xl lg:text-4xl text-on-surface-variant leading-relaxed font-light">
+                      I am a trained doctor who pivoted into the tech sector. This path gave me a unique lens: I understand the deeply human side of systems implementation just as well as the technical and commercial realities.
+                  </p>
+  </div>
+  </div>
+  <div class="grid md:grid-cols-3 gap-0 border-x border-black grid-cols-1 bg-white/70 backdrop-blur-sm">
+  <div class="p-12 border-r border-black last:border-r-0 hover:bg-black hover:text-white transition-colors duration-300 border-b">
+  <span class="font-label-sm mb-12 block">FOUNDATION</span>
+  <h4 class="font-headline-md text-2xl mb-6 uppercase">PEOPLE</h4>
+  <p class="font-body-md leading-relaxed opacity-80">Understanding the human side of implementation.</p>
+  </div>
+  <div class="p-12 border-r border-black last:border-r-0 hover:bg-black hover:text-white transition-colors duration-300 border-b">
+  <span class="font-label-sm mb-12 block">CAPABILITY</span>
+  <h4 class="font-headline-md text-2xl mb-6 uppercase">Technical</h4>
+  <p class="font-body-md leading-relaxed opacity-80">Navigating complex technical challenges to deliver real lasting solutions .</p>
+  </div>
+  <div class="p-12 border-r border-black last:border-r-0 hover:bg-black hover:text-white transition-colors duration-300 border-b">
+  <span class="font-label-sm mb-12 block">ALIGNEMNT</span>
+  <h4 class="font-headline-md text-2xl mb-6 uppercase">Commercial</h4>
+  <p class="font-body-md leading-relaxed opacity-80">Aligning technical side with commercial and the current market.</p>
+  </div>
+  </div>
+  </section>
 
-<div id="footer-placeholder"></div>
+  <!-- Section 3: Large Editorial Block -->
+  <section class="fade-in-ready fade-in-active py-stack-lg" id="built">
+      <div class="grid lg:grid-cols-2 gap-0 border border-black grid-cols-1">
+          <div class="p-6 sm:p-12 md:p-24 bg-white/80 backdrop-blur-sm">
+              <h2 class="micro-heading mb-12">How It Was Built</h2>
+              <p class="text-xl md:text-3xl lg:text-4xl text-on-surface-variant mb-0 leading-relaxed font-light">
+                  I have scaled startups, managed high-value digital health portfolios, and trained AI models on complex clinical data. By moving fluidly across clinical practice, B2B sales, and AI development, I ensure that innovations aren't just built, they are successfully adopted and commercialized.
+              </p>
+          </div>
+          
+          <div class="grid grid-cols-2 bg-black">
+              <div class="p-8 md:p-12 border-b border-r border-white/20 flex flex-col justify-center items-center text-center">
+                  <div class="font-headline-lg text-white text-2xl md:text-4xl mb-2">Doctor</div>
+                  <div class="font-label-sm text-white/50">Clinical</div>
+              </div>
+              <div class="p-8 md:p-12 border-b border-white/20 flex flex-col justify-center items-center text-center">
+                  <div class="font-headline-lg text-white text-2xl md:text-4xl mb-2">Builder</div>
+                  <div class="font-label-sm text-white/50">Technical</div>
+              </div>
+              <div class="p-8 md:p-12 border-r border-white/20 flex flex-col justify-center items-center text-center">
+                  <div class="font-headline-lg text-white text-2xl md:text-4xl mb-2">Scaler</div>
+                  <div class="font-label-sm text-white/50">Growth</div>
+              </div>
+              <div class="p-8 md:p-12 flex flex-col justify-center items-center text-center">
+                  <div class="font-headline-lg text-white text-2xl md:text-4xl mb-2">Creative</div>
+                  <div class="font-label-sm text-white/50">Brand</div>
+              </div>
+          </div>
+      </div>
+  </section>
 
-<script>
-    async function loadComponent(id, file) {
-        const response = await fetch(file);
-        const data = await response.text();
-        document.getElementById(id).innerHTML = data;
-    }
-    loadComponent('header-placeholder', 'header.html');
-    loadComponent('footer-placeholder', 'footer.html');
+  <!-- Section 3.5: Services -->
+  <section class="fade-in-ready fade-in-active" id="services">
+      <div class="max-w-4xl mx-auto text-center px-4 mb-16">
+          <h2 class="micro-heading mb-6">What You Can Hire Me For</h2>
+          <h3 class="font-headline-lg text-primary uppercase text-3xl mb-6">Services.</h3>
+          <p class="text-xl md:text-3xl lg:text-4xl text-on-surface-variant leading-relaxed font-light">
+              Three stages of the same transformation &#8212; start wherever your project actually is.
+          </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-0 border border-black grid-cols-1">
+          <div class="p-8 md:p-12 border-black md:border-r border-b md:border-b-0 hover:bg-black hover:text-white transition-colors duration-300 group flex flex-col">
+              <span class="font-label-sm mb-8 block opacity-60 group-hover:opacity-100">01 &#8212; DIAGNOSE</span>
+              <h4 class="font-headline-md text-2xl mb-4 uppercase">Digital Transformation Audit</h4>
+              <p class="font-body-md leading-relaxed opacity-80 mb-6 flex-grow">
+                  A structured review of where AI or process automation is being adopted, where it's stalling, and what to fix first &#8212; delivered as a clear roadmap.
+              </p>
+              <span class="font-label-sm uppercase tracking-widest text-xs opacity-60 group-hover:opacity-100">For corporates &amp; enterprise teams</span>
+          </div>
+          <div class="p-8 md:p-12 border-black md:border-r border-b md:border-b-0 hover:bg-black hover:text-white transition-colors duration-300 group flex flex-col">
+              <span class="font-label-sm mb-8 block opacity-60 group-hover:opacity-100">02 &#8212; BUILD</span>
+              <h4 class="font-headline-md text-2xl mb-4 uppercase">AI Prototyping &amp; MVP Build</h4>
+              <p class="font-body-md leading-relaxed opacity-80 mb-6 flex-grow">
+                  End-to-end build of AI/LLM products &#8212; multi-agent systems, vector memory, working prototypes that survive real users, not just a demo.
+              </p>
+              <span class="font-label-sm uppercase tracking-widest text-xs opacity-60 group-hover:opacity-100">For startups &amp; founders</span>
+          </div>
+          <div class="p-8 md:p-12 hover:bg-black hover:text-white transition-colors duration-300 group flex flex-col">
+              <span class="font-label-sm mb-8 block opacity-60 group-hover:opacity-100">03 &#8212; COMMERCIALISE</span>
+              <h4 class="font-headline-md text-2xl mb-4 uppercase">Go-To-Market </h4>
+              <p class="font-body-md leading-relaxed opacity-80 mb-6 flex-grow">
+                  Positioning, pipeline and stakeholder narrative for regulated, human-sensitive sectors &#8212; including social value reporting for public-sector and non-profit tenders.
+              </p>
+              <span class="font-label-sm uppercase tracking-widest text-xs opacity-60 group-hover:opacity-100">For non-profits &amp; social enterprises</span>
+          </div>
+      </div>
+
+      <div class="flex justify-center mt-12">
+          <a class="btn-primary get-in-touch-btn px-12 py-5 font-label-sm rounded-none text-sm tracking-widest uppercase" href="mailto:info@darynavakulenko.com">Discuss a Project</a>
+      </div>
+  </section>
+
+  <!-- Section 4: Focused Impact -->
+  <section class="fade-in-ready fade-in-active py-stack-lg" id="impact">
+      <div class="max-w-4xl mx-auto">
+
+  <h3 class="font-headline-lg text-headline-lg text-center uppercase mb-12"> Impact</h3>
+  <p class="text-xl md:text-3xl lg:text-4xl leading-relaxed text-center mb-24 opacity-80 font-light text-on-surface-variant">
+                  The situations I am best suited for are those in transition. If you are looking for someone who can translate technical complexity into real-world business results, I am ready to partner.
+              </p>
+  <div class="space-y-0">
+  <div class="editorial-container p-12 border-b-0 hover:bg-surface-container-low transition-colors group cursor-default">
+  <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+  <span class="font-label-sm">01. AI INTEGRATION</span>
+  <p class="font-headline-md text-xl md:w-2/3 group-hover:translate-x-2 transition-transform">Healthcare or enterprise orgs integrating AI and uncovering friction.</p>
+  </div>
+  </div>
+  <div class="editorial-container p-12 border-b-0 hover:bg-surface-container-low transition-colors group cursor-default">
+  <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+  <span class="font-label-sm">02. LEADERSHIP</span>
+  <p class="font-headline-md text-xl md:w-2/3 group-hover:translate-x-2 transition-transform">Teams needing a partner for both technical delivery and GTM strategy.</p>
+  </div>
+  </div>
+  <div class="editorial-container p-12 hover:bg-surface-container-low transition-colors group cursor-default">
+  <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+  <span class="font-label-sm">03. EXECUTION</span>
+  <p class="font-headline-md text-xl md:w-2/3 group-hover:translate-x-2 transition-transform">Projects stuck in the gap between "idea" and "result."</p>
+  </div>
+  </div>
+  </div>
+  </div>
+  </section>
+
+
+  </main>
+
+  <footer class="w-full py-24 bg-black text-white">
+  <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+  <div class="flex flex-col md:flex-row justify-between items-start gap-16 mb-24">
+  <div class="font-headline-lg text-4xl uppercase tracking-tighter">Daryna<br>Vakulenko</div>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-12 grid-cols-1">
+  <div class="flex flex-col gap-4">
+  <span class="font-label-sm opacity-40">NAVIGATION</span>
+  <a class="font-label-sm hover:underline" href="#what">WHAT</a>
+  <a class="font-label-sm hover:underline" href="#how">HOW</a>
+  <a class="font-label-sm hover:underline" href="#services">SERVICES</a>
+  <a class="font-label-sm hover:underline" href="#built">EXECUTION</a>
+  </div>
+  <div class="flex flex-col gap-4">
+  <span class="font-label-sm opacity-40">SOCIAL</span>
+  <a class="font-label-sm hover:underline" href="https://linkedin.com/in/daryna-vakulenko" target="_blank">LINKEDIN</a>
+  <a class="font-label-sm hover:underline" href="https://www.behance.net/qrbnk" target="_blank">BEHANCE</a>
+  </div>
+
+  </div>
+  </div>
+  <div class="flex flex-col md:flex-row justify-between items-center border-t border-white/20 pt-12 text-center">
+  <div class="font-label-sm opacity-40 uppercase">© 2026 Daryna Vakulenko. ALL RIGHTS RESERVED.</div>
+  </div>
+  </div>
+  </footer>
+</div>
+
+<!-- SYSTEM SCRIPTS -->
+<script src="jquery.min.js"></script>
+<script src="jquery-migrate.min.js"></script>
+<script src="jquery.fancybox.min.js"></script>
+<script src="third.js"></script>
+<script src="smush-lazy-load.min.js"></script>
+<script src="wp-emoji-release.min.js"></script>
+<script src="general.js"></script>
+
+<script id="native-ui-handlers">
+    document.addEventListener('DOMContentLoaded', () => {
+        // Only run wavy character animation on desktop to prevent mobile scroll lag
+        if (window.innerWidth > 768) {
+            document.querySelectorAll('.wavy-text').forEach(el => {
+                const text = el.textContent.trim();
+                const words = text.split(' ');
+                el.innerHTML = '';
+                let charIndex = 0;
+
+                words.forEach((word, wordIndex) => {
+                    const wordSpan = document.createElement('span');
+                    wordSpan.className = 'inline-block whitespace-nowrap';
+
+                    for (const char of word) {
+                        const charSpan = document.createElement('span');
+                        charSpan.textContent = char;
+                        charSpan.className = 'wave-char';
+                        charSpan.style.animationDelay = `${charIndex * 0.04}s`;
+                        wordSpan.appendChild(charSpan);
+                        charIndex++;
+                    }
+
+                    el.appendChild(wordSpan);
+
+                    if (wordIndex < words.length - 1) {
+                        const spaceSpan = document.createElement('span');
+                        spaceSpan.innerHTML = '&nbsp;';
+                        spaceSpan.className = 'inline-block';
+                        el.appendChild(spaceSpan);
+                        charIndex++;
+                    }
+                });
+            });
+        }
+
+        const contactButtons = document.querySelectorAll('.get-in-touch-btn, a[href^="mailto:"]');
+        contactButtons.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const mailtoTarget = this.getAttribute('href');
+
+                if (typeof gsap !== 'undefined') {
+                    gsap.to("#page-flow-wrapper > *", {
+                        duration: 1.4,
+                        y: 100,
+                        opacity: 0,
+                        scale: 0.96,
+                        filter: "blur(10px)",
+                        stagger: {
+                            amount: 0.3,
+                            from: "top"
+                        },
+                        ease: "sine.inOut",
+                        onComplete: () => {
+                            window.location.href = mailtoTarget;
+                        }
+                    });
+                } else {
+                    window.location.href = mailtoTarget;
+                }
+            });
+        });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const adminBarOffset = window.innerWidth <= 782 ? 46 : 32;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - adminBarOffset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'auto'
+                });
+            }
+        });
+    });
+
+    const observerOptions = {
+        threshold: 0.05,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-active');
+            }
+        });
+    }, observerOptions);
 </script>
-</body>
-</html>
+
+
+
+
+</body></html>
